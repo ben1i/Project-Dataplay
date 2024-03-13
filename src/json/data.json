@@ -9,7 +9,8 @@
             "realeaseDate" : 2017,
             "budget" : 40000000,
             "franchise" : "Ça",
-            "death" : 5
+            "death" : 5,
+            "heartrateDifference" : 11
         },
 
         "TheSixthSense" : {
@@ -61,7 +62,8 @@
             "realeaseDate" : 1973,
             "budget" : 12000000,
             "franchise" : "L'Exorciste",
-            "death" : 3
+            "death" : 3,
+            "heartrateDifference" : 10
         },
 
         "Signs" : {
@@ -107,75 +109,328 @@
         },
 
         "FridayThe13th" : {
+            "boxoffice" : 39000000,
+            "score" : 3,
+            "actors" : 23,
+            "oscars" : 0,
+            "realeaseDate" : 1980,
+            "budget" : 550000,
+            "franchise" : "Vendredi 13",
             "death" : 14
         },
 
         "Scream3" : {
+            "boxoffice" : 161000000,
+            "score" : 2.8,
+            "actors" : 37,
+            "oscars" : 0,
+            "realeaseDate" : 2000,
+            "budget" : 40000000,
+            "franchise" : "Scream",
             "death" : 11
         },
 
         "TheTexasChainsawMassacre" : {
-            "death" : 7
+            "boxoffice" : 30000000,
+            "score" : 3.9,
+            "actors" : 17,
+            "oscars" : 0,
+            "realeaseDate" : 1974,
+            "budget" : 140000,
+            "franchise" : "Massacre à la Tronçonneuse",
+            "death" : 7,
+            "heartrateDifference" : 13
         },
 
         "Saw" : {
+            "boxoffice" : 103000000,
+            "boxofficeFR" : 3000000,
+            "score" : 3.6,
+            "actors" : 18,
+            "oscars" : 0,
+            "realeaseDate" : 2004,
+            "budget" : 1000000,
+            "franchise" : "Saw",
             "death" : 6
         },
 
         "Halloween" : {
-            "death" : 5
+            "boxoffice" : 47000000,
+            "score" : 3.8,
+            "actors" : 27,
+            "oscars" : 0,
+            "realeaseDate" : 1978,
+            "budget" : 325000,
+            "franchise" : "Halloween",
+            "death" : 5,
+            "heartrateDifference" : 13
         },
 
         "Psycho" : {
+            "boxoffice" : 32000000,
+            "score" : 4.3,
+            "actors" : 34,
+            "oscars" : 0,
+            "realeaseDate" : 1960,
+            "budget" : 806000,
             "death" : 2
         },
 
-        "Shining" : {
+        "TheShining" : {
+            "boxoffice" : 47000000,
+            "boxofficeFR" : 8000,
+            "score" : 4.2,
+            "actors" : 29,
+            "oscars" : 0,
+            "realeaseDate" : 1980,
+            "budget" : 19000000,
+            "franchise" : "Shining",
             "death" : 1
         },
 
-        "Conjuring" : {
-            "death" : 0
+        "TheConjuring" : {
+            "boxoffice" : 320000000,
+            "boxofficeFR" : 9000000,
+            "score" : 3.6,
+            "actors" : 32,
+            "oscars" : 0,
+            "realeaseDate" : 2013,
+            "budget" : 13000000,
+            "franchise" : "Conjuring",
+            "death" : 0,
+            "heartrateDifference" : 20
         },
 
         "TheMist" : {
+            "boxoffice" : 57000000,
+            "boxofficeFR" : 282000,
+            "score" : 3.4,
+            "actors" : 45,
+            "oscars" : 0,
+            "budget" : 19000000,
             "realeaseDate" : 2007,
             "death" : 30
         },
 
         "KillerKlownsFromOuterSpace" : {
+            "boxoffice" : 745,
+            "score" : 3.3,
+            "actors" : 37,
+            "oscars" : 0,
+            "budget" : 1000000,
             "realeaseDate" : 1988,
             "death" : 40
         },
 
         "TheCabinInTheWoods" : {
+            "boxoffice" : 70000000,
+            "boxofficeFR" : 2000000,
+            "score" : 3.4,
+            "actors" : 48,
+            "oscars" : 0,
+            "budget" : 30000000,
             "realeaseDate" : 2011,
             "death" : 56
         },
 
         "30DaysOfNight" : {
+            "boxoffice" : 75000000,
+            "boxofficeFR" : 1000000,
+            "score" : 3.1,
+            "actors" : 43,
+            "oscars" : 0,
+            "budget" : 30000000,
             "realeaseDate" : 2007,
             "death" : 60
         },
 
         "Us" : {
+            "boxoffice" : 256000000,
+            "boxofficeFR" : 5000000,
+            "score" : 3.7,
+            "actors" : 24,
+            "oscars" : 0,
+            "budget" : 20000000,
             "realeaseDate" : 2019,
             "death" : 66
         },
 
         "Carrie" : {
+            "boxoffice" : 33000000,
+            "score" : 3.8,
+            "actors" : 31,
+            "oscars" : 0,
+            "budget" : 1000000,
             "realeaseDate" : 1976,
             "death" : 70
         },
 
         "TheBelkoExperiment" : {
+            "boxoffice" : 11000000,
+            "score" : 2.8,
+            "actors" : 49,
+            "oscars" : 0,
+            "budget" : 5000000,
             "realeaseDate" : 2016,
             "death" : 84
         },
 
         "Slither" : {
+            "boxoffice" : 12000000,
+            "boxofficeFR" : 365000,
+            "score" : 3.2,
+            "actors" : 40,
+            "oscars" : 0,
+            "budget" : 15000000,
             "realeaseDate" : 2006,
             "death" : 100
+        },
+
+        "TheInvisibleMan" : {
+            "boxoffice" : 27000,
+            "score" : 3.9,
+            "actors" : 42,
+            "oscars" : 0,
+            "budget" : 328000,
+            "realeaseDate" : 1933,
+            "death" : 105
+        },
+
+        "ThePurgeElectionYear" : {
+            "boxoffice" : 118000000,
+            "boxofficeFR" : 5000000,
+            "score" : 2.6,
+            "actors" : 66,
+            "oscars" : 0,
+            "budget" : 10000000,
+            "franchise" : "La Purge",
+            "realeaseDate" : 2016,
+            "death" : 110
+        },
+
+        "FromDuskTillDawn" : {
+            "boxoffice" : 25000000,
+            "score" : 3.5,
+            "actors" : 39,
+            "oscars" : 0,
+            "budget" : 19000000,
+            "realeaseDate" : 1996,
+            "death" : 120
+        },
+
+        "TheFirstPurge" : {
+            "boxoffice" : 137000000,
+            "boxofficeFR" : 8000000,
+            "score" : 2.4,
+            "actors" : 64,
+            "oscars" : 0,
+            "budget" :13000000,
+            "franchise" : "La Purge",
+            "realeaseDate" : 2018,
+            "death" : 130
+        },
+
+        "DawnOfTheDead" : {
+            "boxoffice" : 102000000,
+            "boxofficeFR" : 3000000,
+            "score" : 3.4,
+            "actors" : 43,
+            "oscars" : 0,
+            "budget" : 26000000,
+            "franchise" : "Sage des zombies",
+            "realeaseDate" : 2004,
+            "death" : 140
+        },
+
+        "Brightburn" : {
+            "boxoffice" : 33000000,
+            "boxofficeFR" : 1000000,
+            "score" : 2.6,
+            "actors" : 18,
+            "oscars" : 0,
+            "budget" : 6000000,
+            "realeaseDate" : 2019,
+            "death" : 274
+        },
+
+        "Host" : {
+            "heartrateDifference" : 24
+        },
+
+        "Sinister" : {
+            "heartrateDifference" : 22
+        },
+
+        "Insidious" : {
+            "heartrateDifference" : 21
+        },
+
+        "Hereditary" : {
+            "heartrateDifference" : 18
+        },
+
+        "Terrified" : {
+            "heartrateDifference" : 18
+        },
+
+        "ItFollows" : {
+            "heartrateDifference" : 17
+        },
+
+        "Dashcam" : {
+            "heartrateDifference" : 17
+        },
+
+        "AQuitPlace2" : {
+            "heartrateDifference" : 16
+        },
+
+        "ParanormalActivity" : {
+            "heartrateDifference" : 16
+        },
+
+        "TheConjuring2" : {
+            "heartrateDifference" : 15
+        },
+
+        "TheBabadook" : {
+            "heartrateDifference" : 15
+        },
+
+        "TheDescent" : {
+            "heartrateDifference" : 15
+        },
+
+        "Hush" : {
+            "heartrateDifference" : 14
+        },
+
+        "TheAutopsyOfJaneDoe" : {
+            "heartrateDifference" : 14
+        },
+
+        "AQuitPlace" : {
+            "heartrateDifference" : 14
+        },
+
+        "TheRing" : {
+            "heartrateDifference" : 14
+        },
+
+        "NightmareOnElmStreet" : {
+            "heartrateDifference" : 13
+        },
+
+        "REC" : {
+            "heartrateDifference" : 12
+        },
+
+        "28DaysLater" : {
+            "heartrateDifference" : 9
+        },
+
+        "Oculus" : {
+            "heartrateDifference" : 9
         }
     }
 }

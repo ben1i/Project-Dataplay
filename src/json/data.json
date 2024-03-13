@@ -1,0 +1,181 @@
+{
+    "movies" : {
+        "It" : {
+            "boxoffice" : 704000000,
+            "boxofficeFR" : 20000000,
+            "score" : 3.4,
+            "actors" : 49,
+            "oscars" : 0,
+            "realeaseDate" : 2017,
+            "budget" : 40000000,
+            "franchise" : "Ça",
+            "death" : 5
+        },
+
+        "TheSixthSense" : {
+            "boxoffice" : 672000000,
+            "boxofficeFR" : 40000000,
+            "score" : 4,
+            "actors" : 50,
+            "oscars" : 0,
+            "realeaseDate" : 1999,
+            "budget" : 40000000
+        },
+
+        "IAmLegend" : {
+            "boxoffice" : 585000000,
+            "boxofficeFR" : 25000000,
+            "score" : 3.4,
+            "actors" : 62,
+            "oscars" : 0,
+            "realeaseDate" : 2007,
+            "budget" : 150000000
+        },
+
+        "WorldWarZ" : {
+            "boxoffice" : 540000000,
+            "boxofficeFR" : 21000000,
+            "score" : 3.1,
+            "actors" : 82,
+            "oscars" : 0,
+            "realeaseDate" : 2013,
+            "budget" : 200000000
+        },
+
+        "ItChapter2" : {
+            "boxoffice" : 473000000,
+            "boxofficeFR" : 12000000,
+            "score" : 2.9,
+            "actors" : 87,
+            "oscars" : 0,
+            "realeaseDate" : 2019,
+            "budget" : 79000000,
+            "franchise" : "Ça"  
+        },
+
+        "TheExorcist" : {
+            "boxoffice" : 441000000,
+            "score" : 4,
+            "actors" : 43,
+            "oscars" : 2,
+            "realeaseDate" : 1973,
+            "budget" : 12000000,
+            "franchise" : "L'Exorciste",
+            "death" : 3
+        },
+
+        "Signs" : {
+            "boxoffice" : 408000000,
+            "boxofficeFR" : 10000000,
+            "score" : 3.5,
+            "actors" : 26,
+            "oscars" : 0,
+            "realeaseDate" : 2002,
+            "budget" : 72000000   
+        },
+
+        "Prometheus" : {
+            "boxoffice" : 403000000,
+            "boxofficeFR" : 15000000,
+            "score" : 3.2,
+            "actors" : 50,
+            "oscars" : 0,
+            "realeaseDate" : 2012,
+            "budget" : 130000000,
+            "franchise" : "Alien"  
+        },
+
+        "TheNun" : {
+            "boxoffice" : 366000000,
+            "boxofficeFR" : 10000000,
+            "score" : 2.1,
+            "actors" : 51,
+            "oscars" : 0,
+            "realeaseDate" : 2018,
+            "budget" : 22000000,
+            "franchise" : "Conjuring"  
+        },
+
+        "Hannibal" : {
+            "boxoffice" : 351000000,
+            "score" : 3.2,
+            "actors" : 39,
+            "oscars" : 0,
+            "realeaseDate" : 2001,
+            "budget" : 87000000,
+            "franchise" : "Hannibal"  
+        },
+
+        "FridayThe13th" : {
+            "death" : 14
+        },
+
+        "Scream3" : {
+            "death" : 11
+        },
+
+        "TheTexasChainsawMassacre" : {
+            "death" : 7
+        },
+
+        "Saw" : {
+            "death" : 6
+        },
+
+        "Halloween" : {
+            "death" : 5
+        },
+
+        "Psycho" : {
+            "death" : 2
+        },
+
+        "Shining" : {
+            "death" : 1
+        },
+
+        "Conjuring" : {
+            "death" : 0
+        },
+
+        "TheMist" : {
+            "realeaseDate" : 2007,
+            "death" : 30
+        },
+
+        "KillerKlownsFromOuterSpace" : {
+            "realeaseDate" : 1988,
+            "death" : 40
+        },
+
+        "TheCabinInTheWoods" : {
+            "realeaseDate" : 2011,
+            "death" : 56
+        },
+
+        "30DaysOfNight" : {
+            "realeaseDate" : 2007,
+            "death" : 60
+        },
+
+        "Us" : {
+            "realeaseDate" : 2019,
+            "death" : 66
+        },
+
+        "Carrie" : {
+            "realeaseDate" : 1976,
+            "death" : 70
+        },
+
+        "TheBelkoExperiment" : {
+            "realeaseDate" : 2016,
+            "death" : 84
+        },
+
+        "Slither" : {
+            "realeaseDate" : 2006,
+            "death" : 100
+        }
+    }
+}

@@ -427,7 +427,7 @@
             "heartrateDifference" : 17
         },
 
-        "AQuitPlace2" : {
+        "AQuitePlace2" : {
             "boxoffice" : 297000000,
             "boxofficeFR" : 5000000,
             "score" : 3.4,
@@ -504,7 +504,7 @@
             "heartrateDifference" : 14
         },
 
-        "AQuitPlace" : {
+        "AQuitePlace" : {
             "boxoffice" : 340000000,
             "boxofficeFR" : 5000000,
             "score" : 3.7,

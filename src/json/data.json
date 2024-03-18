@@ -354,82 +354,221 @@
         },
 
         "Host" : {
+            "boxoffice" : 443000,
+            "score" : 3.2,
+            "actors" : 12,
+            "oscars" : 0,
+            "budget" : 100000,
+            "realeaseDate" : 2020,
             "heartrateDifference" : 24
         },
 
         "Sinister" : {
+            "boxoffice" : 82000000,
+            "boxofficeFR" : 3000000,
+            "score" : 3.3,
+            "actors" : 16,
+            "oscars" : 0,
+            "budget" : 3000000,
+            "realeaseDate" : 2012,
             "heartrateDifference" : 22
         },
 
         "Insidious" : {
+            "boxoffice" : 100000000,
+            "boxofficeFR" : 4000000,
+            "score" : 3.2,
+            "actors" : 17,
+            "oscars" : 0,
+            "budget" : 1000000,
+            "realeaseDate" : 2010,
+            "franchise" : "Insidious",
             "heartrateDifference" : 21
         },
 
         "Hereditary" : {
+            "boxoffice" : 82000000,
+            "boxofficeFR" : 1000000,
+            "score" : 4,
+            "actors" : 28,
+            "oscars" : 0,
+            "budget" : 10000000,
+            "realeaseDate" : 2018,
             "heartrateDifference" : 18
         },
 
         "Terrified" : {
+            "boxoffice" : 367000,
+            "score" : 3.2,
+            "actors" : 16,
+            "oscars" : 0,
+            "realeaseDate" : 2017,
             "heartrateDifference" : 18
         },
 
         "ItFollows" : {
+            "boxoffice" : 21000000,
+            "boxofficeFR" : 733000,
+            "score" : 3.5,
+            "actors" : 30,
+            "oscars" : 0,
+            "budget" : 2000000,
+            "realeaseDate" : 2014,
             "heartrateDifference" : 17
         },
 
         "Dashcam" : {
+            "boxoffice" : 66000,
+            "score" : 2.3,
+            "actors" : 14,
+            "oscars" : 0,
+            "budget" : 100000,
+            "realeaseDate" : 2021, 
             "heartrateDifference" : 17
         },
 
         "AQuitPlace2" : {
+            "boxoffice" : 297000000,
+            "boxofficeFR" : 5000000,
+            "score" : 3.4,
+            "actors" : 29,
+            "oscars" : 0,
+            "budget" : 61000000,
+            "realeaseDate" : 2020,
+            "franchise" : "Sans un bruit",
             "heartrateDifference" : 16
         },
 
         "ParanormalActivity" : {
+            "boxoffice" : 193000000,
+            "boxofficeFR" : 9000000,
+            "score" : 2.9,
+            "actors" : 9,
+            "oscars" : 0,
+            "budget" : 215000,
+            "realeaseDate" : 2007,
+            "franchise" : "Paranormal Activity",
             "heartrateDifference" : 16
         },
 
         "TheConjuring2" : {
+            "boxoffice" : 322000000,
+            "boxofficeFR" : 11000000,
+            "score" : 3.4,
+            "actors" : 32,
+            "oscars" : 0,
+            "budget" : 40000000,
+            "realeaseDate" : 2016,
+            "franchise" : "Conjuring",
             "heartrateDifference" : 15
         },
 
         "TheBabadook" : {
+            "boxoffice" : 10000000,
+            "boxofficeFR" : 1000000,
+            "score" : 3.4,
+            "actors" : 36,
+            "oscars" : 0,
+            "budget" : 2000000,
+            "realeaseDate" : 2014,
             "heartrateDifference" : 15
         },
 
         "TheDescent" : {
+            "boxoffice" : 57000000,
+            "boxofficeFR" : 2000000,
+            "score" : 3.6,
+            "actors" : 18,
+            "oscars" : 0,
+            "budget" : 3000000,
+            "realeaseDate" : 2005,
             "heartrateDifference" : 15
         },
 
         "Hush" : {
+            "boxoffice" : 288000,
+            "score" : 2.9,
+            "actors" : 11,
+            "oscars" : 0,
+            "realeaseDate" : 2008,
             "heartrateDifference" : 14
         },
 
         "TheAutopsyOfJaneDoe" : {
+            "boxoffice" : 6000000,
+            "boxofficeFR" : 1000000,
+            "score" : 3.2,
+            "actors" : 9,
+            "oscars" : 0,
+            "realeaseDate" : 2016,
             "heartrateDifference" : 14
         },
 
         "AQuitPlace" : {
+            "boxoffice" : 340000000,
+            "boxofficeFR" : 5000000,
+            "score" : 3.7,
+            "actors" : 9,
+            "oscars" : 0,
+            "budget" : 17000000,
+            "realeaseDate" : 2018,
+            "franchise" : "Sans un bruit",
             "heartrateDifference" : 14
         },
 
         "TheRing" : {
+            "boxoffice" : 249000000,
+            "boxofficeFR" : 5000000,
+            "score" : 3.3,
+            "actors" : 35,
+            "oscars" : 0,
+            "budget" : 48000000,
+            "realeaseDate" : 2002,
             "heartrateDifference" : 14
         },
 
         "NightmareOnElmStreet" : {
+            "boxoffice" : 25000000,
+            "score" : 3.7,
+            "actors" : 30,
+            "oscars" : 0,
+            "budget" : 1000000,
+            "realeaseDate" : 1984,
+            "franchise" : "Les Griffes de la Nuit",
             "heartrateDifference" : 13
         },
 
         "REC" : {
+            "boxoffice" : 32000000,
+            "boxofficeFR" : 5000000,
+            "score" : 3.7,
+            "actors" : 23,
+            "oscars" : 0,
+            "budget" : 1000000,
+            "realeaseDate" : 2007,
+            "franchise" : "REC",
             "heartrateDifference" : 12
         },
 
         "28DaysLater" : {
+            "boxoffice" : 84000000,
+            "boxofficeFR" : 1000000,
+            "score" : 3.8,
+            "actors" : 37,
+            "oscars" : 0,
+            "budget" : 8000000,
+            "realeaseDate" : 2002,
+            "franchise" : "28 jours plus tard",
             "heartrateDifference" : 9
         },
 
         "Oculus" : {
+            "boxoffice" : 44000000,
+            "score" : 3.2,
+            "actors" : 22,
+            "oscars" : 0,
+            "budget" : 5000000,
+            "realeaseDate" : 2013,
             "heartrateDifference" : 9
         }
     }

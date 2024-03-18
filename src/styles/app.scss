@@ -2,9 +2,95 @@
 @import 'components/type';
 
 body {
+    font-family: "Alegreya Sans SC" ;
+    color: white;
     margin: 0;
+    padding: 2.50em;
+    background-color: black;
 }
 .home{
-    text-align: center;
+    transform: translateY(-100vh);
+    &__what{
+        font-family: "Alegreya" ;
+        font-size: 2.25em;
+        position: absolute;
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        padding: 0 0.44em;
+        border-radius: 2.25em;
+    }
     
+    &__title{
+        display: flex;
+        justify-content: center;
+        margin-top: 2.25em;
+
+        height:30vh;
+        width: 100%;
+        margin: 0;
+    }
+
+    &__title img{
+        object-fit: cover;
+        width: 100%;
+
+        overflow: hidden;
+    }
+    &__subtitle{
+        text-align: center;
+        color: rgb(255, 0, 0);
+        margin: 0;
+        font-size: 2.25em;
+        font-family: "Alegreya" ;
+        margin-bottom: 1em;
+    }
 }
+.selection{
+    
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    &__button{
+        font-family: "Alegreya Sans SC" ;
+        font-size: 1.50em;
+        color: white;
+        margin: 1em;
+        background: none;
+        border: none;
+    }
+    &__button:hover{
+        cursor: pointer;
+    }
+    &__button:hover{
+        cursor: pointer;
+    }
+
+    &__arrow img{
+        width: 1em;
+    }
+    &__button:hover + &__arrow{
+        display: block;
+        opacity: 1;
+
+        width: 1em;
+
+    }
+    }
+
+    .tuto{
+        top: 0;
+        position: absolute;
+        &__title{
+
+            font-size: 3.38em;
+        font-family: "Alegreya" ;
+
+        }
+        &__p{
+            font-size: 1em;
+            max-width: 575px;
+        }
+    }
+

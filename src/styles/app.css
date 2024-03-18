@@ -1,0 +1,96 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.title {
+  color: #e41612;
+}
+
+body {
+  font-family: "Alegreya Sans SC";
+  color: white;
+  margin: 0;
+  padding: 2.5em;
+  background-color: black;
+}
+
+.home {
+  transform: translateY(-100vh);
+}
+.home__what {
+  font-family: "Alegreya";
+  font-size: 2.25em;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  padding: 0 0.44em;
+  border-radius: 2.25em;
+}
+.home__title {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25em;
+  height: 30vh;
+  width: 100%;
+  margin: 0;
+}
+.home__title img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+}
+.home__subtitle {
+  text-align: center;
+  color: rgb(255, 0, 0);
+  margin: 0;
+  font-size: 2.25em;
+  font-family: "Alegreya";
+  margin-bottom: 1em;
+}
+
+.selection {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+.selection__button {
+  font-family: "Alegreya Sans SC";
+  font-size: 1.5em;
+  color: white;
+  margin: 1em;
+  background: none;
+  border: none;
+}
+.selection__button:hover {
+  cursor: pointer;
+}
+.selection__button:hover {
+  cursor: pointer;
+}
+.selection__arrow img {
+  width: 1em;
+}
+.selection__button:hover + .selection__arrow {
+  display: block;
+  opacity: 1;
+  width: 1em;
+}
+
+.tuto {
+  top: 0;
+  position: absolute;
+}
+.tuto__title {
+  font-size: 3.38em;
+  font-family: "Alegreya";
+}
+.tuto__p {
+  font-size: 1em;
+  max-width: 575px;
+}/*# sourceMappingURL=app.css.map */

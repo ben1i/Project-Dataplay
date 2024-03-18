@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.title {
+  color: #e41612;
+}
+
+@keyframes link {
+  from {
+    top: 5%;
+    transform: rotateY(360deg);
+  }
+  to {
+    top: 30%;
+    transform: rotateY(0);
+  }
+}
+@keyframes link2 {
+  from {
+    top: 5%;
+  }
+  to {
+    top: 30%;
+  }
+}
+body {
+  margin: 0;
+}
+
+.home {
+  text-align: center;
+}
+
+.test__img {
+  width: 10%;
+  animation: link2 10s;
+  position: absolute;
+}
+.test__img img {
+  width: 100%;
+  animation: link 10s;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=app.css.map */

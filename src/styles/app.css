@@ -9,8 +9,37 @@ body {
   color: #e41612;
 }
 
+@font-face {
+  font-family: sprat;
+  src: url(../assets/fonts/Sprat-CondensedLight.otf);
+}
+@font-face {
+  font-family: spratbold;
+  src: url(../assets/fonts/Sprat-CondensedBold.otf);
+}
+/*@keyframes link {
+    from {
+        top : 5%;
+        transform: rotateY(360deg);
+    }
+
+    to {
+        top:30%;
+        transform: rotateY(0);
+    }
+}
+
+@keyframes link2 {
+    from {
+        top : 5%;
+    }
+
+    to {
+        top:30%;
+    }
+}*/
 body {
-  font-family: "Alegreya Sans SC";
+  font-family: sprat;
   color: white;
   margin: 0;
   padding: 2.5em;
@@ -18,17 +47,8 @@ body {
 }
 
 .home {
-  transform: translateY(-100vh);
-}
-.home__what {
-  font-family: "Alegreya";
-  font-size: 2.25em;
-  position: absolute;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0 0.44em;
-  border-radius: 2.25em;
+  transform: translateY(0vh);
+  font-family: sprat;
 }
 .home__title {
   display: flex;
@@ -49,7 +69,7 @@ body {
   color: rgb(255, 0, 0);
   margin: 0;
   font-size: 2.25em;
-  font-family: "Alegreya";
+  font-family: spratbold;
   margin-bottom: 1em;
 }
 
@@ -60,7 +80,8 @@ body {
   justify-content: center;
 }
 .selection__button {
-  font-family: "Alegreya Sans SC";
+  padding: 0 1.5em;
+  font-family: sprat;
   font-size: 1.5em;
   color: white;
   margin: 1em;
@@ -69,67 +90,40 @@ body {
 }
 .selection__button:hover {
   cursor: pointer;
-}
-.selection__button:hover {
-  cursor: pointer;
-}
-.selection__arrow img {
-  width: 1em;
-}
-.selection__button:hover + .selection__arrow {
-  display: block;
-  opacity: 1;
-  width: 1em;
+  background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
+  background-size: 1em;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
-.tuto {
-  top: 0;
-  position: absolute;
-}
-.tuto__title {
-  font-size: 3.38em;
-  font-family: "Alegreya";
-}
-.tuto__p {
-  font-size: 1em;
-  max-width: 575px;
-}
-/*@keyframes link {
-  from {
-    top: 5%;
-    transform: rotateY(360deg);
-  }
-  to {
-    top: 30%;
-    transform: rotateY(0);
-  }
-}
-@keyframes link2 {
-  from {
-    top: 5%;
-  }
-  to {
-    top: 30%;
-  }
-}*/
-body {
-  margin: 0;
-}
-
-.home {
+.rank {
   text-align: center;
 }
-
-/*.test__img {
-  width: 10%;
-  animation: link2 10s;
-  position: absolute;
+.rank__question {
+  font-family: spratbold;
+  font-size: 3.38em;
 }
-.test__img img {
-  width: 100%;
-  animation: link 10s;
-}*/
+.rank__instructions {
+  font-size: 1em;
+}
+.rank__slot {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 2.25em;
+  background-color: rgb(46, 46, 93);
+  margin: 1.5em 30%;
+}
 
-.hidden {
-  display: none;
+.answer {
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+}
+.answer__card {
+  padding: 0 3.38em;
+  background-color: rgb(128, 141, 200);
+  margin: 0 1em;
+}
+.answer__card:hover {
+  cursor: grab;
 }/*# sourceMappingURL=app.css.map */

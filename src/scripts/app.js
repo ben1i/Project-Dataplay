@@ -1,5 +1,7 @@
 "use strict"
-
+$(document).ready(function() {
+    $(".answer__card").draggable();
+});
 var score = 10;
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -66,3 +68,4 @@ var Alien = localStorage.getItem("Alien")
 if (Alien === "Y") {
     posters.slice('alien.jpg');
 }
+/*drag and drop*/

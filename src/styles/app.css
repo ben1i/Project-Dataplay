@@ -95,7 +95,6 @@ body {
   background-repeat: no-repeat;
   background-position-y: center;
 }
-
 .rank {
   text-align: center;
 }
@@ -127,3 +126,10 @@ body {
 .answer__card:hover {
   cursor: grab;
 }/*# sourceMappingURL=app.css.map */
+
+
+
+.test__img img {
+  width: 100%;
+  animation: link 10s;
+}*//*# sourceMappingURL=app.css.map */

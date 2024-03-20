@@ -38,12 +38,48 @@ body {
         top:30%;
     }
 }*/
+@keyframes computerTransition {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(-17.5%);
+  }
+  20% {
+    transform: translateY(-35%);
+  }
+  30% {
+    transform: translateY(-52, 5%);
+  }
+  40% {
+    transform: translateY(-70%);
+  }
+  50% {
+    transform: translateY(-75%);
+  }
+  60% {
+    transform: translateY(-80%);
+  }
+  70% {
+    transform: translateY(-85%);
+  }
+  80% {
+    transform: translateY(-90%);
+  }
+  90% {
+    transform: translateY(-95%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
 body {
   font-family: sprat;
   color: white;
   margin: 0;
   padding: 2.5em;
   background-color: black;
+  overflow: hidden;
 }
 
 .home {
@@ -72,6 +108,12 @@ body {
   font-family: spratbold;
   margin-bottom: 1em;
 }
+.home--animation {
+  animation-name: computerTransition;
+  animation-duration: 3160ms;
+  animation-delay: 1700ms;
+  pointer-events: none;
+}
 
 .selection {
   display: flex;
@@ -95,6 +137,7 @@ body {
   background-repeat: no-repeat;
   background-position-y: center;
 }
+
 .rank {
   text-align: center;
 }
@@ -125,10 +168,17 @@ body {
 }
 .answer__card:hover {
   cursor: grab;
-}/*# sourceMappingURL=app.css.map */
+}
 
+.hidden {
+  display: none;
+}
 
-
+/*.test__img {
+  width: 10%;
+  animation: link2 10s;
+  position: absolute;
+}
 .test__img img {
   width: 100%;
   animation: link 10s;

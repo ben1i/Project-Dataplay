@@ -1,4 +1,5 @@
 "use strict"
+/*drag and drop*/
 $(document).ready(function() {
     $(".answer__card").draggable();
 });
@@ -112,5 +113,4 @@ var Alien = localStorage.getItem("Alien")
 if (Alien === "Y") {
     posters.slice('alien.jpg');
 }
-/*drag and drop*/
 

@@ -9,6 +9,27 @@ body {
   color: #e41612;
 }
 
+/*@keyframes link {
+    from {
+        top : 5%;
+        transform: rotateY(360deg);
+    }
+
+    to {
+        top:30%;
+        transform: rotateY(0);
+    }
+}
+
+@keyframes link2 {
+    from {
+        top : 5%;
+    }
+
+    to {
+        top:30%;
+    }
+}*/
 body {
   font-family: "Alegreya Sans SC";
   color: white;
@@ -94,30 +115,9 @@ body {
   font-size: 1em;
   max-width: 575px;
 }
-/*@keyframes link {
-  from {
-    top: 5%;
-    transform: rotateY(360deg);
-  }
-  to {
-    top: 30%;
-    transform: rotateY(0);
-  }
-}
-@keyframes link2 {
-  from {
-    top: 5%;
-  }
-  to {
-    top: 30%;
-  }
-}*/
-body {
-  margin: 0;
-}
 
-.home {
-  text-align: center;
+.hidden {
+  display: none;
 }
 
 /*.test__img {
@@ -128,8 +128,4 @@ body {
 .test__img img {
   width: 100%;
   animation: link 10s;
-}*/
-
-.hidden {
-  display: none;
-}/*# sourceMappingURL=app.css.map */
+}*//*# sourceMappingURL=app.css.map */

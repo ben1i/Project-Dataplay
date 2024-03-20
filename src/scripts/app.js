@@ -1,6 +1,6 @@
 "use strict"
 
-var score = 10;
+var score;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -9,9 +9,17 @@ var posters = ["alien.jpg", "blairwitch.jpg", "carrie.jpg", "dawnofthedead.jpg",
 
 var testText = document.querySelector('.test__text');
 
-const AlienSound = new Audio('./assets/sounds/105719216.ogg')
+var startButton = document.querySelector('.selection__button--1');
+var homeSection = document.querySelector('.home');
 
-AlienSound.play();
+//const AlienSound = new Audio('./assets/sounds/105719216.ogg')
+
+//AlienSound.play();
+
+startButton.addEventListener('click', function() {
+    score = 0;
+    homeSection.classList.add('hidden');
+})
 
 fetch('json/data.json')
     .then(function(response) {
@@ -19,35 +27,33 @@ fetch('json/data.json')
     })
     .then (function(json) {
         console.log(json);
+
+        if (score === 10) {
+            const cheminPoster = choisirPosterAleatoire();
+            afficherPoster(cheminPoster);
+            console.log(cheminPoster)
+            if (cheminPoster === "./assets/images/basic/alien.jpg") {
+                localStorage.setItem("Alien", "Y");
+                testText.classList.remove('hidden');
+                posterImage.alt = "Poster de Alien (1979)"
+            }
+        }
+        
+        if (score === 20) {
+            const cheminPoster = choisirPosterShinyAleatoire();
+            afficherShinyPoster(cheminPoster);
+            if (cheminPoster === "./assets/images/shiny/alien.jpg") {
+                localStorage.setItem("AlienShiny", "Y");
+            }
+        }
+        
+        var Alien = localStorage.getItem("Alien")
+        if (Alien === "Y") {
+            posters.slice('alien.jpg');
+        }
+        
+        
     });
-
-if (score === 10) {
-    const cheminPoster = choisirPosterAleatoire();
-    afficherPoster(cheminPoster);
-    console.log(cheminPoster)
-    if (cheminPoster === "./assets/images/basic/alien.jpg") {
-        localStorage.setItem("Alien", "Y");
-        testText.classList.remove('hidden');
-        posterImage.alt = "Poster de Alien (1979)"
-    }
-}
-
-if (score === 20) {
-    const cheminPoster = choisirPosterShinyAleatoire();
-    afficherShinyPoster(cheminPoster);
-    if (cheminPoster === "./assets/images/shiny/alien.jpg") {
-        localStorage.setItem("AlienShiny", "Y");
-    }
-}
-
-var Alien = localStorage.getItem("Alien")
-if (Alien === "Y") {
-    posters.slice('alien.jpg');
-}
-
-
-
-
 
 
 function getRandomIntInclusive(min,max) {

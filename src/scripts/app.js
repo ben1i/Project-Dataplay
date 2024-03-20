@@ -1,6 +1,9 @@
 "use strict"
 
-var score;
+$(document).ready(function() {
+    $(".answer__card").draggable();
+});
+var score = 10;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -89,4 +92,32 @@ function afficherPoster(cheminPoster) {
 
 function afficherShinyPoster(cheminPoster) {
     posterImage.src = cheminPoster;
+
 }
+
+if (score === 10) {
+    const cheminPoster = choisirPosterAleatoire();
+    afficherPoster(cheminPoster);
+    console.log(cheminPoster)
+    if (cheminPoster === "./assets/images/basic/alien.jpg") {
+        localStorage.setItem("Alien", "Y");
+        testText.classList.remove('hidden');
+        posterImage.alt = "Poster de Alien (1979)"
+    }
+}
+
+if (score === 20) {
+    const cheminPoster = choisirPosterShinyAleatoire();
+    afficherShinyPoster(cheminPoster);
+    if (cheminPoster === "./assets/images/shiny/alien.jpg") {
+        localStorage.setItem("AlienShiny", "Y");
+    }
+}
+
+var Alien = localStorage.getItem("Alien")
+
+if (Alien === "Y") {
+    posters.slice('alien.jpg');
+}
+/*drag and drop*/
+

@@ -1,8 +1,10 @@
 "use strict"
+
 $(document).ready(function() {
     $(".answer__card").draggable();
 });
-var score = 10;
+
+var score;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -23,7 +25,7 @@ startButton.addEventListener('click', function() {
     homeSection.classList.add('hidden');
 })
 
-fetch('json/data.json')
+fetch('assets/json/data.json')
     .then(function(response) {
         return response.json();
     })

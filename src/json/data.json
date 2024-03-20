@@ -63,7 +63,8 @@
             "budget" : 12000000,
             "franchise" : "L'Exorciste",
             "death" : 3,
-            "heartrateDifference" : 10
+            "heartrateDifference" : 10,
+            "poster" : "exorcist.jpg"
         },
 
         "Signs" : {
@@ -139,7 +140,8 @@
             "budget" : 140000,
             "franchise" : "Massacre à la Tronçonneuse",
             "death" : 7,
-            "heartrateDifference" : 13
+            "heartrateDifference" : 13,
+            "poster" : "texaschainsawmassacre.jpg"
         },
 
         "Saw" : {
@@ -163,7 +165,8 @@
             "budget" : 325000,
             "franchise" : "Halloween",
             "death" : 5,
-            "heartrateDifference" : 13
+            "heartrateDifference" : 13,
+            "poster" : "halloween.jpg"
         },
 
         "Psycho" : {
@@ -173,7 +176,8 @@
             "oscars" : 0,
             "realeaseDate" : 1960,
             "budget" : 806000,
-            "death" : 2
+            "death" : 2,
+            "poster" : "psycho.jpg"
         },
 
         "TheShining" : {
@@ -185,7 +189,8 @@
             "realeaseDate" : 1980,
             "budget" : 19000000,
             "franchise" : "Shining",
-            "death" : 1
+            "death" : 1,
+            "poster" : "shining.jpg"
         },
 
         "TheConjuring" : {
@@ -262,7 +267,8 @@
             "oscars" : 0,
             "budget" : 1000000,
             "realeaseDate" : 1976,
-            "death" : 70
+            "death" : 70,
+            "poster" : "carrie.jpg"
         },
 
         "TheBelkoExperiment" : {
@@ -339,7 +345,8 @@
             "budget" : 26000000,
             "franchise" : "Sage des zombies",
             "realeaseDate" : 2004,
-            "death" : 140
+            "death" : 140,
+            "poster" : "dawnofthedead.jpg"
         },
 
         "Brightburn" : {
@@ -524,7 +531,8 @@
             "oscars" : 0,
             "budget" : 48000000,
             "realeaseDate" : 2002,
-            "heartrateDifference" : 14
+            "heartrateDifference" : 14,
+            "poster" : "thering.jpg"
         },
 
         "NightmareOnElmStreet" : {
@@ -535,7 +543,8 @@
             "budget" : 1000000,
             "realeaseDate" : 1984,
             "franchise" : "Les Griffes de la Nuit",
-            "heartrateDifference" : 13
+            "heartrateDifference" : 13,
+            "poster" : "elmstreet.jpg"
         },
 
         "REC" : {
@@ -571,5 +580,9 @@
             "realeaseDate" : 2013,
             "heartrateDifference" : 9
         }
+    },
+
+    "questions" : {
+        
     }
 }

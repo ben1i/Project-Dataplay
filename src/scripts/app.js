@@ -3,8 +3,7 @@
 $(document).ready(function() {
     $(".answer__card").draggable();
 });
-
-var score;
+var score
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');

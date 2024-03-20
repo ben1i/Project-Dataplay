@@ -3,7 +3,9 @@
 $(document).ready(function() {
     $(".answer__card").draggable();
 });
-var score
+
+var score;
+var life = 3;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -15,48 +17,82 @@ var testText = document.querySelector('.test__text');
 var startButton = document.querySelector('.selection__button--1');
 var homeSection = document.querySelector('.home');
 
-//const AlienSound = new Audio('./assets/sounds/105719216.ogg')
+var questionsSection = document.querySelector('.questions');
+var qcmLabel = document.querySelector('.questions__question');
+var qcmAnswer1 = document.querySelector('.questions__answer--1');
+var qcmAnswer2 = document.querySelector('.questions__answer--2');
+var qcmAnswer3 = document.querySelector('.questions__answer--3');
+var qcmAnswer4 = document.querySelector('.questions__answer--4');
 
-//AlienSound.play();
+var collectionButton = document.querySelector('.selection__button--3');
 
-startButton.addEventListener('click', function() {
-    score = 0;
-    homeSection.classList.add('hidden');
-})
 
 fetch('assets/json/data.json')
     .then(function(response) {
         return response.json();
     })
-    .then (function(json) {
-        console.log(json);
+    .then(data => {
 
-        if (score === 10) {
-            const cheminPoster = choisirPosterAleatoire();
-            afficherPoster(cheminPoster);
-            console.log(cheminPoster)
-            if (cheminPoster === "./assets/images/basic/alien.jpg") {
-                localStorage.setItem("Alien", "Y");
-                testText.classList.remove('hidden');
-                posterImage.alt = "Poster de Alien (1979)"
+        const Sense = data.movies[1];
+        console.log(Sense[0]);
+
+        const Sounds = data.sounds;
+        collectionButton.addEventListener('mouseenter', function() {
+            const hoverAudio = new Audio(Sounds[1]);
+            hoverAudio.play()
+        })
+        startButton.addEventListener('mouseenter', function() {
+            const hoverAudio = new Audio(Sounds[1]);
+            hoverAudio.play()
+        })
+
+        startButton.addEventListener('click', function() {
+            score = 0;
+            homeSection.classList.add('home--animation');
+
+            const startAudio = new Audio(Sounds[0]);
+            startAudio.play();
+            
+            setTimeout(function() {
+                homeSection.classList.add('hidden');
+                questionsSection.classList.remove('hidden');
+
+                var cheminsAudio = data.musics;
+                var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+                var Ambianceaudio = new Audio(cheminAleatoire);
+                Ambianceaudio.loop = true;
+
+                Ambianceaudio.play();
+
+                var questionQcm = data.questions.qcm;
+                qcmLabel.innerText = questionQcm[Math.floor(Math.random() * questionQcm.length)];
+            }, 4860);
+
+            if (score === 10) {
+                const cheminPoster = choisirPosterAleatoire();
+                afficherPoster(cheminPoster);
+                console.log(cheminPoster);
+                if (cheminPoster === "./assets/images/basic/alien.jpg") {
+                    localStorage.setItem("Alien", "Y");
+                    testText.classList.remove('hidden');
+                    posterImage.alt = "Poster de Alien (1979)";
+                }
             }
-        }
-        
-        if (score === 20) {
-            const cheminPoster = choisirPosterShinyAleatoire();
-            afficherShinyPoster(cheminPoster);
-            if (cheminPoster === "./assets/images/shiny/alien.jpg") {
-                localStorage.setItem("AlienShiny", "Y");
+            
+            if (score === 20) {
+                const cheminPoster = choisirPosterShinyAleatoire();
+                afficherShinyPoster(cheminPoster);
+                if (cheminPoster === "./assets/images/shiny/alien.jpg") {
+                    localStorage.setItem("AlienShiny", "Y");
+                }
             }
-        }
-        
-        var Alien = localStorage.getItem("Alien")
-        if (Alien === "Y") {
-            posters.slice('alien.jpg');
-        }
-        
-        
-    });
+            
+            /*var Alien = localStorage.getItem("Alien")
+            if (Alien === "Y") {
+                posters.slice('alien.jpg');
+            }*/
+        })
+      });
 
 
 function getRandomIntInclusive(min,max) {

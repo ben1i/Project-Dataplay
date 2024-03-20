@@ -1,8 +1,79 @@
 "use strict"
+
+
+
 $(document).ready(function() {
+    var movienumbers = [ 1, 2, 3, 4, 5 ];
+    var slotsnumbers = [ 1, 2, 3, 4, 5 ];
+    
+    movienumbers.sort(function() {
+        return Math.random() - 0.5;
+    });
+
+    var cardcontainer = document.querySelector('.answer');
+
+    movienumbers.forEach(function(number){
+        const card = createCard(number);
+        cardcontainer.appendChild(card);        
+
+    })
+ 
+
+    function createCard(number) {
+        var card = document.createElement('div');
+        card.classList.add('answer__card');
+        card.textContent = 'carte' + number;
+        card.setAttribute("data-number", number);
+
+        return card;
+
+    }
     $(".answer__card").draggable();
+
+
+    $(".rank__slot").each(function(index){
+        $(this).data('number',slotsnumbers[index]);
+        $(this).droppable({
+            accept: ".answer__card",
+            drop: handledrop
+        });
+    }) 
+    function handledrop(event, ui){
+        var slotNumber = $(this).data('number');
+        var cardNumber = ui.draggable.data('number');
+        console.log(slotNumber, cardNumber)
+
+        if (slotNumber === cardNumber){
+            console.log('correct')
+        }else{
+            console.log('incorrect')
+        }
+
+    }
+
+    /*$(".rank__slot").droppable({
+        accept: ".answer__card", // Accepter seulement les cartes pour le drop
+        drop: function(event, ui) {
+            var slotNumber = $(this).data('number'); // Numéro de l'emplacement
+            var cardNumber = ui.draggable.data('number'); // Numéro de la carte droppée
+            
+            // Vérifier si la carte droppée est dans le bon emplacement
+            if (slotNumber === cardNumber) {
+                // La carte est dans le bon emplacement
+                console.log('correct')
+                $(this).addClass('correct');
+                ui.draggable.addClass('correct').draggable('disable'); // Marquer la carte comme correcte et la désactiver
+            } else {
+                // La carte est dans le mauvais emplacement
+                console.log('incorrect')
+                $(this).addClass('incorrect');
+                ui.draggable.addClass('incorrect');
+            }
+        }
+    });*/
 });
-var score
+
+var score;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');

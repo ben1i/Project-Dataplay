@@ -97,6 +97,7 @@ body {
         &__question{
             font-family: spratbold;
             font-size: 3.38em;
+            margin-bottom: 1em;
         }
         &__instructions{
             font-size: 1em;
@@ -115,18 +116,83 @@ body {
         justify-content: center;
         flex-flow: row;
         &__card{
-            padding: 0 3.38em;
+
+            padding: 1em 3.38em;
             background-color: rgb(128, 141, 200);
-            margin: 0 1em;
+            margin: 1em 1.50em;
+            &:hover{
+                cursor: grab;
+            }
         }
-        &__card:hover{
-            cursor: grab;
+    }
+
+    .picture{
+        text-align: center;
+        flex-flow: column wrap;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        &__question{
+            font-family: spratbold;
+            font-size: 3.38em;
+            margin-bottom: 1em;
+        }
+        &__frame{
+            background-color: aliceblue;
+            height: 55vh;
+            width: 40vh;
+            
+
+        }
+        &__input{
+            font-family: sprat;
+            font-size: 1em;
+            color: white;
+            background-color: rgb(46, 46, 93);
+            border: none;
+            padding: 1em 3.38em;
+            margin: 1.50em;
+
+        }
+    }
+    .trueorfalse{
+        height: 100vh;
+        text-align: center;
+        
+        &__question{
+            font-family: spratbold;
+            font-size: 3.38em;
+            margin-bottom: 1em;
+        }
+        &__radio{
+            font-size: 1.50em;
+            display: flex;
+            flex-flow: column wrap;
+        }
+        &__option{
+            margin: 1em;
+        }
+    }
+    .multiplechoice{
+        &__question{
+            font-family: spratbold;
+            font-size: 3.38em;
+            margin-bottom: 1em;
+        }
+        &__checkboxes{
+            font-size: 1.50em;
+            display: flex;
+            flex-flow: column wrap;
+        }
+        &__option{
+            margin: 1em;
         }
     }
 
 .hidden {
     display: none;
 }
+
 
 /*.test__img {
   width: 10%;

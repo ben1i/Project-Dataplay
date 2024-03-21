@@ -84,7 +84,8 @@ var testText = document.querySelector('.test__text');
 var startButton = document.querySelector('.selection__button--1');
 var homeSection = document.querySelector('.home');
 
-var questionsSection = document.querySelector('.questions');
+var questionsSection = document.querySelector('.jeu');
+var rankGame = document.querySelector('.rank');
 var qcmLabel = document.querySelector('.questions__question');
 var qcmAnswer1 = document.querySelector('.questions__answer--1');
 var qcmAnswer2 = document.querySelector('.questions__answer--2');
@@ -123,6 +124,7 @@ fetch('assets/json/data.json')
             setTimeout(function() {
                 homeSection.classList.add('hidden');
                 questionsSection.classList.remove('hidden');
+                rankGame.classList.remove('hidden');
 
                 var cheminsAudio = data.musics;
                 var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
@@ -131,8 +133,51 @@ fetch('assets/json/data.json')
 
                 Ambianceaudio.play();
 
-                var questionQcm = data.questions.qcm;
-                qcmLabel.innerText = questionQcm[Math.floor(Math.random() * questionQcm.length)];
+                var questionQcm = data.questions[0];
+                var qcmChosenQuestion = questionQcm[Math.floor(Math.random() * questionQcm.length)];
+                //qcmLabel.innerText = qcmChosenQuestion;
+                
+                var cheminsReponses = data.movies;
+                
+                
+                var ReponseAleatoire1 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
+                var qcmAnswer1Name = document.querySelector('.answer__text--1');
+                //qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+                var ReponseAleatoire2 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
+                var qcmAnswer2Name = document.querySelector('.answer__text--2');
+                //qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+                var ReponseAleatoire3 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
+                var qcmAnswer3Name = document.querySelector('.answer__text--3');
+                //qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+                var ReponseAleatoire4 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
+                var qcmAnswer4Name = document.querySelector('.answer__text--4');
+                //qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+                if (qcmChosenQuestion === questionQcm[0]) {
+                    var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
+                    var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
+                    var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
+                    var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
+
+                    var validAnswer = qcmAnswer1BoxOffice;
+
+                    if (qcmAnswer2BoxOffice > validAnswer) {
+                        validAnswer = qcmAnswer2BoxOffice;
+                    }
+
+                    if (qcmAnswer3BoxOffice > validAnswer) {
+                        validAnswer = qcmAnswer3BoxOffice;
+                    }
+
+                    if (qcmAnswer4BoxOffice > validAnswer) {
+                        validAnswer = qcmAnswer4BoxOffice;
+                    }
+
+                    console.log(validAnswer);
+                }
             }, 4860);
 
             if (score === 10) {

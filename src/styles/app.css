@@ -79,7 +79,6 @@ body {
   margin: 0;
   padding: 2.5em;
   background-color: black;
-  overflow: hidden;
 }
 
 .home {
@@ -144,6 +143,7 @@ body {
 .rank__question {
   font-family: spratbold;
   font-size: 3.38em;
+  margin-bottom: 1em;
 }
 .rank__instructions {
   font-size: 1em;
@@ -152,8 +152,10 @@ body {
   display: flex;
   justify-content: flex-start;
   padding: 0 2.25em;
-  background-color: rgb(46, 46, 93);
   margin: 1.5em 30%;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 0.2em;
 }
 
 .answer {
@@ -162,12 +164,74 @@ body {
   flex-flow: row;
 }
 .answer__card {
-  padding: 0 3.38em;
-  background-color: rgb(128, 141, 200);
-  margin: 0 1em;
+  padding: 1em 3.38em;
+  background-color: rgb(255, 0, 0);
+  margin: 1em 1.5em;
 }
 .answer__card:hover {
   cursor: grab;
+}
+
+.picture {
+  text-align: center;
+  flex-flow: column wrap;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.picture__question {
+  font-family: spratbold;
+  font-size: 3.38em;
+  margin-bottom: 1em;
+}
+.picture__frame {
+  background-color: aliceblue;
+  height: 55vh;
+  width: 40vh;
+}
+.picture__input {
+  font-family: sprat;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 1em 3.38em;
+  margin: 1.5em;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 0.2em;
+}
+
+.trueorfalse {
+  height: 100vh;
+  text-align: center;
+}
+.trueorfalse__question {
+  font-family: spratbold;
+  font-size: 3.38em;
+  margin-bottom: 1em;
+}
+.trueorfalse__radio {
+  font-size: 1.5em;
+  display: flex;
+  flex-flow: column wrap;
+}
+.trueorfalse__option {
+  margin: 1em;
+}
+
+.multiplechoice__question {
+  font-family: spratbold;
+  font-size: 3.38em;
+  margin-bottom: 1em;
+}
+.multiplechoice__checkboxes {
+  font-size: 1.5em;
+  display: flex;
+  flex-flow: column wrap;
+}
+.multiplechoice__option {
+  margin: 1em;
 }
 
 .hidden {

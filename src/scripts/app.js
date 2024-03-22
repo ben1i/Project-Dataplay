@@ -1,5 +1,5 @@
 "use strict"
-
+/*drag and drop*/
 $(document).ready(function() {
     var movienumbers = [ 1, 2, 3, 4, 5 ];
     var slotsnumbers = [ 1, 2, 3, 4, 5 ];
@@ -15,7 +15,7 @@ $(document).ready(function() {
         cardcontainer.appendChild(card);        
 
     })
- 
+     $(".answer__card").draggable();
 
     function createCard(number) {
         var card = document.createElement('div');
@@ -26,7 +26,7 @@ $(document).ready(function() {
         return card;
 
     }
-    $(".answer__card").draggable();
+
 
 
     $(".rank__slot").each(function(index){
@@ -49,6 +49,66 @@ $(document).ready(function() {
 
     }
 
+    $(".answer__card").hover(function(){
+        $(".rank").toggleClass("hovered")
+    })
+
+
+
+
+});
+    /*radio multipe*/
+    var choice1 = document.querySelector('.multipleform__option--1');
+    var choice2 = document.querySelector('.multipleform__option--2');
+    var choice3 = document.querySelector('.multipleform__option--3');
+    var choice4 = document.querySelector('.multipleform__option--4');
+    var label1 = document.querySelector('.multipleform__label--1');
+    var label2 = document.querySelector('.multipleform__label--2');
+    var label3 = document.querySelector('.multipleform__label--3');
+    var label4 = document.querySelector('.multipleform__label--4');
+    var radio1 = document.getElementById('1');
+    var radio2 = document.getElementById('2');
+    var radio3 = document.getElementById('3');
+    var radio4 = document.getElementById('4');
+
+    label1.addEventListener('click', function(){
+        radio1.checked = true;
+        console.log('checked');
+        choice1.classList.add('selected');
+        choice2.classList.remove('selected');
+        choice3.classList.remove('selected');
+        choice4.classList.remove('selected');
+    });
+
+
+    label2.addEventListener('click', function(){
+        radio2.checked = true;
+        console.log('checked');
+        choice2.classList.add('selected');
+        choice3.classList.remove('selected');
+        choice4.classList.remove('selected');
+        choice1.classList.remove('selected');
+    });
+
+    label3.addEventListener('click', function(){
+        radio3.checked = true;
+        console.log('checked');
+        choice3.classList.add('selected');
+        choice4.classList.remove('selected');
+        choice1.classList.remove('selected');
+        choice2.classList.remove('selected');
+    });
+    label4.addEventListener('click', function(){
+        radio4.checked = true;
+        console.log('checked');
+        choice4.classList.add('selected');
+        choice1.classList.remove('selected');
+        choice2.classList.remove('selected');
+        choice3.classList.remove('selected');
+    });
+
+
+
     /*$(".rank__slot").droppable({
         accept: ".answer__card", // Accepter seulement les cartes pour le drop
         drop: function(event, ui) {
@@ -69,7 +129,7 @@ $(document).ready(function() {
             }
         }
     });*/
-});
+
 
 var score;
 var life;

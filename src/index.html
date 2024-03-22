@@ -49,8 +49,8 @@
           </div>
     </section>
 
-  <section class="jeu hidden">
-    <div class="rank hidden">
+  <section class="jeu">
+    <div class="rank">
       <h2 class="rank__question">Question</h2>
       <p class="rank__instructions">Sélectionne les cartes et dépose les dans le bon ordre</p>
       <div class="rank__slot"><p class="rank__p">1.</p></div>
@@ -59,63 +59,66 @@
       <div class="rank__slot"><p class="rank__p">4.</p></div>
       <div class="rank__slot"><p class="rank__p">5.</p></div>
       <div class="answer">
-        <div class="answer__card"></div>
+
       </div>
 
     </div>
 
-    <div class="picture hidden">
+    <div class="picture">
       <h2 class="picture__question">Question</h2>
-      <div class="picture__frame"></div>
+      
       <input class="picture__input" id="pictureinput" type="text" placeholder="écrit ta réponse ici">
     </div>
 
-    <div class="trueorfalse hidden">
+    <div class="trueorfalse">
       <h2 class="trueorfalse__question">Question</h2>
       <div class="trueorfalse__radio">
         <div class="trueorfalse__option">
-          <input id="true" type="radio">Vrai
+          <input name="tofradio" id="true" type="radio">Vrai
         </div>
         <div class="trueorfalse__option">
-          <input id="false" type="radio">Faux
+          <input name="tofradio" id="false" type="radio">Faux
         </div>
         
       </div>
 
-      <div class="multiplechoice hidden">
+      <div class="multiplechoice">
         <h2 class="multiplechoice__question">Question</h2>
-        <div class="multiplechoice__checkboxes">
-          <div class="multiplechoice__option">
-            <input id="1" value="" type="checkbox">proposition 1
-          </div>
-          <div class="multiplechoice__option">
-            <input id="2" value="" type="checkbox">proposition 2
-          </div>
-          <div class="multiplechoice__option">
-            <input id="3" value="" type="checkbox">proposition 3
-          </div>
-          <div class="multiplechoice__option">
-            <input id="4" value="" type="checkbox">proposition 4
-          </div>
+          <form class="multipleform" action="" method="post">
+            <div class="multipleform__option multipleform__option--1">
+              <input class="multipleform__input" name="choiceradio" id="1" value="" type="radio">
+              <label class="multipleform__label multipleform__label--1" for="1">proposition1</label>
+            </div>
+            <div class="multipleform__option multipleform__option--2">
+              <input  class="multipleform__input" name="choiceradio" id="2" value="" type="radio">
+              <label class="multipleform__label multipleform__label--2" for="2">proposition2</label>
+            </div>
+            <div class="multipleform__option multipleform__option--3">
+              <input  class="multipleform__input multipleform__input--3" name="choiceradio" id="3" value="" type="radio">
+              <label class="multipleform__label multipleform__label--3" for="3">proposition3</label>
+            </div>
+            <div class="multipleform__option multipleform__option--4">
+              <input  class="multipleform__input" name="choiceradio" id="4" value="" type="radio">
+              <label class="multipleform__label multipleform__label--4" for="4">proposition4</label>
+            </div>
+          </form>
+      
         </div>
-        
-        <div class="multiplepics hidden">
-          <h2 class="multiplepics__question">Question</h2>
-          <div class="multiplepics__checkboxes">
-            <div class="multiplepics__option">
+        <div class="thisorthat">
+          <h2 class="thisorthat__question">Question</h2>
+          <div class="sidebyside">
+            <div class="sidebyside__left">
+              <p class="sidebyside__p sidebyside__p--left">Nom du Film</p>
               
             </div>
-            <div class="multiplepics__option">
-              
+
+            <div class="sidebyside__right">
+              <p class="sidebyside__p sidebyside__p--right">Nom du Film</p>
+
             </div>
-            <div class="multiplepics__option">
-              
-            </div>
-            <div class="multiplepics__option">
-             
-            </div>
-            
           </div>
+
+        </div>
 
     </div>
 </section>

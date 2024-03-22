@@ -138,7 +138,7 @@ body {
     }
 
     .rank{
-        
+        transition: 0.5s;
         text-align: center;
         &__question{
             font-family: spratbold;
@@ -159,17 +159,26 @@ body {
             border-width: 0.20em;
         }
     }
+    .hovered{
+        background-image: url();
+        transition: 0.5s;
+        background-color: aqua;
+    }
     .answer{
         display: flex;
         justify-content: center;
         flex-flow: row;
         &__card{
-
+            transition: 0.2s;
             padding: 1em 3.38em;
-            background-color: rgb(255, 0, 0);
+            background-color: rgb(81, 0, 0);
             margin: 1em 1.50em;
             &:hover{
                 cursor: grab;
+            }
+            &:active{
+                transform: scale(0.9);
+                transition: 0.2s;
             }
         }
     }
@@ -179,18 +188,13 @@ body {
         flex-flow: column wrap;
         align-items: center;
         display: flex;
+        background-image: url();
+
         justify-content: center;
         &__question{
             font-family: spratbold;
             font-size: 3.38em;
             margin-bottom: 1em;
-        }
-        &__frame{
-            background-color: aliceblue;
-            height: 55vh;
-            width: 40vh;
-            
-
         }
         &__input{
             font-family: sprat;
@@ -203,7 +207,7 @@ body {
             border-style:solid;
             border-color: rgb(255, 255, 255);
             border-width: 0.20em;
-
+            margin: 25%;
         }
     }
     .trueorfalse{
@@ -230,18 +234,83 @@ body {
             font-size: 3.38em;
             margin-bottom: 1em;
         }
-        &__checkboxes{
-            font-size: 1.50em;
+
+    }
+    .multipleform{
+        font-size: 1.50em;
+        display: flex;
+        flex-flow: column wrap;
+       &__option{
+        
             display: flex;
-            flex-flow: column wrap;
-        }
-        &__option{
+            flex-flow: column;
             margin: 1em;
+            border-style: solid;
+            border-color: white;
+
+        }
+        &__input{
+            visibility: hidden;
+        }
+        &__label{
+            padding-top: 0.67em;
+            padding-left: 3.38em;
+            padding-right: 3.38em;
+            padding-bottom: 1.5em;
+            
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
-
+    .selected{
+        transition: 0.2s;
+        background-color: rgb(81, 0, 0);
+    }
 .hidden {
     display: none;
+}
+.thisorthat{
+    height: 100vh;
+    &__question{
+        z-index: 10;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0; 
+        font-family: spratbold;
+        font-size: 3.38em;
+        margin-bottom: 1em;
+    }
+
+}
+.sidebyside{
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    position: relative;
+        &__left{
+        padding: 1em;
+        width: 50%;
+        background-color: aqua;
+    }
+    &__right{
+        padding: 1em;
+        background-color: red;
+        width: 50%;
+    }
+    &__p{
+        position: absolute;
+        bottom: 0;
+        font-size: 1.50em;
+        &--left{
+            text-align: left;
+        }
+        &--right{
+            text-align: right;
+            right: 1em;
+        }
+    }
 }
 
 

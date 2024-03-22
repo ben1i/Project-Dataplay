@@ -72,7 +72,7 @@ $(document).ready(function() {
 });
 
 var score;
-var life = 3;
+var life;
 
 var posterContainer = document.querySelector('.test__img');
 var posterImage = posterContainer.querySelector('img');
@@ -90,12 +90,20 @@ var qcmLabel = document.querySelector('.questions__question');
 
 var collectionButton = document.querySelector('.selection__button--3');
 
+var questionNumber = 0;
+
+var jsonData;
+
+var validAnswertoGet
+
 
 fetch('assets/json/data.json')
     .then(function(response) {
         return response.json();
     })
     .then(data => {
+
+        jsonData = data;
 
         const Sounds = data.sounds;
         collectionButton.addEventListener('mouseenter', function() {
@@ -109,6 +117,7 @@ fetch('assets/json/data.json')
 
         startButton.addEventListener('click', function() {
             score = 0;
+            life = 3
             homeSection.classList.add('home--animation');
 
             const startAudio = new Audio(Sounds[0]);
@@ -116,129 +125,9 @@ fetch('assets/json/data.json')
             
             setTimeout(function() {
                 homeSection.classList.add('hidden');
-                questionsSection.classList.remove('hidden');
                 //rankGame.classList.remove('hidden');
-                
-                for (let i = 0; i < 20; i++) {
 
-                    var cheminsAudio = data.musics;
-                    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-                    var Ambianceaudio = new Audio(cheminAleatoire);
-                    Ambianceaudio.loop = true;
-
-                    Ambianceaudio.play();
-
-                    var questionQcm = data.questions[0];
-                    var qcmChosenQuestion = questionQcm[Math.floor(Math.random() * questionQcm.length)];
-                    qcmLabel.innerText = qcmChosenQuestion;
-                    
-                    var cheminsReponses = data.movies;
-                    
-                    
-                    var ReponseAleatoire1 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
-                    var qcmAnswer1Name = document.querySelector('.questions__label1');
-                    qcmAnswer1Name.innerText = ReponseAleatoire1[0];
-
-                    var ReponseAleatoire2 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
-                    var qcmAnswer2Name = document.querySelector('.questions__label2');
-                    qcmAnswer2Name.innerText = ReponseAleatoire2[0];
-
-                    var ReponseAleatoire3 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
-                    var qcmAnswer3Name = document.querySelector('.questions__label3');
-                    qcmAnswer3Name.innerText = ReponseAleatoire3[0];
-
-                    var ReponseAleatoire4 = cheminsReponses[Math.floor(Math.random() * cheminsReponses.length)];
-                    var qcmAnswer4Name = document.querySelector('.questions__label4');
-                    qcmAnswer4Name.innerText = ReponseAleatoire4[0];
-
-                    if (qcmChosenQuestion === questionQcm[0]) {
-                        var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
-                        var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
-                        var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
-                        var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
-
-                        var validAnswer = qcmAnswer1BoxOffice;
-                        var validAnswertoGet = ReponseAleatoire1;
-
-                        if (qcmAnswer2BoxOffice > validAnswer) {
-                            validAnswer = qcmAnswer2BoxOffice;
-                            validAnswertoGet = ReponseAleatoire2;
-                        }
-
-                        if (qcmAnswer3BoxOffice > validAnswer) {
-                            validAnswer = qcmAnswer3BoxOffice;
-                            validAnswertoGet = ReponseAleatoire3;
-                        }
-
-                        if (qcmAnswer4BoxOffice > validAnswer) {
-                            validAnswer = qcmAnswer4BoxOffice;
-                            validAnswertoGet = ReponseAleatoire4;
-                        }
-
-                        console.log(validAnswertoGet);
-                    } else if (qcmChosenQuestion === questionQcm[1]) {
-                        var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
-                        var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
-                        var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
-                        var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
-
-                        var validAnswer = qcmAnswer1BoxOffice;
-                        var validAnswertoGet = ReponseAleatoire1;
-
-                        if (qcmAnswer2BoxOffice < validAnswer) {
-                            validAnswer = qcmAnswer2BoxOffice;
-                            validAnswertoGet = ReponseAleatoire2;
-                        }
-
-                        if (qcmAnswer3BoxOffice < validAnswer) {
-                            validAnswer = qcmAnswer3BoxOffice;
-                            validAnswertoGet = ReponseAleatoire3;
-                        }
-
-                        if (qcmAnswer4BoxOffice < validAnswer) {
-                            validAnswer = qcmAnswer4BoxOffice;
-                            validAnswertoGet = ReponseAleatoire4;
-                        }
-                        
-                        console.log(validAnswertoGet);
-                    }
-
-                    const radios = document.querySelectorAll('.questions__answer');
-                    radios.forEach((radio) => {
-                        radio.addEventListener('change', () => {
-                            if (radio.checked) {
-                                const radioLabel = radio.previousElementSibling;
-                                var radioChosen = radioLabel.textContent;
-
-                                console.log(radioChosen);
-                            };
-
-                            if (radioChosen === validAnswertoGet[0]) {
-                                score = score + 1;
-                                console.log(score)
-                            } else {
-                                life = life - 1;
-                                console.log(life);
-                            }
-                        })
-                    });
-
-                    if (score === 10) {
-                        var cheminMovies = cheminsReponses[Math.floor(Math.random() * cheminMovies.length)];
-                        var chosenPoster = cheminMovies[6];
-                        posterImage.src = chosenPoster;
-                    }
-                    
-                    /*if (score === 20) {
-                        const cheminPoster = choisirPosterShinyAleatoire();
-                        afficherShinyPoster(cheminPoster);
-                        if (cheminPoster === "./assets/images/shiny/alien.jpg") {
-                            localStorage.setItem("AlienShiny", "Y");
-                        }
-                    }*/
-
-                    console.log(i);
-                }
+                questionLoader(data);
             }, 4860);
             
             /*var Alien = localStorage.getItem("Alien")
@@ -248,11 +137,168 @@ fetch('assets/json/data.json')
         });
       });
 
+function questionLoader(data) {
+    questionsSection.classList.remove('hidden');
+
+        var cheminsAudio = data.musics;
+        var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+        var Ambianceaudio = new Audio(cheminAleatoire);
+        Ambianceaudio.loop = true;
+
+        Ambianceaudio.play();
+
+        var questionQcm = data.questions[0];
+        var qcmChosenQuestion = questionQcm[Math.floor(Math.random() * questionQcm.length)];
+        qcmLabel.innerText = qcmChosenQuestion;
+                    
+        var cheminsReponses = data.movies;
+        shuffle(cheminsReponses);
+        console.log(cheminsReponses[0][0]);
+                    
+        //var RandomNumber1 = Math.floor(Math.random() * cheminsReponses.length);
+        //console.log(RandomNumber1);
+        var ReponseAleatoire1 = cheminsReponses[0];
+        console.log(ReponseAleatoire1);
+        var qcmAnswer1Name = document.querySelector('.questions__label1');
+        qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+        //cheminsReponses.splice(RandomNumber1);
+
+        //var RandomNumber2 = Math.floor(Math.random() * cheminsReponses.length);
+        //console.log(RandomNumber2);
+        var ReponseAleatoire2 = cheminsReponses[1];
+        console.log(ReponseAleatoire2);
+        var qcmAnswer2Name = document.querySelector('.questions__label2');
+        qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+        //cheminsReponses.splice(RandomNumber2);
+
+        //var RandomNumber3 = Math.floor(Math.random() * cheminsReponses.length);
+        //console.log(RandomNumber3);
+        var ReponseAleatoire3 = cheminsReponses[2];
+        console.log(ReponseAleatoire3);
+        var qcmAnswer3Name = document.querySelector('.questions__label3');
+        qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+        //cheminsReponses.splice(RandomNumber3);
+
+        //var RandomNumber4 = Math.floor(Math.random() * cheminsReponses.length);
+        //console.log(RandomNumber4);
+        var ReponseAleatoire4 = cheminsReponses[3];
+        console.log(ReponseAleatoire4);
+        var qcmAnswer4Name = document.querySelector('.questions__label4');
+        qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+        //cheminsReponses.splice(RandomNumber4);
+
+        if (qcmChosenQuestion === questionQcm[0]) {
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[0];
+
+            if (qcmAnswer2BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[0];
+            }
+
+            if (qcmAnswer3BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[0];
+            }
+
+            if (qcmAnswer4BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[0];
+            }
+
+            console.log(validAnswertoGet);
+                    
+        } else if (qcmChosenQuestion === questionQcm[1]) {
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[0];
+
+            if (qcmAnswer2BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[0];
+            }
+
+            if (qcmAnswer3BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[0];
+            }
+
+            if (qcmAnswer4BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[0];
+            }
+                        
+            console.log(validAnswertoGet);
+        }
+
+        if (score === 10) {
+            var cheminMovies = cheminsReponses[Math.floor(Math.random() * cheminMovies.length)];
+            var chosenPoster = cheminMovies[6];
+            posterImage.src = chosenPoster;
+        }
+                    
+        /*if (score === 20) {
+            const cheminPoster = choisirPosterShinyAleatoire();
+            afficherShinyPoster(cheminPoster);
+            if (cheminPoster === "./assets/images/shiny/alien.jpg") {
+                localStorage.setItem("AlienShiny", "Y");
+            }
+        }*/
+}
+
+const radios = document.querySelectorAll('.questions__answer');
+radios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+        
+        if (radio.checked) {
+            const radioLabel = radio.previousElementSibling;
+            var radioChosen = radioLabel.textContent;
+
+            console.log(radioChosen);
+            
+            checkAnswerAndDisplayNextQuestion(radioChosen,radio);
+        };
+    });
+});
+
+function checkAnswerAndDisplayNextQuestion(radioChosen,radio){ 
+
+    var data = jsonData;
+
+    if (radioChosen === validAnswertoGet) {
+        score = score + 1;
+        console.log(score);
+        radio.checked = false;
+    } else {
+        life = life - 1;
+        console.log(life);
+        radio.checked = false;
+    }
+
+    if (questionNumber < 20 && life > 0) {
+        questionLoader(data);
+    } else if (life === 0) {
+        questionsSection.classList.add('hidden');
+    }
+}
 
 function getRandomIntInclusive(min,max) {
     min= Math.ceil(min);
     max=Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
 }
 
 /*function choisirPosterAleatoire() {
@@ -263,7 +309,7 @@ function getRandomIntInclusive(min,max) {
     const cheminPoster = `${cheminDossier}/${posterChoisi}`;
 
     return cheminPoster;
-}*/
+}
 
 function choisirPosterShinyAleatoire() {
     const cheminDossier = "./assets/images/shiny";
@@ -285,4 +331,4 @@ var Alien = localStorage.getItem("Alien")
 
 if (Alien === "Y") {
     posters.slice('alien.jpg');
-}
+}*/

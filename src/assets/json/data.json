@@ -6,7 +6,9 @@
              3.4,
              49,
              0,
-             2017
+             2017,
+             "assets/images/basic/it.jpg",
+             "assets/images/shiny/it.jpg"
         ],
 
         [
@@ -15,7 +17,9 @@
              4,
              50,
              0,
-             1999
+             1999,
+             "assets/images/basic/thesixthsense.jpg",
+             "assets/images/shiny/thesixthsense.jpg"
         ],
 
         [
@@ -24,7 +28,9 @@
              3.4,
              62,
              0,
-             2007
+             2007,
+             "assets/images/basic/iamlegend.jpg",
+             "assets/images/shiny/iamlegend.jpg"
         ],
 
         [
@@ -33,7 +39,9 @@
              3.1,
              82,
              0,
-             2013
+             2013,
+             "assets/images/basic/worldwarz.jpg",
+             "assets/images/shiny/worldwarz.jpg"
         ],
 
         [
@@ -42,7 +50,9 @@
              2.9,
              87,
              0,
-             2019
+             2019,
+             "assets/images/basic/itchapter2.jpg",
+             "assets/images/shiny/itchapter2.jpg"
         ],
 
         [
@@ -52,7 +62,8 @@
              43,
              2,
              1973,
-             "assets/images/basic/exorcist.jpg"
+             "assets/images/basic/exorcist.jpg",
+             "assets/images/shiny/exorcist.jpg"
         ],
 
         [
@@ -61,7 +72,9 @@
              3.5,
              26,
              0,
-             2002   
+             2002,
+             "assets/images/basic/signs.jpg",
+             "assets/images/shiny/signs.jpg"
         ],
 
         [
@@ -70,7 +83,9 @@
              3.2,
              50,
              0,
-             2012
+             2012,
+             "assets/images/basic/prometheus.jpg",
+             "assets/images/shiny/prometheus.jpg"
         ],
 
         [
@@ -79,7 +94,9 @@
              2.1,
              51,
              0,
-             2018 
+             2018,
+             "assets/images/basic/thenun.jpg",
+             "assets/images/shiny/thenun.jpg"
         ],
 
         [
@@ -88,7 +105,9 @@
              3.2,
              39,
              0,
-             2001 
+             2001,
+             "assets/images/basic/hannibal.jpg",
+             "assets/images/shiny/hannibal.jpg"
         ],
 
         [
@@ -97,7 +116,9 @@
              3,
              23,
              0,
-             1980
+             1980,
+             "assets/images/basic/fridaythe13th.jpg",
+             "assets/images/shiny/fridaythe13th.jpg"
         ],
 
         [
@@ -106,7 +127,9 @@
              2.8,
              37,
              0,
-             2000
+             2000,
+             "assets/images/basic/scream3.jpg",
+             "assets/images/shiny/scream3.jpg"
         ],
 
         [
@@ -116,7 +139,8 @@
              17,
              0,
              1974,
-             "assets/images/basic/texaschainsawmassacre.jpg"
+             "assets/images/basic/texaschainsawmassacre.jpg",
+             "assets/images/shiny/texaschainsawmassacre.jpg"
         ],
 
         [
@@ -125,7 +149,9 @@
              3.6,
              18,
              0,
-             2004
+             2004,
+             "assets/images/basic/saw.jpg",
+             "assets/images/shiny/saw.jpg"
         ],
 
         [
@@ -135,7 +161,8 @@
              27,
              0,
              1978,
-             "assets/images/basic/halloween.jpg"
+             "assets/images/basic/halloween.jpg",
+             "assets/images/shiny/halloween.jpg"
         ],
 
         [
@@ -145,7 +172,8 @@
              34,
              0,
              1960,
-             "assets/images/basic/psycho.jpg"
+             "assets/images/basic/psycho.jpg",
+             "assets/images/shiny/psycho.jpg"
         ],
 
         [
@@ -155,7 +183,8 @@
              29,
              0,
              1980,
-             "assets/images/basic/shining.jpg"
+             "assets/images/basic/shining.jpg",
+             "assets/images/shiny/shining.jpg"
         ],
 
         [
@@ -164,7 +193,9 @@
              3.6,
              32,
              0,
-             2013
+             2013,
+             "assets/images/basic/conjuring.jpg",
+             "assets/images/shiny/conjuring.jpg"
         ],
 
         [
@@ -173,7 +204,9 @@
              3.4,
              45,
              0,
-             2007
+             2007,
+             "assets/images/basic/themist.jpg",
+             "assets/images/shiny/themist.jpg"
         ],
 
         [
@@ -182,7 +215,9 @@
              3.3,
              37,
              0,
-             1988
+             1988,
+             "assets/images/basic/killersklowns.jpg",
+             "assets/images/shiny/killersklowns.jpg"
         ],
 
         [
@@ -191,7 +226,9 @@
              3.4,
              48,
              0,
-             2011
+             2011,
+             "assets/images/basic/thecabininthewoods.jpg",
+             "assets/images/shiny/thecabininthewoods.jpg"
         ],
 
         [
@@ -200,7 +237,9 @@
              3.1,
              43,
              0,
-             2007
+             2007,
+             "assets/images/basic/30daysofnight.jpg",
+             "assets/images/shiny/30daysofnight.jpg"
         ],
 
         [
@@ -209,7 +248,9 @@
              3.7,
              24,
              0,
-             2019
+             2019,
+             "assets/images/basic/us.jpg",
+             "assets/images/shiny/us.jpg"
         ],
 
         [
@@ -219,7 +260,8 @@
              31,
              0,
              1976,
-             "assets/images/basic/carrie.jpg"
+             "assets/images/basic/carrie.jpg",
+             "assets/images/shiny/carrie.jpg"
         ],
 
         [
@@ -228,7 +270,9 @@
              2.8,
              49,
              0, 
-             2016
+             2016,
+             "assets/images/basic/thebelkoexperiment.jpg",
+             "assets/images/shiny/thebelkoexperiment.jpg"
         ],
 
         [
@@ -237,7 +281,9 @@
              3.2,
              40,
              0,
-             2006
+             2006,
+             "assets/images/basic/slither.jpg",
+             "assets/images/shiny/slither.jpg"
         ],
 
         [
@@ -246,7 +292,9 @@
              3.9,
              42,
              0,
-             1933
+             1933,
+             "assets/images/basic/theinvisibleman.jpg",
+             "assets/images/shiny/theinvisibleman.jpg"
         ],
 
         [
@@ -255,7 +303,9 @@
              2.6,
              66,
              0,
-             2016
+             2016,
+             "assets/images/basic/purge3.jpg",
+             "assets/images/shiny/purge3.jpg"
         ],
 
         [
@@ -264,7 +314,9 @@
              3.5,
              39,
              0,
-             1996
+             1996,
+             "assets/images/basic/fromdusktilldawn.jpg",
+             "assets/images/shiny/fromdusktilldawn.jpg"
         ],
 
         [
@@ -273,7 +325,9 @@
              2.4,
              64,
              0,
-            2018
+            2018,
+            "assets/images/basic/firstpurge.jpg",
+             "assets/images/shiny/firstpurge.jpg"
         ],
 
         [
@@ -283,7 +337,8 @@
              43,
              0,
              2004,
-             "assets/images/basic/dawnofthedead.jpg"
+             "assets/images/basic/dawnofthedead.jpg",
+             "assets/images/shiny/dawnofthedead.jpg"
         ],
 
         [
@@ -292,7 +347,9 @@
              2.6,
              18,
              0,
-             2019
+             2019,
+             "assets/images/basic/brightburn.jpg",
+             "assets/images/shiny/brightburn.jpg"
         ],
 
         [
@@ -301,7 +358,9 @@
              3.2,
              12,
              0,
-             2020
+             2020,
+             "assets/images/basic/host.jpg",
+             "assets/images/shiny/host.jpg"
         ],
 
         [
@@ -310,7 +369,9 @@
              3.3,
              16,
              0,
-             2012
+             2012,
+             "assets/images/basic/sinister.jpg",
+             "assets/images/shiny/sinister.jpg"
         ],
 
         [
@@ -319,7 +380,9 @@
              3.2,
              17,
              0,
-             2010
+             2010,
+             "assets/images/basic/insidious.jpg",
+             "assets/images/shiny/insidious.jpg"
         ],
 
         [
@@ -328,7 +391,9 @@
              4,
              28,
              0,
-             2018
+             2018,
+             "assets/images/basic/hereditary.jpg",
+             "assets/images/shiny/hereditary.jpg"
         ],
 
         [
@@ -337,7 +402,9 @@
              3.2,
              16,
              0,
-             2017
+             2017,
+             "assets/images/basic/terrified.jpg",
+             "assets/images/shiny/terrified.jpg"
         ],
 
         [
@@ -346,7 +413,9 @@
              3.5,
              30,
              0,
-             2014
+             2014,
+             "assets/images/basic/itfollows.jpg",
+             "assets/images/shiny/itfollows.jpg"
         ],
 
         [
@@ -355,7 +424,9 @@
              2.3,
              14,
              0,
-             2021
+             2021,
+             "assets/images/basic/dashcam.jpg",
+             "assets/images/shiny/dashcam.jpg"
         ],
 
         [
@@ -364,7 +435,9 @@
              3.4,
              29,
              0,
-             2020
+             2020,
+             "assets/images/basic/aquietplace2.jpg",
+             "assets/images/shiny/aquietplace2.jpg"
         ],
 
         [
@@ -373,7 +446,9 @@
              2.9,
              9,
              0,
-             2007
+             2007,
+             "assets/images/basic/paranormalactivity.jpg",
+             "assets/images/shiny/paranormalactivity.jpg"
         ],
 
         [
@@ -382,7 +457,9 @@
              3.4,
              32,
              0,
-             2016
+             2016,
+             "assets/images/basic/conjuring2.jpg",
+             "assets/images/shiny/conjuring2.jpg"
         ],
 
         [
@@ -391,7 +468,9 @@
              3.4,
              36,
              0,
-             2014
+             2014,
+             "assets/images/basic/thebabadook.jpg",
+             "assets/images/shiny/thebabadook.jpg"
         ],
 
         [
@@ -400,7 +479,9 @@
              3.6,
              18,
              0,
-             2005
+             2005,
+             "assets/images/basic/thedescent.jpg",
+             "assets/images/shiny/thedescent.jpg"
         ],
 
         [
@@ -409,7 +490,9 @@
              2.9,
              11,
              0,
-             2008
+             2008,
+             "assets/images/basic/hush.jpg",
+             "assets/images/shiny/hush.jpg"
         ],
 
         [
@@ -418,7 +501,9 @@
              3.2,
              9,
              0,
-             2016
+             2016,
+             "assets/images/basic/janedoe.jpg",
+             "assets/images/shiny/janedoe.jpg"
         ],
 
         [
@@ -427,7 +512,9 @@
              3.7,
              9,
              0,
-             2018
+             2018,
+             "assets/images/basic/aquietplace.jpg",
+             "assets/images/shiny/aquietplace.jpg"
         ],
 
         [
@@ -437,7 +524,8 @@
              35,
              0,
              2002,
-             "assets/images/basic/thering.jpg"
+             "assets/images/basic/thering.jpg",
+             "assets/images/shiny/thering.jpg"
         ],
 
         [
@@ -447,7 +535,8 @@
              30,
              0,
              1984,
-             "elmstreet.jpg"
+             "assets/images/basic/elmstreet.jpg",
+             "assets/images/shiny/elmstreet.jpg"
         ],
 
         [
@@ -456,7 +545,9 @@
              3.7,
              23,
              0,
-             2007
+             2007,
+             "assets/images/basic/rec.jpg",
+             "assets/images/shiny/rec.jpg"
         ],
 
         [
@@ -465,7 +556,9 @@
              3.8,
              37,
              0,
-             2002
+             2002,
+             "assets/images/basic/28dayslater.jpg",
+             "assets/images/shiny/28dayslater.jpg"
         ],
 
         [
@@ -474,7 +567,40 @@
              3.2,
              22,
              0,
-             2013
+             2013,
+             "assets/images/basic/oculus.jpg",
+             "assets/images/shiny/oculus.jpg"
+        ],
+
+        [
+          "Le Silence des agneaux",
+          272000000,
+          4.3,
+          60,
+          5,
+          1991,
+          "assets/images/basic/silenceofthelambs.jpg",
+          "assets/images/shiny/silenceofthelambs.jpg"
+        ],
+
+        [
+          "Alien",
+          106000000,
+          4.3,
+          11,
+          1,
+          1979,
+          "assets/images/basic/alien.jpg",
+          "assets/images/shiny/alien.jpg"
+        ],
+
+        [
+          "The Thing",
+          19000000,
+          4.4,
+          19,
+          0,
+          1982
         ]
     ],
 
@@ -645,7 +771,8 @@
         ],
 
         [
-
+          "Alien",
+          4000000
         ]
     ],
 
@@ -893,6 +1020,21 @@
      [
           "The Mirror",
           5000000
+     ],
+
+     [
+       "Le Silence des agneaux",
+       19000000
+     ],
+
+     [
+       "Alien",
+       11000000
+     ],
+
+     [
+          "The Thing",
+          15000000
      ]
     ],
 
@@ -1015,6 +1157,21 @@
      [
           "Brightburn : L'Enfant du mal",
           274
+     ],
+
+     [
+          "Alien",
+          6
+     ],
+
+     [
+          "Le Silence des agneaux",
+          8
+     ],
+
+     [
+          "The Thing",
+          7
      ]
     ],
 

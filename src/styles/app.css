@@ -74,14 +74,16 @@ body {
   }
 }
 body {
+  font-size: 14px;
   font-family: sprat;
   color: white;
   margin: 0;
-  padding: 2.5em;
+  padding: 0;
   background-color: black;
 }
 
 .home {
+  height: 100vh;
   transform: translateY(0vh);
   font-family: sprat;
 }
@@ -152,13 +154,52 @@ body {
 .rank__slot {
   display: flex;
   justify-content: flex-start;
-  padding: 0 2.25em;
-  margin: 1.5em 30%;
+  padding: 0 1.5em;
+  margin: 1.5em 15%;
   border-style: solid;
   border-color: rgb(255, 255, 255);
   border-width: 0.2em;
 }
+.rank__next {
+  position: absolute;
+  right: 2.5em;
+  padding: 0 1.5em;
+  font-family: sprat;
+  font-size: 1.5em;
+  color: white;
+  background: none;
+  border: none;
+}
+.rank__next:hover {
+  cursor: pointer;
+  background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
+  background-size: 1em;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
 
+@media (min-width: 800px) {
+  .rank__slot {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1.5em;
+    margin: 1.5em 25%;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 0.2em;
+  }
+}
+@media (min-width: 1200px) {
+  .rank__slot {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1.5em;
+    margin: 1.5em 30%;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 0.2em;
+  }
+}
 .hovered {
   background-image: url();
   transition: 0.5s;
@@ -168,7 +209,7 @@ body {
 .answer {
   display: flex;
   justify-content: center;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 .answer__card {
   transition: 0.2s;
@@ -184,11 +225,22 @@ body {
   transition: 0.2s;
 }
 
+@media (min-width: 800px) {
+  .answer {
+    flex-flow: row wrap;
+  }
+}
+@media (min-width: 1200px) {
+  .answer {
+    flex-flow: row wrap;
+  }
+}
 .picture {
   text-align: center;
   flex-flow: column wrap;
   align-items: center;
   display: flex;
+  height: 100vh;
   background-image: url();
   justify-content: center;
 }
@@ -208,10 +260,26 @@ body {
   border-style: solid;
   border-color: rgb(255, 255, 255);
   border-width: 0.2em;
-  margin: 25%;
+}
+@media (min-width: 1200px) {
+  .picture .picture__input {
+    font-family: sprat;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    padding: 1em 3.38em;
+    margin: 1.5em;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 0.2em;
+  }
 }
 
 .trueorfalse {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   height: 100vh;
   text-align: center;
 }
@@ -229,7 +297,13 @@ body {
   margin: 1em;
 }
 
+.multiplechoice {
+  height: 100vh;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
 .multiplechoice__question {
+  margin-top: 2.25em;
   font-family: spratbold;
   font-size: 3.38em;
   margin-bottom: 1em;
@@ -238,7 +312,9 @@ body {
 .multipleform {
   font-size: 1.5em;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-bottom: 2.5em;
 }
 .multipleform__option {
   display: flex;
@@ -260,6 +336,12 @@ body {
   cursor: pointer;
 }
 
+@media (min-width: 800px) {
+  .multipleform {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}
 .selected {
   transition: 0.2s;
   background-color: rgb(81, 0, 0);
@@ -271,12 +353,14 @@ body {
 
 .thisorthat {
   height: 100vh;
+  width: 100vw;
 }
 .thisorthat__question {
   z-index: 10;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  bottom: 50%;
+  transform: translate(-50%, -50%);
   margin: 0;
   font-family: spratbold;
   font-size: 3.38em;
@@ -312,6 +396,36 @@ body {
   right: 1em;
 }
 
+@media (min-width: 1200px) {
+  .sidebyside {
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    position: relative;
+  }
+  .sidebyside__left {
+    padding: 1em;
+    width: 50%;
+    background-color: aqua;
+  }
+  .sidebyside__right {
+    padding: 1em;
+    background-color: red;
+    width: 50%;
+  }
+  .sidebyside__p {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5em;
+  }
+  .sidebyside__p--left {
+    text-align: left;
+  }
+  .sidebyside__p--right {
+    text-align: right;
+    right: 1em;
+  }
+}
 /*.test__img {
   width: 10%;
   animation: link2 10s;

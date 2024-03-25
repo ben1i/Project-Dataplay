@@ -1308,6 +1308,10 @@
         [
             "Parmi ces 4 films, lequel a gagné le plus au box-office mondial ?",
             "Parmi ces 4 films, lequel a gagné le moins au box-office mondial ?"
+        ],
+
+        [
+          "À quel film appartient ce poster ?"
         ]
     ],
 

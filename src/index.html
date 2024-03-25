@@ -49,40 +49,46 @@
           </div>
     </section>
 
-  <section class="jeu">
-    <div class="rank">
-      <h2 class="rank__question">Question</h2>
-      <p class="rank__instructions">Sélectionne les cartes et dépose les dans le bon ordre</p>
-      <div class="rank__slot"><p class="rank__p">1.</p></div>
-      <div class="rank__slot"><p class="rank__p">2.</p></div>
-      <div class="rank__slot"><p class="rank__p">3.</p></div>
-      <div class="rank__slot"><p class="rank__p">4.</p></div>
-      <div class="rank__slot"><p class="rank__p">5.</p></div>
-      <div class="answer">
+    <section class="jeu hidden">
+      <div class="rank hidden">
+        <h2 class="rank__question">Question</h2>
+        <p class="rank__instructions">Sélectionne les cartes et dépose les dans le bon ordre</p>
+        <div class="rank__slot"><p class="rank__p">1.</p></div>
+        <div class="rank__slot"><p class="rank__p">2.</p></div>
+        <div class="rank__slot"><p class="rank__p">3.</p></div>
+        <div class="rank__slot"><p class="rank__p">4.</p></div>
+        <div class="rank__slot"><p class="rank__p">5.</p></div>
+        <div class="answer">
+
+        </div>
 
       </div>
 
-    </div>
+      <div class="picture hidden">
+        <h2 class="picture__question">Question</h2>
 
-    <div class="picture">
-      <h2 class="picture__question">Question</h2>
-      
-      <input class="picture__input" id="pictureinput" type="text" placeholder="écrit ta réponse ici">
-    </div>
+        <div class="picture__picture">
+          <img src="" alt="">
+        </div>
 
-    <div class="trueorfalse">
-      <h2 class="trueorfalse__question">Question</h2>
-      <div class="trueorfalse__radio">
-        <div class="trueorfalse__option">
-          <input name="tofradio" id="true" type="radio">Vrai
-        </div>
-        <div class="trueorfalse__option">
-          <input name="tofradio" id="false" type="radio">Faux
-        </div>
-        
+        <input class="picture__input" id="pictureinput" type="text" placeholder="écrit ta réponse ici">
+
+        <button class="picture__confirm">Valider</button>
       </div>
 
-      <div class="multiplechoice">
+      <div class="trueorfalse hidden">
+        <h2 class="trueorfalse__question">Question</h2>
+        <div class="trueorfalse__radio">
+          <div class="trueorfalse__option">
+            <input name="tofradio" id="true" type="radio">Vrai
+          </div>
+          <div class="trueorfalse__option">
+            <input name="tofradio" id="false" type="radio">Faux
+          </div>
+        </div>
+      </div>
+
+      <div class="multiplechoice hidden">
         <h2 class="multiplechoice__question">Question</h2>
           <form class="multipleform" action="" method="post">
             <div class="multipleform__option multipleform__option--1">
@@ -102,29 +108,25 @@
               <label class="multipleform__label multipleform__label--4" for="4">proposition4</label>
             </div>
           </form>
-      
-        </div>
-        <div class="thisorthat">
-          <h2 class="thisorthat__question">Question</h2>
-          <div class="sidebyside">
-            <div class="sidebyside__left">
-              <p class="sidebyside__p sidebyside__p--left">Nom du Film</p>
-              
-            </div>
+      </div>
 
-            <div class="sidebyside__right">
-              <p class="sidebyside__p sidebyside__p--right">Nom du Film</p>
-
-            </div>
+      <div class="thisorthat hidden">
+        <h2 class="thisorthat__question">Question</h2>
+        <div class="sidebyside">
+          <div class="sidebyside__left">
+            <p class="sidebyside__p sidebyside__p--left">Nom du Film</p>
           </div>
-
+          <div class="sidebyside__right">
+            <p class="sidebyside__p sidebyside__p--right">Nom du Film</p>
+          </div>
         </div>
+      </div>
 
-    </div>
-</section>
+      </div>
+    </section>
 
-
-      <section class="questions hidden">
+    <!--
+    <section class="questions hidden">
       <form class="questions__qcm">
 
         <h1 class="questions__question"></h1>
@@ -141,7 +143,7 @@
         <label class="questions__label4" for="checkbox4"></label>
         <input class="questions__answer questions__answer--4" type="radio" name="checkbox" id="checkbox4"></input>
       </form>
-    </section>
+    </section>-->
 
 
     <section class="collection hidden">
@@ -194,127 +196,291 @@
         <div class="collection__item fromdusktilldawn">
           <img src="./assets/images/basic/fromdusktilldawn.jpg" alt="Une nuit en enfer">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item halloween">
+          <img src="./assets/images/basic/halloween.jpg" alt="Halloween">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item hannibal">
+          <img src="./assets/images/basic/hannibal.jpg" alt="Hannibal">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item hereditary">
+          <img src="./assets/images/basic/hereditary.jpg" alt="Hérédité">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item host">
+          <img src="./assets/images/basic/host.jpg" alt="Host">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item hush">
+          <img src="./assets/images/basic/hush.jpg" alt="Pas un bruit">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item iamlegend">
+          <img src="./assets/images/basic/iamlegend.jpg" alt="Je suis une légende">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item insidious">
+          <img src="./assets/images/basic/insidious.jpg" alt="Insidious">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item it">
+          <img src="./assets/images/basic/it.jpg" alt="Ça">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item itchapter2">
+          <img src="./assets/images/basic/itchapter2.jpg" alt="Ça Chapitre 2">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item itfollows">
+          <img src="./assets/images/basic/itfollows.jpg" alt="It Follows">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item janedoe">
+          <img src="./assets/images/basic/jane doe.jpg" alt="The Autopsy of Jane Doe">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item killersklowns">
+          <img src="./assets/images/basic/killersklowns.jpg" alt="Les Clowns tueurs venus d'ailleurs">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item oculus">
+          <img src="./assets/images/basic/oculus.jpg" alt="The Mirror">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item paranormalactivity">
+          <img src="./assets/images/basic/paranormalactivity.jpg" alt="Paranormal Activity">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item prometheus">
+          <img src="./assets/images/basic/prometheus.jpg" alt="Prometheus">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item psycho">
+          <img src="./assets/images/basic/psycho.jpg" alt="Psychose">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item purge3">
+          <img src="./assets/images/basic/purge3.jpg" alt="American Nightmare 3 : Élections">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item rec">
+          <img src="./assets/images/basic/rec.jpg" alt="REC">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item saw">
+          <img src="./assets/images/basic/saw.jpg" alt="Saw">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item scream3">
+          <img src="./assets/images/basic/scream3.jpg" alt="Scream 3">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item shining">
+          <img src="./assets/images/basic/shining.jpg" alt="Shining">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item signs">
+          <img src="./assets/images/basic/signs.jpg" alt="Signes">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item silenceofthelambs">
+          <img src="./assets/images/basic/silenceofthelambs.jpg" alt="Le silence des agneaux">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item sinister">
+          <img src="./assets/images/basic/sinister.jpg" alt="Sinister">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item slither">
+          <img src="./assets/images/basic/slither.jpg" alt="Horribilis">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item terrified">
+          <img src="./assets/images/basic/terrified.jpg" alt="Terrified">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item texaschainsawmassacre">
+          <img src="./assets/images/basic/texaschainsawmassacre.jpg" alt="Massacre à la tronçonneuse">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thebabadook">
+          <img src="./assets/images/basic/thebabadook.jpg" alt="Mister Babadook">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thebelkoexperiment">
+          <img src="./assets/images/basic/thebelkoexperiment.jpg" alt="The Belko Experiment">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thecabininthewoods">
+          <img src="./assets/images/basic/thecabininthewoods.jpg" alt="La Cabane dans les bois">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thedescent">
+          <img src="./assets/images/basic/thedescent.jpg" alt="The Descent">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item theinvisibleman">
+          <img src="./assets/images/basic/theinvisibleman.jpg" alt="Invisible Man">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item themist">
+          <img src="./assets/images/basic/themist.jpg" alt="The Mist">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thenun">
+          <img src="./assets/images/basic/thenun.jpg" alt="La Nonne">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thering">
+          <img src="./assets/images/basic/thering.jpg" alt="Le Cercle">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thesixthsense">
+          <img src="./assets/images/basic/thesixthsense.jpg" alt="Le Sixième sens">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item thething">
+          <img src="./assets/images/basic/thething.jpg" alt="The Thing">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item us">
+          <img src="./assets/images/basic/us.jpg" alt="Us">
         </div>
-        <div class="collection__item">
-          <img src="" alt="">
+        <div class="collection__item worldwarz">
+          <img src="./assets/images/basic/worldwarz.jpg" alt="World War Z">
         </div>
       </div>
 
-      <div class="collection__shiny">
-
+      <div class="collection__shiny hidden">
+        <div class="collection__item 28dayslater">
+          <img src="./assets/images/shiny/28dayslater.jpg" alt="28 jours plus tard">
+        </div>
+        <div class="collection__item 30daysofnight">
+          <img src="./assets/images/shiny/30daysofnight.jpg" alt="30 jours de nuit">
+        </div>
+        <div class="collection__item alien">
+          <img src="./assets/images/shiny/alien.jpg" alt="Alien, le huitième passager">
+        </div>
+        <div class="collection__item aquietplace">
+          <img src="./assets/images/shiny/aquietplace.jpg" alt="Sans un bruit">
+        </div>
+        <div class="collection__item aquietplace2">
+          <img src="./assets/images/shiny/aquietplace2.jpg" alt="Sans un bruit 2">
+        </div>
+        <div class="collection__item brightburn">
+          <img src="./assets/images/shiny/brightburn.jpg" alt="Brightburn, l'Enfant du mal">
+        </div>
+        <div class="collection__item carrie">
+          <img src="./assets/images/shiny/carrie.jpg" alt="Carrie">
+        </div>
+        <div class="collection__item conjuring">
+          <img src="./assets/images/shiny/conjuring.jpg" alt="Conjuring">
+        </div>
+        <div class="collection__item conjuring2">
+          <img src="./assets/images/shiny/conjuring2.jpg" alt="Conjuring 2">
+        </div>
+        <div class="collection__item dashcam">
+          <img src="./assets/images/shiny/dashcam.jpg" alt="Dashcam">
+        </div>
+        <div class="collection__item dawnofthedead">
+          <img src="./assets/images/shiny/dawnofthedead.jpg" alt="L'armée des morts">
+        </div>
+        <div class="collection__item elmstreet">
+          <img src="./assets/images/shiny/elmstreet.jpg" alt="Les Griffes de la nuit">
+        </div>
+        <div class="collection__item exorcist">
+          <img src="./assets/images/shiny/exorcist.jpg" alt="L'Exorciste">
+        </div>
+        <div class="collection__item firstpurge">
+          <img src="./assets/images/shiny/firstpurge.jpg" alt="American Nightmare 4 : Les Origines">
+        </div>
+        <div class="collection__item fridaythe13th">
+          <img src="./assets/images/shiny/fridaythe13th.jpg" alt="Vendredi 13">
+        </div>
+        <div class="collection__item fromdusktilldawn">
+          <img src="./assets/images/shiny/fromdusktilldawn.jpg" alt="Une nuit en enfer">
+        </div>
+        <div class="collection__item halloween">
+          <img src="./assets/images/shiny/halloween.jpg" alt="Halloween">
+        </div>
+        <div class="collection__item hannibal">
+          <img src="./assets/images/shiny/hannibal.jpg" alt="Hannibal">
+        </div>
+        <div class="collection__item hereditary">
+          <img src="./assets/images/shiny/hereditary.jpg" alt="Hérédité">
+        </div>
+        <div class="collection__item host">
+          <img src="./assets/images/shiny/host.jpg" alt="Host">
+        </div>
+        <div class="collection__item hush">
+          <img src="./assets/images/shiny/hush.jpg" alt="Pas un bruit">
+        </div>
+        <div class="collection__item iamlegend">
+          <img src="./assets/images/shiny/iamlegend.jpg" alt="Je suis une légende">
+        </div>
+        <div class="collection__item insidious">
+          <img src="./assets/images/shiny/insidious.jpg" alt="Insidious">
+        </div>
+        <div class="collection__item it">
+          <img src="./assets/images/shiny/it.jpg" alt="Ça">
+        </div>
+        <div class="collection__item itchapter2">
+          <img src="./assets/images/shiny/itchapter2.jpg" alt="Ça Chapitre 2">
+        </div>
+        <div class="collection__item itfollows">
+          <img src="./assets/images/shiny/itfollows.jpg" alt="It Follows">
+        </div>
+        <div class="collection__item janedoe">
+          <img src="./assets/images/shiny/jane doe.jpg" alt="The Autopsy of Jane Doe">
+        </div>
+        <div class="collection__item killersklowns">
+          <img src="./assets/images/shiny/killersklowns.jpg" alt="Les Clowns tueurs venus d'ailleurs">
+        </div>
+        <div class="collection__item oculus">
+          <img src="./assets/images/shiny/oculus.jpg" alt="The Mirror">
+        </div>
+        <div class="collection__item paranormalactivity">
+          <img src="./assets/images/shiny/paranormalactivity.jpg" alt="Paranormal Activity">
+        </div>
+        <div class="collection__item prometheus">
+          <img src="./assets/images/shiny/prometheus.jpg" alt="Prometheus">
+        </div>
+        <div class="collection__item psycho">
+          <img src="./assets/images/shiny/psycho.jpg" alt="Psychose">
+        </div>
+        <div class="collection__item purge3">
+          <img src="./assets/images/shiny/purge3.jpg" alt="American Nightmare 3 : Élections">
+        </div>
+        <div class="collection__item rec">
+          <img src="./assets/images/shiny/rec.jpg" alt="REC">
+        </div>
+        <div class="collection__item saw">
+          <img src="./assets/images/shiny/saw.jpg" alt="Saw">
+        </div>
+        <div class="collection__item scream3">
+          <img src="./assets/images/shiny/scream3.jpg" alt="Scream 3">
+        </div>
+        <div class="collection__item shining">
+          <img src="./assets/images/shiny/shining.jpg" alt="Shining">
+        </div>
+        <div class="collection__item signs">
+          <img src="./assets/images/shiny/signs.jpg" alt="Signes">
+        </div>
+        <div class="collection__item silenceofthelambs">
+          <img src="./assets/images/shiny/silenceofthelambs.jpg" alt="Le silence des agneaux">
+        </div>
+        <div class="collection__item sinister">
+          <img src="./assets/images/shiny/sinister.jpg" alt="Sinister">
+        </div>
+        <div class="collection__item slither">
+          <img src="./assets/images/shiny/slither.jpg" alt="Horribilis">
+        </div>
+        <div class="collection__item terrified">
+          <img src="./assets/images/shiny/terrified.jpg" alt="Terrified">
+        </div>
+        <div class="collection__item texaschainsawmassacre">
+          <img src="./assets/images/shiny/texaschainsawmassacre.jpg" alt="Massacre à la tronçonneuse">
+        </div>
+        <div class="collection__item thebabadook">
+          <img src="./assets/images/shiny/thebabadook.jpg" alt="Mister Babadook">
+        </div>
+        <div class="collection__item thebelkoexperiment">
+          <img src="./assets/images/shiny/thebelkoexperiment.jpg" alt="The Belko Experiment">
+        </div>
+        <div class="collection__item thecabininthewoods">
+          <img src="./assets/images/shiny/thecabininthewoods.jpg" alt="La Cabane dans les bois">
+        </div>
+        <div class="collection__item thedescent">
+          <img src="./assets/images/shiny/thedescent.jpg" alt="The Descent">
+        </div>
+        <div class="collection__item theinvisibleman">
+          <img src="./assets/images/shiny/theinvisibleman.jpg" alt="Invisible Man">
+        </div>
+        <div class="collection__item themist">
+          <img src="./assets/images/shiny/themist.jpg" alt="The Mist">
+        </div>
+        <div class="collection__item thenun">
+          <img src="./assets/images/shiny/thenun.jpg" alt="La Nonne">
+        </div>
+        <div class="collection__item thering">
+          <img src="./assets/images/shiny/thering.jpg" alt="Le Cercle">
+        </div>
+        <div class="collection__item thesixthsense">
+          <img src="./assets/images/shiny/thesixthsense.jpg" alt="Le Sixième sens">
+        </div>
+        <div class="collection__item thething">
+          <img src="./assets/images/shiny/thething.jpg" alt="The Thing">
+        </div>
+        <div class="collection__item us">
+          <img src="./assets/images/shiny/us.jpg" alt="Us">
+        </div>
+        <div class="collection__item worldwarz">
+          <img src="./assets/images/shiny/worldwarz.jpg" alt="World War Z">
+        </div>
       </div>
     </section>
 

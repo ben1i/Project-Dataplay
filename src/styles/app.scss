@@ -77,7 +77,7 @@ body {
     margin: 0;
     padding: 2.50em;
     background-color: black;
-    //overflow: hidden;
+    overflow: hidden;
 }
 .home{
     transform: translateY(-0vh);
@@ -208,6 +208,14 @@ body {
             border-color: rgb(255, 255, 255);
             border-width: 0.20em;
             margin: 25%;
+        }
+
+        &__picture {
+            height: 200px;
+
+            & img {
+                height: 100%;
+            }
         }
     }
     .trueorfalse{

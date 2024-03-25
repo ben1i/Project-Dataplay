@@ -79,6 +79,7 @@ body {
   margin: 0;
   padding: 2.5em;
   background-color: black;
+  overflow: hidden;
 }
 
 .home {
@@ -209,6 +210,12 @@ body {
   border-color: rgb(255, 255, 255);
   border-width: 0.2em;
   margin: 25%;
+}
+.picture__picture {
+  height: 200px;
+}
+.picture__picture img {
+  height: 100%;
 }
 
 .trueorfalse {

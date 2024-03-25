@@ -144,11 +144,17 @@ var testText = document.querySelector('.test__text');
 var startButton = document.querySelector('.selection__button--1');
 var homeSection = document.querySelector('.home');
 
-var questionsSection = document.querySelector('.questions');
-//var rankGame = document.querySelector('.rank');
-var qcmLabel = document.querySelector('.questions__question');
+var questionsSection = document.querySelector('.jeu');
+
+var rankGame = document.querySelector('.rank');
+
+var qcmLabel = document.querySelector('.multiplechoice');
+var qcmQuestion  = document.querySelector('.multiplechoice__question');
+
+var pictureGame = document.querySelector('.picture');
 
 var collectionButton = document.querySelector('.selection__button--3');
+var collectionSection = document.querySelector('.collection');
 
 var questionNumber = 0;
 
@@ -175,6 +181,18 @@ fetch('assets/json/data.json')
             hoverAudio.play()
         })
 
+        collectionButton.addEventListener('click', function() {
+            homeSection.classList.add('home--animation');
+
+            const startAudio = new Audio(Sounds[0]);
+            startAudio.play();
+            
+            setTimeout(function() {
+                collectionSection.classList.remove('hidden');
+                homeSection.classList.add('hidden');
+            }, 4860);
+        })
+
         startButton.addEventListener('click', function() {
             score = 0;
             life = 3
@@ -184,10 +202,7 @@ fetch('assets/json/data.json')
             startAudio.play();
             
             setTimeout(function() {
-                homeSection.classList.add('hidden');
-                //rankGame.classList.remove('hidden');
-
-                questionLoader(data);
+                ChooseQuestion(data);
             }, 4860);
             
             /*var Alien = localStorage.getItem("Alien")
@@ -197,8 +212,22 @@ fetch('assets/json/data.json')
         });
       });
 
-function questionLoader(data) {
+function ChooseQuestion(data, questionData) {
+    var questionData = data.questions;
+    var questionChosen = questionData[Math.floor(Math.random() * questionData.length)]; //Math.floor(Math.random() * questionData.length)
+
+    homeSection.classList.add('hidden');
+    //rankGame.classList.remove('hidden');
+    if (questionChosen === questionData[0]) {
+        qcmQuestionLoader(data);
+    } else if (questionChosen === questionData[1]) {
+        pictureQuestionLoader(data);
+    }  
+}
+
+function qcmQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
+    qcmLabel.classList.remove('hidden');
 
         var cheminsAudio = data.musics;
         var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
@@ -209,7 +238,7 @@ function questionLoader(data) {
 
         var questionQcm = data.questions[0];
         var qcmChosenQuestion = questionQcm[Math.floor(Math.random() * questionQcm.length)];
-        qcmLabel.innerText = qcmChosenQuestion;
+        qcmQuestion.innerText = qcmChosenQuestion;
                     
         var cheminsReponses = data.movies;
         shuffle(cheminsReponses);
@@ -219,7 +248,7 @@ function questionLoader(data) {
         //console.log(RandomNumber1);
         var ReponseAleatoire1 = cheminsReponses[0];
         console.log(ReponseAleatoire1);
-        var qcmAnswer1Name = document.querySelector('.questions__label1');
+        var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
         qcmAnswer1Name.innerText = ReponseAleatoire1[0];
         //cheminsReponses.splice(RandomNumber1);
 
@@ -227,7 +256,7 @@ function questionLoader(data) {
         //console.log(RandomNumber2);
         var ReponseAleatoire2 = cheminsReponses[1];
         console.log(ReponseAleatoire2);
-        var qcmAnswer2Name = document.querySelector('.questions__label2');
+        var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
         qcmAnswer2Name.innerText = ReponseAleatoire2[0];
         //cheminsReponses.splice(RandomNumber2);
 
@@ -235,7 +264,7 @@ function questionLoader(data) {
         //console.log(RandomNumber3);
         var ReponseAleatoire3 = cheminsReponses[2];
         console.log(ReponseAleatoire3);
-        var qcmAnswer3Name = document.querySelector('.questions__label3');
+        var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
         qcmAnswer3Name.innerText = ReponseAleatoire3[0];
         //cheminsReponses.splice(RandomNumber3);
 
@@ -243,7 +272,7 @@ function questionLoader(data) {
         //console.log(RandomNumber4);
         var ReponseAleatoire4 = cheminsReponses[3];
         console.log(ReponseAleatoire4);
-        var qcmAnswer4Name = document.querySelector('.questions__label4');
+        var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
         qcmAnswer4Name.innerText = ReponseAleatoire4[0];
         //cheminsReponses.splice(RandomNumber4);
 
@@ -315,12 +344,13 @@ function questionLoader(data) {
         }*/
 }
 
-const radios = document.querySelectorAll('.questions__answer');
+const radios = document.querySelectorAll('.multipleform__input');
+console.log(radios);
 radios.forEach((radio) => {
-    radio.addEventListener('change', () => {
-        
+    radio.addEventListener('click', () => {
+        console.log("test");
         if (radio.checked) {
-            const radioLabel = radio.previousElementSibling;
+            const radioLabel = radio.nextElementSibling;
             var radioChosen = radioLabel.textContent;
 
             console.log(radioChosen);
@@ -345,50 +375,76 @@ function checkAnswerAndDisplayNextQuestion(radioChosen,radio){
     }
 
     if (questionNumber < 20 && life > 0) {
-        questionLoader(data);
+        qcmLabel.classList.add('hidden');
+        ChooseQuestion(data);
     } else if (life === 0) {
         questionsSection.classList.add('hidden');
     }
-}
-
-function getRandomIntInclusive(min,max) {
-    min= Math.ceil(min);
-    max=Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
 
-/*function choisirPosterAleatoire() {
-    const cheminDossier = "./assets/images/basic";
-     // Liste des noms de fichiers de vos images
-    const indexAleatoire = Math.floor(Math.random() * posters.length);
-    const posterChoisi = posters[indexAleatoire];
-    const cheminPoster = `${cheminDossier}/${posterChoisi}`;
+function pictureQuestionLoader(data) {
+    questionsSection.classList.remove('hidden');
+    pictureGame.classList.remove('hidden');
 
-    return cheminPoster;
+    var cheminsAudio = data.musics;
+    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+    var Ambianceaudio = new Audio(cheminAleatoire);
+    Ambianceaudio.loop = true;
+
+    Ambianceaudio.play();
+
+    var pictureQuestion = data.questions[1];
+    var pictureQuestionChosen = pictureQuestion[Math.floor(Math.random() * pictureQuestion.length)];
+    var pictureLabel = document.querySelector('.picture__question');
+    pictureLabel.innerText = pictureQuestionChosen;
+
+    var cheminsReponses = data.movies;
+    shuffle(cheminsReponses);
+    var moviePoster = cheminsReponses[0][6];
+    var movieName = cheminsReponses[0][0];
+    console.log(movieName);
+    var pictureDiv = document.querySelector('.picture__picture');
+    var pictureImg = pictureDiv.querySelector('img');
+    pictureImg.src = moviePoster;
+    pictureImg.alt = movieName;
+
+    pictureCheckAnswerAndDisplayNextQuestion(data,movieName);
 }
 
-function choisirPosterShinyAleatoire() {
-    const cheminDossier = "./assets/images/shiny";
-    const posters = ["alien.jpg", "poster2.jpg", "poster3.jpg"]; // Liste des noms de fichiers de vos images
+function pictureCheckAnswerAndDisplayNextQuestion(data,movieName) {
+    var pictureInput = document.querySelector('.picture__input');
+    var pictureSubmit = document.querySelector('.picture__confirm');
+    var data = jsonData;
+    console.log(movieName);
 
-    const indexAleatoire = Math.floor(Math.random() * posters.length);
-    const posterChoisi = posters[indexAleatoire];
-    const cheminPoster = `${cheminDossier}/${posterChoisi}`;
+    pictureSubmit.addEventListener('click', function(){
+        console.log(pictureInput.value);
+        if (pictureInput.value === movieName) {
+            score = score + 1;
+            console.log(score);
+        } else {
+            life = life - 1;
+            console.log(life);
+        }
+    
+        if (questionNumber < 20 && life > 0) {
+            pictureGame.classList.add('hidden');
+            ChooseQuestion(data);
+            pictureInput.value = [];
+        } else if (life === 0) {
+            questionsSection.classList.add('hidden');
+        }
+    })
+    
 
-    return cheminPoster;
 }
 
-function afficherShinyPoster(cheminPoster) {
-    posterImage.src = cheminPoster;
-
-}
-
-var Alien = localStorage.getItem("Alien")
-
-if (Alien === "Y") {
-    posters.slice('alien.jpg');
+/*function getRandomIntInclusive(min,max) {
+    min= Math.ceil(min);
+    max=Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }*/

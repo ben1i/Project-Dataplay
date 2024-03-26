@@ -50,7 +50,16 @@
     </section>
 
   <section class="jeu">
-    <div class="rank">
+    <div class="top">
+      <div class="top__lives">
+        <img src="./assets/images/heatbeat2.gif" alt="">
+      </div>
+      <div class="top__music">
+        <img src="./assets/images/music.svg" alt="">
+      </div>
+    </div>
+
+    <div class="rank hidden">
       <h2 class="rank__question">Question</h2>
       <p class="rank__instructions">Sélectionne les cartes et dépose les dans le bon ordre</p>
       <div class="rank__slot"><p class="rank__p">1.</p></div>
@@ -59,9 +68,10 @@
       <div class="rank__slot"><p class="rank__p">4.</p></div>
       <div class="rank__slot"><p class="rank__p">5.</p></div>
       <div class="answer"></div>
-     <button class="rank__next">Valider</button>
+     <button class="rank__next">Valider</button>    
+    </div>
 
-      <div class="picture hidden">
+      <div class="picture">
         <h2 class="picture__question">Question</h2>
 
         <div class="picture__picture">
@@ -72,10 +82,10 @@
 
         <button class="picture__confirm">Valider</button>
       </div>
-      <button class="rank__next">Valider</button>
-    </div>
 
-      <div class="trueorfalse hidden">
+
+
+      <div class="trueorfalse">
         <h2 class="trueorfalse__question">Question</h2>
         <div class="trueorfalse__radio">
           <div class="trueorfalse__option">
@@ -110,8 +120,9 @@
       </div>
 
       <div class="thisorthat hidden">
-        <h2 class="thisorthat__question">Question</h2>
+
         <div class="sidebyside">
+          <h2 class="thisorthat__question">Question</h2>
           <div class="sidebyside__left">
             <p class="sidebyside__p sidebyside__p--left">Nom du Film</p>
           </div>

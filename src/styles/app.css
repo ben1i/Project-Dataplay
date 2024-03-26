@@ -80,7 +80,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
-  overflow: hidden;
 }
 
 .home {
@@ -140,7 +139,61 @@ body {
   background-position-y: center;
 }
 
+.top {
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  height: 5.06em;
+  width: 100%;
+}
+.top__lives {
+  right: 0;
+  height: 3.38em;
+  width: 3.38em;
+  border-radius: 50%;
+  background: conic-gradient(rgb(129, 0, 0) 360deg, black 0deg);
+  margin-left: auto;
+  overflow: hidden;
+}
+.top__lives img {
+  width: 3.38em;
+  height: 3.38em;
+}
+.top__music {
+  margin: 1.5em;
+  width: 3.38em;
+  height: 3.38em;
+}
+.top__music img {
+  width: 3.38em;
+  height: 3.38em;
+}
+.top__music img:hover {
+  cursor: pointer;
+}
+
+.livestwothird {
+  transition: 0.2s;
+  background: conic-gradient(rgb(129, 0, 0) 240deg, black 0deg);
+}
+
+.livesonethird {
+  transition: 0.2s;
+  background: conic-gradient(rgb(129, 0, 0) 120deg, black 0deg);
+}
+
+.liveszerothird {
+  transition: 0.2s;
+  background: conic-gradient(rgb(129, 0, 0) 0deg, black 0deg);
+}
+
 .rank {
+  height: 100vh;
   transition: 0.5s;
   text-align: center;
 }

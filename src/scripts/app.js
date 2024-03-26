@@ -109,28 +109,6 @@ $(document).ready(function() {
 
 
 
-    /*$(".rank__slot").droppable({
-        accept: ".answer__card", // Accepter seulement les cartes pour le drop
-        drop: function(event, ui) {
-            var slotNumber = $(this).data('number'); // Numéro de l'emplacement
-            var cardNumber = ui.draggable.data('number'); // Numéro de la carte droppée
-            
-            // Vérifier si la carte droppée est dans le bon emplacement
-            if (slotNumber === cardNumber) {
-                // La carte est dans le bon emplacement
-                console.log('correct')
-                $(this).addClass('correct');
-                ui.draggable.addClass('correct').draggable('disable'); // Marquer la carte comme correcte et la désactiver
-            } else {
-                // La carte est dans le mauvais emplacement
-                console.log('incorrect')
-                $(this).addClass('incorrect');
-                ui.draggable.addClass('incorrect');
-            }
-        }
-    });*/
-
-
 var score;
 var life;
 

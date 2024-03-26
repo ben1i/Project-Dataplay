@@ -78,7 +78,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    overflow: hidden;
+    //overflow: hidden;
 }
 .home{
     height: 100vh;
@@ -139,9 +139,61 @@ body {
 
         }
     }
+    .top{
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        height: 5.06em;
+        width: 100%;
+
+        &__lives{
+        right: 0;
+        height: 3.38em;
+        width: 3.38em;
+        border-radius: 50%;
+        background: conic-gradient(rgb(129, 0, 0) 360deg, black 0deg);
+        margin-left: auto;
+        overflow: hidden;
+        & img{
+        width: 3.38em;
+        height: 3.38em;
+        }
+        }
+        &__music{
+            margin: 1.5em;
+            width: 3.38em;
+            height: 3.38em;
+                    & img{
+            width: 3.38em;
+            height: 3.38em;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        }
+    }
+
+
+.livestwothird{
+    transition: 0.2s;
+    background: conic-gradient(rgb(129, 0, 0) 240deg, black 0deg);
+}
+.livesonethird{
+    transition: 0.2s;
+    background: conic-gradient(rgb(129, 0, 0) 120deg, black 0deg);
+}
+.liveszerothird{
+    transition: 0.2s;
+    background: conic-gradient(rgb(129, 0, 0) 0deg, black 0deg);
+}
 
     .rank{
-
+        height: 100vh;
         transition: 0.5s;
         text-align: center;
         &__question{
@@ -165,21 +217,19 @@ body {
            
         }
         &__next{
-            position: absolute;
-            right: 2.50em;
+            transition: 0.2s;
             padding: 0 1.50em;
-            font-family: sprat;
+            font-family: spratbold;
             font-size: 1.50em;
             color: white;
+            margin: 1em;
             background: none;
             border: none;
-                &:hover{
-                    cursor: pointer;
-                    background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
-                    background-size: 1em;
-                    background-repeat: no-repeat;
-                    background-position-y:center
-                }
+            &:hover{
+                transition: 0.2s;
+                cursor: pointer;
+                background-color: rgb(81, 0, 0);
+            }
             }
 
         }
@@ -269,6 +319,21 @@ body {
             border-style:solid;
             border-color: rgb(255, 255, 255);
             border-width: 0.20em;
+        }
+        &__confirm{
+            transition: 0.2s;
+            padding: 0 1.50em;
+            font-family: spratbold;
+            font-size: 1.50em;
+            color: white;
+            margin: 1em;
+            background: none;
+            border: none;
+            &:hover{
+                transition: 0.2s;
+                cursor: pointer;
+                background-color: rgb(81, 0, 0);
+            }
         }
         @media(min-width: 1200px){
             .picture__input{

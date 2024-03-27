@@ -178,17 +178,14 @@ body {
 }
 
 .livestwothird {
-  transition: 0.2s;
   background: conic-gradient(rgb(129, 0, 0) 240deg, black 0deg);
 }
 
 .livesonethird {
-  transition: 0.2s;
   background: conic-gradient(rgb(129, 0, 0) 120deg, black 0deg);
 }
 
 .liveszerothird {
-  transition: 0.2s;
   background: conic-gradient(rgb(129, 0, 0) 0deg, black 0deg);
 }
 

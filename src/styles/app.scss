@@ -184,7 +184,7 @@ body {
 
 }
 .livesonethird{
-    background-image: url(../assets/images/SVG/lives-one-thirds.svg);
+    background-image: url(../assets/images/SVG/lives-one-third.svg);
 }
 .liveszerothird{
     background: none;
@@ -267,7 +267,6 @@ body {
         justify-content: center;
         flex-flow: row wrap;
         &__card{
-            transition: 0.2s;
             padding: 1em 3.38em;
             background-color: rgb(81, 0, 0);
             margin: 1em 1.50em;

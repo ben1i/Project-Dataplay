@@ -27,8 +27,6 @@ $(document).ready(function() {
 
     }
 
-
-
     $(".rank__slot").each(function(index){
         $(this).data('number',slotsnumbers[index]);
         $(this).droppable({
@@ -49,9 +47,6 @@ $(document).ready(function() {
 
     }
 
-    $(".answer__card").hover(function(){
-        $(".rank").toggleClass("hovered")
-    })
 
 
 

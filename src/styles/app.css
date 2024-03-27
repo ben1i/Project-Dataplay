@@ -155,10 +155,10 @@ body {
   right: 0;
   height: 3.38em;
   width: 3.38em;
-  border-radius: 50%;
-  background: conic-gradient(rgb(129, 0, 0) 360deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-full.svg);
+  background-repeat: no-repeat;
   margin-left: auto;
-  overflow: hidden;
+  background-size: 3.38em;
 }
 .top__lives img {
   width: 3.38em;
@@ -178,18 +178,15 @@ body {
 }
 
 .livestwothird {
-  transition: 0.2s;
-  background: conic-gradient(rgb(129, 0, 0) 240deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-two-thirds.svg);
 }
 
 .livesonethird {
-  transition: 0.2s;
-  background: conic-gradient(rgb(129, 0, 0) 120deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-one-thirds.svg);
 }
 
 .liveszerothird {
-  transition: 0.2s;
-  background: conic-gradient(rgb(129, 0, 0) 0deg, black 0deg);
+  background: none;
 }
 
 .rank {
@@ -501,6 +498,16 @@ body {
 }
 .totradio {
   margin-top: 50%;
+}
+.youlose {
+  text-align: center;
+  height: 100vh;
+}
+.youlose__title {
+  font-family: spratbold;
+  font-size: 3.38em;
+  margin-bottom: 1em;
+  color: rgb(255, 0, 0);
 }
 
 /*.test__img {

@@ -1307,11 +1307,84 @@
     "questions" : [
         [
             "Parmi ces 4 films, lequel a gagné le plus au box-office mondial ?",
-            "Parmi ces 4 films, lequel a gagné le moins au box-office mondial ?"
+            "Parmi ces 4 films, lequel a gagné le moins au box-office mondial ?",
+            "Combien d'oscars a gagné ce film ?",
+            "Parmi ces 4 films, lequel a le plus d'acteurs ?",
+            "En se basant seulement sur les posters, quel film a gagné le plus au box-office ?",
+            "Parmi ces 4 films, lequel est le plus vieux ?",
+            "Parmi ces 4 films, lequel a gagné le plus d'oscars ?",
+            "Parmi ces 4 films, lequel a le moins de morts ?",
+            "Parmi ces 4 films, lequel a le plus de morts ?",
+            "Parmi ces 4 films, lequel est sorti en 2017 ?",
+            "Lequel des développeurs a vu le plus de film d'horreur ?"
         ],
 
         [
-          "À quel film appartient ce poster ?"
+          "À quel film appartient ce poster ?",
+          "À qui appartient ce masque ?",
+          "Qui est ce personnage ?",
+          "À quel film appartient ce personnage ?",
+          "À quel film appartient cette scène ?",
+          "De quel film vient cette arme ?"
+        ],
+
+        [
+          [
+               "'Halloween' a été réalisé par John Carpenter. Vrai ou faux ?",
+               "true"
+          ],
+
+          [
+               "'The Texas Chainsaw Massacre' est basé sur des événements réels. Vrai ou faux ?",
+               "false"
+          ],
+
+          [
+               "Le film 'Poltergeist' a été réalisé par Steven Spielberg. Vrai ou faux ?",
+               "false"
+          ],
+
+          [
+               "'Le Cercle - The Ring' est un remake d'un film japonais. Vrai ou faux ?",
+               "true"
+          ],
+
+          [
+               "'Le Projet Blair Witch' est basé sur des événements réels. Vrai ou faux ?",
+               "false"
+          ],
+
+          [
+               "'Scream' a été réalisé par Wes Craven. Vrai ou faux ?",
+               "true"
+          ],
+
+          [
+               "'Paranormal Activity' est un film du genre 'Found Footage'. Vrai ou faux ?",
+               "true"
+          ],
+
+          [
+               "Le film 'Alien' a été réalisé par Stanley Kubrick. Vrai ou faux ?",
+               "false"
+          ],
+
+          [
+               "Le film 'Destination Finale' est célèbre pour ses nombreuses morts accidentelles. Vrai ou faux ?",
+               "true"
+          ]
+        ],
+
+        [
+          "Quel film a gagné le plus d'argent au box-office ?",
+          "Quel film a gagné le plus d'oscars ?",
+          "Quel film a le plus de morts ?"
+        ],
+
+        [
+          "Classez ces films d'horreurs selon leur budget de production, du plus bas au plus élevé.",
+          "Classez ces films d'horreurs selon le nombre d'acteurs dans le casting, du plus bas au plus élevé.",
+          "Classez ces films d'horreurs selon leur note sur le site Letterboxd, du plus bas au plus élevé."
         ]
     ],
 

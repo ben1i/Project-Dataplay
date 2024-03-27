@@ -215,21 +215,19 @@ body {
   border-width: 0.2em;
 }
 .rank__next {
-  position: absolute;
-  right: 2.5em;
+  transition: 0.2s;
   padding: 0 1.5em;
-  font-family: sprat;
+  font-family: spratbold;
   font-size: 1.5em;
   color: white;
+  margin: 1em;
   background: none;
   border: none;
 }
 .rank__next:hover {
+  transition: 0.2s;
   cursor: pointer;
-  background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
-  background-size: 1em;
-  background-repeat: no-repeat;
-  background-position-y: center;
+  background-color: rgb(81, 0, 0);
 }
 
 @media (min-width: 800px) {
@@ -266,7 +264,6 @@ body {
   flex-flow: row wrap;
 }
 .answer__card {
-  transition: 0.2s;
   padding: 1em 3.38em;
   background-color: rgb(81, 0, 0);
   margin: 1em 1.5em;
@@ -276,7 +273,6 @@ body {
 }
 .answer__card:active {
   transform: scale(0.9);
-  transition: 0.2s;
 }
 
 @media (min-width: 800px) {
@@ -314,6 +310,21 @@ body {
   border-style: solid;
   border-color: rgb(255, 255, 255);
   border-width: 0.2em;
+}
+.picture__confirm {
+  transition: 0.2s;
+  padding: 0 1.5em;
+  font-family: spratbold;
+  font-size: 1.5em;
+  color: white;
+  margin: 1em;
+  background: none;
+  border: none;
+}
+.picture__confirm:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: rgb(81, 0, 0);
 }
 @media (min-width: 1200px) {
   .picture .picture__input {
@@ -464,11 +475,13 @@ body {
     position: relative;
   }
   .sidebyside__left {
+    padding-top: 200px;
     padding: 1em;
     width: 50%;
     background-color: aqua;
   }
   .sidebyside__right {
+    padding-top: 200px;
     padding: 1em;
     background-color: red;
     width: 50%;
@@ -486,6 +499,10 @@ body {
     right: 1em;
   }
 }
+.totradio {
+  margin-top: 50%;
+}
+
 /*.test__img {
   width: 10%;
   animation: link2 10s;

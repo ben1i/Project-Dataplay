@@ -1,6 +1,6 @@
 "use strict"
 /*drag and drop*/
-$(document).ready(function() {
+
     var movienumbers = [ 1, 2, 3, 4, 5 ];
     var slotsnumbers = [ 1, 2, 3, 4, 5 ];
     
@@ -10,53 +10,66 @@ $(document).ready(function() {
 
     var cardcontainer = document.querySelector('.answer');
 
-    movienumbers.forEach(function(number){
-        const card = createCard(number);
-        cardcontainer.appendChild(card);        
+    //movienumbers.forEach(function(number){
+        //const card = createCard(number);
+        //cardcontainer.appendChild(card);        
 
-    })
-     $(".answer__card").draggable();
+    //})
+    
 
-    function createCard(number) {
+    function createCard(number, cheminNombre) {
         var card = document.createElement('div');
         card.classList.add('answer__card');
-        card.textContent = 'carte' + number;
-        card.setAttribute("data-number", number);
-
+        card.textContent = number;
+        card.setAttribute("data-number", cheminNombre);
+         $(card).draggable();
         return card;
 
     }
 
 
 
-    $(".rank__slot").each(function(index){
-        $(this).data('number',slotsnumbers[index]);
-        $(this).droppable({
-            accept: ".answer__card",
-            drop: handledrop
-        });
-    }) 
+    function slotNumber(slotsnumbers) {
+        $(".rank__slot").each(function(index){
+            $(this).data('number',slotsnumbers[index]);
+            $(this).droppable({
+                accept: ".answer__card",
+                drop: handledrop
+            });
+        })
+    }
+
+    var cardNumbersArray = [];
+    var cardNumbersArrayArray = [];
+
     function handledrop(event, ui){
         var slotNumber = $(this).data('number');
         var cardNumber = ui.draggable.data('number');
-        console.log(slotNumber, cardNumber)
+        console.log(slotNumber, cardNumber);
+
+        cardNumbersArray.push(cardNumber);
 
         if (slotNumber === cardNumber){
             console.log('correct')
         }else{
             console.log('incorrect')
         }
-
     }
+
+    $('#validerBtn').click(function() {
+        // Stockez les valeurs de cardNumber dans cardNumberArray
+        cardNumbersArray.forEach(function(cardNumber) {
+            cardNumbersArrayArray.push(cardNumber);
+        })
+    
+        // Affichez cardNumberArray dans la console
+        console.log(cardNumbersArrayArray);
+    });
 
     $(".answer__card").hover(function(){
         $(".rank").toggleClass("hovered")
     })
 
-
-
-
-});
     /*radio multipe*/
     var choice1 = document.querySelector('.multipleform__option--1');
     var choice2 = document.querySelector('.multipleform__option--2');
@@ -125,11 +138,16 @@ var homeSection = document.querySelector('.home');
 var questionsSection = document.querySelector('.jeu');
 
 var rankGame = document.querySelector('.rank');
+var rankSubmit = document.querySelector('.rank__next');
 
 var qcmLabel = document.querySelector('.multiplechoice');
 var qcmQuestion  = document.querySelector('.multiplechoice__question');
 
 var pictureGame = document.querySelector('.picture');
+
+var trueorfalseGame = document.querySelector('.trueorfalse');
+
+var thisorthatGame = document.querySelector('.thisorthat');
 
 var collectionButton = document.querySelector('.selection__button--3');
 var collectionSection = document.querySelector('.collection');
@@ -191,16 +209,27 @@ fetch('assets/json/data.json')
       });
 
 function ChooseQuestion(data, questionData) {
+    rankGame.classList.add('hidden');
+    qcmLabel.classList.add('hidden');
+    pictureGame.classList.add('hidden');
+    trueorfalseGame.classList.add('hidden');
+    thisorthatGame.classList.add('hidden');
+
     var questionData = data.questions;
-    var questionChosen = questionData[Math.floor(Math.random() * questionData.length)]; //Math.floor(Math.random() * questionData.length)
+    var questionChosen = questionData[4]; //Math.floor(Math.random() * questionData.length)
 
     homeSection.classList.add('hidden');
-    //rankGame.classList.remove('hidden');
     if (questionChosen === questionData[0]) {
         qcmQuestionLoader(data);
     } else if (questionChosen === questionData[1]) {
         pictureQuestionLoader(data);
-    }  
+    } else if (questionChosen === questionData[2]) {
+        trueorfalseQuestionLoader(data);
+    } else if (questionChosen === questionData[3]) {
+        thisorthatQuestionLoader(data);
+    } else if (questionChosen === questionData[4]) {
+        rankQuestionLoader(data);
+    }
 }
 
 function qcmQuestionLoader(data) {
@@ -306,20 +335,6 @@ function qcmQuestionLoader(data) {
                         
             console.log(validAnswertoGet);
         }
-
-        if (score === 10) {
-            var cheminMovies = cheminsReponses[Math.floor(Math.random() * cheminMovies.length)];
-            var chosenPoster = cheminMovies[6];
-            posterImage.src = chosenPoster;
-        }
-                    
-        /*if (score === 20) {
-            const cheminPoster = choisirPosterShinyAleatoire();
-            afficherShinyPoster(cheminPoster);
-            if (cheminPoster === "./assets/images/shiny/alien.jpg") {
-                localStorage.setItem("AlienShiny", "Y");
-            }
-        }*/
 }
 
 const radios = document.querySelectorAll('.multipleform__input');
@@ -339,6 +354,8 @@ radios.forEach((radio) => {
 });
 
 function checkAnswerAndDisplayNextQuestion(radioChosen,radio){ 
+    
+    Ambianceaudio;
 
     var data = jsonData;
 
@@ -354,14 +371,11 @@ function checkAnswerAndDisplayNextQuestion(radioChosen,radio){
 
     if (questionNumber < 20 && life > 0) {
         qcmLabel.classList.add('hidden');
+        Ambianceaudio.pause();
         ChooseQuestion(data);
     } else if (life === 0) {
         questionsSection.classList.add('hidden');
     }
-}
-
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
 }
 
 function pictureQuestionLoader(data) {
@@ -420,6 +434,370 @@ function pictureCheckAnswerAndDisplayNextQuestion(data,movieName) {
     
 
 }
+
+function trueorfalseQuestionLoader(data) {
+
+    questionsSection.classList.remove('hidden');
+    trueorfalseGame.classList.remove('hidden');
+
+    var cheminsAudio = data.musics;
+    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+    var Ambianceaudio = new Audio(cheminAleatoire);
+    Ambianceaudio.loop = true;
+
+    Ambianceaudio.play();
+
+    var trueorfalseQuestion = data.questions[2];
+    var trueorfalseQuestionChoose = trueorfalseQuestion[Math.floor(Math.random() * trueorfalseQuestion.length)];
+    var trueorfalseQuestionChosen = trueorfalseQuestionChoose[0];
+    var trueorfalseLabel = document.querySelector('.trueorfalse__question');
+    trueorfalseLabel.innerText = trueorfalseQuestionChosen;
+
+    var trueorfalsecheminsReponses = trueorfalseQuestionChoose[1];
+    console.log(trueorfalsecheminsReponses)
+
+    const radios = document.querySelectorAll('.tofradio');
+    console.log(radios);
+    radios.forEach((radio) => {
+        radio.addEventListener('click', () => {
+            console.log("test");
+            if (radio.checked) {
+                var radioChosen = radio.value;
+                console.log(radioChosen);
+
+                if (radioChosen === trueorfalsecheminsReponses) {
+                    score = score + 1;
+                    console.log(score);
+                    radio.checked = false;
+                } else {
+                    life = life - 1;
+                    console.log(life);
+                    radio.checked = false;
+                }
+            
+                if (questionNumber < 20 && life > 0) {
+                    qcmLabel.classList.add('hidden');
+                    ChooseQuestion(data);
+                } else if (life === 0) {
+                    questionsSection.classList.add('hidden');
+                }
+            };
+        });
+    });
+}
+
+function thisorthatQuestionLoader(data) {
+    questionsSection.classList.remove('hidden');
+    thisorthatGame.classList.remove('hidden');
+
+    var cheminsAudio = data.musics;
+    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+    var Ambianceaudio = new Audio(cheminAleatoire);
+    Ambianceaudio.loop = true;
+
+    Ambianceaudio.play();
+
+    var thisorthatQuestion = data.questions[3];
+    var thisorthatQuestionChosen = thisorthatQuestion[Math.floor(Math.random() * thisorthatQuestion.length)];
+    var trueorfalseLabel = document.querySelector('.thisorthat__question');
+    trueorfalseLabel.innerText = thisorthatQuestionChosen;
+
+    var thisorthatcheminsReponses = data.movies;
+    shuffle(thisorthatcheminsReponses);
+
+    var thisorthatDeadReponses  = data.moviesDeathCount;
+    shuffle(thisorthatDeadReponses);
+
+    if (thisorthatQuestionChosen === thisorthatQuestion[0]) {
+        var ReponseAleatoire1 = thisorthatcheminsReponses[0];
+        console.log(ReponseAleatoire1);
+        var thisorthatAnswer1Name = document.querySelector('.totradio--1');
+        thisorthatAnswer1Name.innerText = ReponseAleatoire1[0];
+        
+        var ReponseAleatoire2 = thisorthatcheminsReponses[1];
+        console.log(ReponseAleatoire2);
+        var thisorthatAnswer2Name = document.querySelector('.totradio--2');
+        thisorthatAnswer2Name.innerText = ReponseAleatoire2[0];
+
+        var thisorthatAnswer1BoxOffice = ReponseAleatoire1[1];
+        var thisorthatAnswer2BoxOffice = ReponseAleatoire2[1];
+
+        var validAnswer = thisorthatAnswer1BoxOffice;
+        validAnswertoGet = ReponseAleatoire1[0];
+
+        if (thisorthatAnswer2BoxOffice > validAnswer) {
+            validAnswer = thisorthatAnswer2BoxOffice;
+            validAnswertoGet = ReponseAleatoire2[0];
+        } 
+    } else if (thisorthatQuestionChosen === thisorthatQuestion[1]) {
+
+        var ReponseAleatoire1 = thisorthatcheminsReponses[0];
+        console.log(ReponseAleatoire1);
+        var thisorthatAnswer1Name = document.querySelector('.totradio--1');
+        thisorthatAnswer1Name.innerText = ReponseAleatoire1[0];
+        
+        var ReponseAleatoire2 = thisorthatcheminsReponses[1];
+        console.log(ReponseAleatoire2);
+        var thisorthatAnswer2Name = document.querySelector('.totradio--2');
+        thisorthatAnswer2Name.innerText = ReponseAleatoire2[0];
+        
+        var thisorthatAnswer1Oscars = ReponseAleatoire1[4];
+        var thisorthatAnswer2Oscars = ReponseAleatoire2[4];
+
+        var validAnswer = thisorthatAnswer1Oscars;
+        validAnswertoGet = ReponseAleatoire1[0];
+
+        if (thisorthatAnswer2Oscars === validAnswer) {
+            validAnswer = [thisorthatAnswer1Oscars,thisorthatAnswer2Oscars]
+            validAnswertoGet = [ReponseAleatoire1[0], ReponseAleatoire2[0]];
+        } else if (thisorthatAnswer2Oscars > validAnswer) {
+            validAnswer = thisorthatAnswer2Oscars;
+            validAnswertoGet = ReponseAleatoire2[0];
+        }
+
+        console.log(validAnswertoGet);
+    } else if (thisorthatQuestionChosen === thisorthatQuestion[2]) {
+        var deadReponseAleatoire1 = thisorthatDeadReponses[0];
+        console.log(deadReponseAleatoire1);
+        var thisorthatAnswer1Name = document.querySelector('.totradio--1');
+        thisorthatAnswer1Name.innerText = deadReponseAleatoire1[0];
+        
+        var deadReponseAleatoire2 = thisorthatDeadReponses[1];
+        console.log(deadReponseAleatoire2);
+        var thisorthatAnswer2Name = document.querySelector('.totradio--2');
+        thisorthatAnswer2Name.innerText = deadReponseAleatoire2[0];
+
+        var thisorthatAnswer1Oscars = deadReponseAleatoire1[4];
+        var thisorthatAnswer2Oscars = deadReponseAleatoire2[4];
+
+        var validAnswer = thisorthatAnswer1Oscars;
+        validAnswertoGet = deadReponseAleatoire1[0];
+
+        if (thisorthatAnswer2Oscars === validAnswer) {
+            validAnswer = [thisorthatAnswer1Oscars,thisorthatAnswer2Oscars]
+            validAnswertoGet = [deadReponseAleatoire1[0], deadReponseAleatoire2[0]];
+        } else if (thisorthatAnswer2Oscars > validAnswer) {
+            validAnswer = thisorthatAnswer2Oscars;
+        }
+    }
+
+    const radios = document.querySelectorAll('.totradio');
+    console.log(radios);
+    radios.forEach((radio) => {
+        radio.addEventListener('click', () => {
+            console.log("test");
+            if (radio.checked) {
+                const radioLabel = radio.nextElementSibling;
+                var radioChosen = radioLabel.textContent;
+        
+                console.log(radioChosen);
+                    
+                if (validAnswertoGet.length === 2) {
+                    if (radioChosen === validAnswertoGet[0] || radioChosen === validAnswertoGet[1]) {
+                        score = score + 1;
+                        console.log(score);
+                        radio.checked = false;
+                    } else {
+                        life = life - 1;
+                        console.log(life);
+                        radio.checked = false;
+                       }
+                } else if (validAnswertoGet === ReponseAleatoire1[0] || validAnswertoGet === ReponseAleatoire2[0]) {
+                    if (radioChosen === validAnswertoGet) {
+                        score = score + 1;
+                        console.log(score);
+                        radio.checked = false;
+                    } else {
+                        life = life - 1;
+                        console.log(life);
+                        radio.checked = false;
+                    }
+                }
+                
+                if (questionNumber < 20 && life > 0) {
+                    qcmLabel.classList.add('hidden');
+                    ChooseQuestion(data);
+                } else if (life === 0) {
+                    questionsSection.classList.add('hidden');
+                }
+            };
+        });
+    });
+}
+
+function rankQuestionLoader(data) {
+    questionsSection.classList.remove('hidden');
+    rankGame.classList.remove('hidden');
+
+    var cheminsAudio = data.musics;
+    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+    var Ambianceaudio = new Audio(cheminAleatoire);
+    Ambianceaudio.loop = true;
+
+    Ambianceaudio.play();
+
+    var rankQuestion = data.questions[4];
+    var rankQuestionChosen = rankQuestion[Math.floor(Math.random() * rankQuestion.length)];
+    var rankLabel = document.querySelector('.rank__question');
+    rankLabel.innerText = rankQuestionChosen;
+
+    var rankcheminsReponses = data.movies;
+    shuffle(rankcheminsReponses);
+
+    var rankBudgetReponses = data.moviesBudget;
+    shuffle(rankBudgetReponses);
+
+    if (rankQuestionChosen === rankQuestion[1] || rankQuestionChosen === rankQuestion[2]) {
+        console.log(rankQuestionChosen);
+        if (rankQuestionChosen === data.questions[4][1]) {
+            
+            var ReponseAleatoire1 = rankcheminsReponses[0][0];
+            console.log(ReponseAleatoire1);
+            var cheminNombre = rankcheminsReponses[0][3]
+            const card1 = createCard(ReponseAleatoire1, cheminNombre);
+            cardcontainer.appendChild(card1);
+
+            var ReponseAleatoire2 = rankcheminsReponses[1][0];
+            console.log(ReponseAleatoire2);
+            var cheminNombre = rankcheminsReponses[1][3];
+            const card2 = createCard(ReponseAleatoire2, cheminNombre);
+            cardcontainer.appendChild(card2);
+
+            var ReponseAleatoire3 = rankcheminsReponses[2][0];
+            console.log(ReponseAleatoire3);
+            var cheminNombre = rankcheminsReponses[2][3];
+            const card3 = createCard(ReponseAleatoire3,cheminNombre);
+            cardcontainer.appendChild(card3);
+
+            var ReponseAleatoire4 = rankcheminsReponses[3][0];
+            console.log(ReponseAleatoire4);
+            var cheminNombre = rankcheminsReponses[3][3];
+            const card4 = createCard(ReponseAleatoire4, cheminNombre);
+            cardcontainer.appendChild(card4);
+
+            var ReponseAleatoire5 = rankcheminsReponses[4][0];
+            console.log(ReponseAleatoire5);
+            var cheminNombre = rankcheminsReponses[4][3];
+            const card5 = createCard(ReponseAleatoire5, cheminNombre);
+            cardcontainer.appendChild(card5);
+
+            movienumbers = [rankcheminsReponses[0][3], rankcheminsReponses[1][3], rankcheminsReponses[2][3], rankcheminsReponses[3][3], rankcheminsReponses[4][3]];
+        } else if (rankQuestionChosen === data.questions[4][2]){
+            var ReponseAleatoire1 = rankcheminsReponses[0][0];
+            console.log(ReponseAleatoire1);
+            var cheminNombre = rankcheminsReponses[0][2];
+            const card1 = createCard(ReponseAleatoire1, cheminNombre);
+            cardcontainer.appendChild(card1);
+
+            var ReponseAleatoire2 = rankcheminsReponses[1][0];
+            console.log(ReponseAleatoire2);
+            var cheminNombre = rankcheminsReponses[1][2];
+            const card2 = createCard(ReponseAleatoire2, cheminNombre);
+            cardcontainer.appendChild(card2);
+
+            var ReponseAleatoire3 = rankcheminsReponses[2][0];
+            console.log(ReponseAleatoire3);
+            var cheminNombre = rankcheminsReponses[2][2];
+            const card3 = createCard(ReponseAleatoire3, cheminNombre);
+            cardcontainer.appendChild(card3);
+
+            var ReponseAleatoire4 = rankcheminsReponses[3][0];
+            console.log(ReponseAleatoire4);
+            var cheminNombre = rankcheminsReponses[3][2];
+            const card4 = createCard(ReponseAleatoire4, cheminNombre);
+            cardcontainer.appendChild(card4);
+
+            var ReponseAleatoire5 = rankcheminsReponses[4][0];
+            console.log(ReponseAleatoire5);
+            var cheminNombre = rankcheminsReponses[4][2];
+            const card5 = createCard(ReponseAleatoire5, cheminNombre);
+            cardcontainer.appendChild(card5);
+
+            movienumbers = [rankcheminsReponses[0][2], rankcheminsReponses[1][2], rankcheminsReponses[2][2], rankcheminsReponses[3][2], rankcheminsReponses[4][2]];
+        } 
+    } else if (rankQuestionChosen === rankQuestion[0]) {
+        var ReponseAleatoire1 = rankBudgetReponses[0][0];
+        console.log(ReponseAleatoire1);
+        var cheminNombre = rankBudgetReponses[0][1];
+        const card1 = createCard(ReponseAleatoire1, cheminNombre);
+        cardcontainer.appendChild(card1);
+
+        var ReponseAleatoire2 = rankBudgetReponses[1][0];
+        console.log(ReponseAleatoire2);
+        var cheminNombre = rankBudgetReponses[1][1];
+        const card2 = createCard(ReponseAleatoire2, cheminNombre);
+        cardcontainer.appendChild(card2);
+
+        var ReponseAleatoire3 = rankBudgetReponses[2][0];
+        console.log(ReponseAleatoire3);
+        var cheminNombre = rankBudgetReponses[2][1];
+        const card3 = createCard(ReponseAleatoire3, cheminNombre);
+        cardcontainer.appendChild(card3);
+
+        var ReponseAleatoire4 = rankBudgetReponses[3][0];
+        console.log(ReponseAleatoire4);
+        var cheminNombre = rankBudgetReponses[3][1];
+        const card4 = createCard(ReponseAleatoire4, cheminNombre);
+        cardcontainer.appendChild(card4);
+
+        var ReponseAleatoire5 = rankBudgetReponses[4][0];
+        console.log(ReponseAleatoire5);
+        var cheminNombre = rankBudgetReponses[4][1];
+        const card5 = createCard(ReponseAleatoire5, cheminNombre);
+        cardcontainer.appendChild(card5);
+
+        movienumbers = [rankBudgetReponses[0][1], rankBudgetReponses[1][1], rankBudgetReponses[2][1], rankBudgetReponses[3][1], rankBudgetReponses[4][1]];
+    }
+    
+    //movienumbers = [ReponseAleatoire1, ReponseAleatoire2, ReponseAleatoire3, ReponseAleatoire4, ReponseAleatoire5];
+    console.log(movienumbers);
+
+    slotsnumbers = movienumbers.sort(function(a,b){return b-a});
+    console.log(slotsnumbers);
+    slotNumber(slotsnumbers);
+
+
+
+    rankSubmit.addEventListener('click', function() {
+
+        cardNumbersArray;
+
+        if (slotNumber === trueorfalsecheminsReponses) {
+            score = score + 1;
+            console.log(score);
+            radio.checked = false;
+        } else {
+            life = life - 1;
+            console.log(life);
+            radio.checked = false;
+        }
+    
+        if (questionNumber < 20 && life > 0) {
+            qcmLabel.classList.add('hidden');
+            ChooseQuestion(data);
+        } else if (life === 0) {
+            questionsSection.classList.add('hidden');
+        }
+    })
+}
+
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+}
+
+/*if (score === 10) {
+    var cheminMovies = cheminsReponses[Math.floor(Math.random() * cheminMovies.length)];
+    var chosenPoster = cheminMovies[6];
+    posterImage.src = chosenPoster;
+}
+            
+if (score === 20) {
+    const cheminPoster = choisirPosterShinyAleatoire();
+    afficherShinyPoster(cheminPoster);
+    if (cheminPoster === "./assets/images/shiny/alien.jpg") {
+        localStorage.setItem("AlienShiny", "Y");
+    }
+}*/
 
 /*function getRandomIntInclusive(min,max) {
     min= Math.ceil(min);

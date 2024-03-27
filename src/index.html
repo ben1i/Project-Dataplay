@@ -68,10 +68,10 @@
       <div class="rank__slot"><p class="rank__p">4.</p></div>
       <div class="rank__slot"><p class="rank__p">5.</p></div>
       <div class="answer"></div>
-     <button class="rank__next">Valider</button>    
+     <button class="rank__next" id="validerBtn">Valider</button>    
     </div>
 
-      <div class="picture">
+      <div class="picture hidden">
         <h2 class="picture__question">Question</h2>
 
         <div class="picture__picture">
@@ -85,14 +85,16 @@
 
 
 
-      <div class="trueorfalse">
+      <div class="trueorfalse hidden">
         <h2 class="trueorfalse__question">Question</h2>
         <div class="trueorfalse__radio">
           <div class="trueorfalse__option">
-            <input name="tofradio" id="true" type="radio">Vrai
+            <input name="tofradio" value="true" type="radio" class="tofradio">
+            <label for="true" class="toflabel">Vrai</label>
           </div>
           <div class="trueorfalse__option">
-            <input name="tofradio" id="false" type="radio">Faux
+            <input name="tofradio" value="false" type="radio" class="tofradio">
+            <label for="false" class="toflabel">Faux</label>
           </div>
         </div>
       </div>
@@ -124,10 +126,12 @@
         <div class="sidebyside">
           <h2 class="thisorthat__question">Question</h2>
           <div class="sidebyside__left">
-            <p class="sidebyside__p sidebyside__p--left">Nom du Film</p>
+            <input type="radio" id="totradio--1" name="totradio" class="totradio">
+            <label for="totradio--1" class="totradio--1">Nom du film</label>
           </div>
           <div class="sidebyside__right">
-            <p class="sidebyside__p sidebyside__p--right">Nom du Film</p>
+            <input type="radio" id="totradio--2" name="totradio" class="totradio">
+            <label for="totradio--2" class="totradio--2">Nom du film</label>
           </div>
         </div>
       </div>

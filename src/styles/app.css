@@ -155,10 +155,10 @@ body {
   right: 0;
   height: 3.38em;
   width: 3.38em;
-  border-radius: 50%;
-  background: conic-gradient(rgb(129, 0, 0) 360deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-full.svg);
+  background-repeat: no-repeat;
   margin-left: auto;
-  overflow: hidden;
+  background-size: 3.38em;
 }
 .top__lives img {
   width: 3.38em;
@@ -178,15 +178,15 @@ body {
 }
 
 .livestwothird {
-  background: conic-gradient(rgb(129, 0, 0) 240deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-two-thirds.svg);
 }
 
 .livesonethird {
-  background: conic-gradient(rgb(129, 0, 0) 120deg, black 0deg);
+  background-image: url(../assets/images/SVG/lives-one-thirds.svg);
 }
 
 .liveszerothird {
-  background: conic-gradient(rgb(129, 0, 0) 0deg, black 0deg);
+  background: none;
 }
 
 .rank {
@@ -212,21 +212,19 @@ body {
   border-width: 0.2em;
 }
 .rank__next {
-  position: absolute;
-  right: 2.5em;
+  transition: 0.2s;
   padding: 0 1.5em;
-  font-family: sprat;
+  font-family: spratbold;
   font-size: 1.5em;
   color: white;
+  margin: 1em;
   background: none;
   border: none;
 }
 .rank__next:hover {
+  transition: 0.2s;
   cursor: pointer;
-  background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
-  background-size: 1em;
-  background-repeat: no-repeat;
-  background-position-y: center;
+  background-color: rgb(81, 0, 0);
 }
 
 @media (min-width: 800px) {
@@ -311,6 +309,21 @@ body {
   border-style: solid;
   border-color: rgb(255, 255, 255);
   border-width: 0.2em;
+}
+.picture__confirm {
+  transition: 0.2s;
+  padding: 0 1.5em;
+  font-family: spratbold;
+  font-size: 1.5em;
+  color: white;
+  margin: 1em;
+  background: none;
+  border: none;
+}
+.picture__confirm:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: rgb(81, 0, 0);
 }
 @media (min-width: 1200px) {
   .picture .picture__input {
@@ -483,6 +496,17 @@ body {
     right: 1em;
   }
 }
+.youlose {
+  text-align: center;
+  height: 100vh;
+}
+.youlose__title {
+  font-family: spratbold;
+  font-size: 3.38em;
+  margin-bottom: 1em;
+  color: rgb(255, 0, 0);
+}
+
 /*.test__img {
   width: 10%;
   animation: link2 10s;

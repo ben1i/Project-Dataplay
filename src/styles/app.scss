@@ -104,7 +104,7 @@ body {
         }
         &__subtitle{
             max-width: 90%;
-            margin: 1em auto;
+            margin: 2.25em auto;
             text-align: center;
             color: rgb(255, 0, 0);
             font-size: 2.25em;
@@ -131,7 +131,7 @@ body {
             }
             &__subtitle{
                 max-width: 90%;
-                margin: 2.25em auto;
+                margin: 3.38em auto;
                 text-align: center;
                 color: rgb(255, 0, 0);
                 font-size: 2.25em;
@@ -152,7 +152,11 @@ body {
             margin: 1em;
             background: none;
             border: none;
+       & a{
+            color: white;
         }
+    }
+        
         &__button:hover{
             cursor: pointer;
             background-image: url(../assets/images/right-arrow-svgrepo-com.svg);
@@ -214,6 +218,7 @@ body {
 }
 
     .rank{
+        padding: 1.50em;
         height: 100vh;
         transition: 0.5s;
         text-align: center;
@@ -498,7 +503,7 @@ body {
         }
     }
 }
-@media(min-width: 1200px) {
+@media(min-width: 800px) {
     .sidebyside{
         display: flex;
         flex-flow: row;
@@ -552,7 +557,7 @@ body {
 
     }}
 .totradio {
-    margin-top: 50%;
+    bottom: 0;
 }
 
 /*.test__img {

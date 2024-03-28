@@ -40,31 +40,24 @@
     }
 
     var cardNumbersArray = [];
-    var cardNumbersArrayArray = [];
 
     function handledrop(event, ui){
         var slotNumber = $(this).data('number');
         var cardNumber = ui.draggable.data('number');
         console.log(slotNumber, cardNumber);
 
-        cardNumbersArray.push(cardNumber);
-
-        if (slotNumber === cardNumber){
-            console.log('correct')
-        }else{
-            console.log('incorrect')
+        if (cardNumber === slotNumber) {
+            cardNumbersArray.push(cardNumber);
+            console.log(cardNumbersArray)
         }
     }
 
-    $('#validerBtn').click(function() {
+    /*$('#validerBtn').click(function() {
         // Stockez les valeurs de cardNumber dans cardNumberArray
         cardNumbersArray.forEach(function(cardNumber) {
             cardNumbersArrayArray.push(cardNumber);
         })
-    
-        // Affichez cardNumberArray dans la console
-        console.log(cardNumbersArrayArray);
-    });
+    });*/
 
     $(".answer__card").hover(function(){
         $(".rank").toggleClass("hovered")
@@ -125,13 +118,6 @@
 var score;
 var life;
 
-var posterContainer = document.querySelector('.test__img');
-var posterImage = posterContainer.querySelector('img');
-
-var posters = ["alien.jpg", "blairwitch.jpg", "carrie.jpg", "dawnofthedead.jpg", "elmstreet.jpg", "exorcist.jpg", "halloween.jpg", "hellraiser.jpg", "it.jpg", "jaws.jpg", "nightofthelivingdead.jpg", "omen.jpg", "psycho.jpg", "rosemarysbaby.jpg", "shining.jpg", "suspiria.jpg", "texaschainsawmassacre.jpg", "theevildead.jpg", "thering.jpg", "thething.jpg"];
-
-var testText = document.querySelector('.test__text');
-
 var startButton = document.querySelector('.selection__button--1');
 var homeSection = document.querySelector('.home');
 
@@ -156,7 +142,13 @@ var questionNumber = 0;
 
 var jsonData;
 
-var validAnswertoGet
+var validAnswertoGet;
+
+var lifeVisu = document.querySelector('.top__lives');
+
+
+var imageBasic = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55];
+var imageShiny = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55];
 
 
 fetch('assets/json/data.json')
@@ -176,6 +168,9 @@ fetch('assets/json/data.json')
             const hoverAudio = new Audio(Sounds[1]);
             hoverAudio.play()
         })
+
+        pointstoposter();
+        postertowatch();
 
         collectionButton.addEventListener('click', function() {
             homeSection.classList.add('home--animation');
@@ -198,6 +193,10 @@ fetch('assets/json/data.json')
             startAudio.play();
             
             setTimeout(function() {
+
+                homeSection.classList.add('hidden');
+                questionsSection.classList.remove('hidden');
+
                 ChooseQuestion(data);
             }, 4860);
             
@@ -214,9 +213,23 @@ function ChooseQuestion(data, questionData) {
     pictureGame.classList.add('hidden');
     trueorfalseGame.classList.add('hidden');
     thisorthatGame.classList.add('hidden');
+    
+    if (Ambianceaudio) {
+        Ambianceaudio.pause();
+    }
+
+    var cheminsAudio = data.musics;
+    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
+    var Ambianceaudio = new Audio(cheminAleatoire);
+    Ambianceaudio.loop = true;
+    Ambianceaudio.play();
+
+    lifeheart();
+    pointstoposter();
+    postertowatch();
 
     var questionData = data.questions;
-    var questionChosen = questionData[4]; //Math.floor(Math.random() * questionData.length)
+    var questionChosen = questionData[Math.floor(Math.random() * questionData.length)]; //Math.floor(Math.random() * questionData.length)
 
     homeSection.classList.add('hidden');
     if (questionChosen === questionData[0]) {
@@ -236,54 +249,36 @@ function qcmQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
     qcmLabel.classList.remove('hidden');
 
-        var cheminsAudio = data.musics;
-        var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-        var Ambianceaudio = new Audio(cheminAleatoire);
-        Ambianceaudio.loop = true;
-
-        Ambianceaudio.play();
-
         var questionQcm = data.questions[0];
         var qcmChosenQuestion = questionQcm[Math.floor(Math.random() * questionQcm.length)];
         qcmQuestion.innerText = qcmChosenQuestion;
-                    
-        var cheminsReponses = data.movies;
-        shuffle(cheminsReponses);
-        console.log(cheminsReponses[0][0]);
-                    
-        //var RandomNumber1 = Math.floor(Math.random() * cheminsReponses.length);
-        //console.log(RandomNumber1);
-        var ReponseAleatoire1 = cheminsReponses[0];
-        console.log(ReponseAleatoire1);
-        var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
-        qcmAnswer1Name.innerText = ReponseAleatoire1[0];
-        //cheminsReponses.splice(RandomNumber1);
-
-        //var RandomNumber2 = Math.floor(Math.random() * cheminsReponses.length);
-        //console.log(RandomNumber2);
-        var ReponseAleatoire2 = cheminsReponses[1];
-        console.log(ReponseAleatoire2);
-        var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
-        qcmAnswer2Name.innerText = ReponseAleatoire2[0];
-        //cheminsReponses.splice(RandomNumber2);
-
-        //var RandomNumber3 = Math.floor(Math.random() * cheminsReponses.length);
-        //console.log(RandomNumber3);
-        var ReponseAleatoire3 = cheminsReponses[2];
-        console.log(ReponseAleatoire3);
-        var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
-        qcmAnswer3Name.innerText = ReponseAleatoire3[0];
-        //cheminsReponses.splice(RandomNumber3);
-
-        //var RandomNumber4 = Math.floor(Math.random() * cheminsReponses.length);
-        //console.log(RandomNumber4);
-        var ReponseAleatoire4 = cheminsReponses[3];
-        console.log(ReponseAleatoire4);
-        var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
-        qcmAnswer4Name.innerText = ReponseAleatoire4[0];
-        //cheminsReponses.splice(RandomNumber4);
 
         if (qcmChosenQuestion === questionQcm[0]) {
+
+            var cheminsReponses = data.movies;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+                    
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
             var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
             var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
             var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
@@ -310,6 +305,31 @@ function qcmQuestionLoader(data) {
             console.log(validAnswertoGet);
                     
         } else if (qcmChosenQuestion === questionQcm[1]) {
+
+            var cheminsReponses = data.movies;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
             var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
             var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
             var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
@@ -334,6 +354,276 @@ function qcmQuestionLoader(data) {
             }
                         
             console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === questionQcm[2]) {
+
+            var cheminsReponses = data.movies;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[3];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[3];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[3];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[3];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[0];
+
+            if (qcmAnswer2BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[0];
+            }
+
+            if (qcmAnswer3BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[0];
+            }
+
+            if (qcmAnswer4BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[0];
+            }
+                        
+            console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === questionQcm[3]) {
+            
+            var cheminsReponses = data.movies;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[5];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[5];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[5];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[5];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[5];
+
+            if (qcmAnswer2BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[5];
+            }
+
+            if (qcmAnswer3BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[5];
+            }
+
+            if (qcmAnswer4BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[5];
+            }
+                        
+            console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === questionQcm[4]) {
+
+            var cheminsReponses = data.movies;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+            
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[4];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[4];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[4];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[4];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[4];
+
+            if (qcmAnswer2BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[4];
+            }
+
+            if (qcmAnswer3BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[4];
+            }
+
+            if (qcmAnswer4BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[4];
+            }
+                        
+            console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === questionQcm[5]) {
+
+            var cheminsReponses = data.moviesDeathCount;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+            
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[1];
+
+            if (qcmAnswer2BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[1];
+            }
+
+            if (qcmAnswer3BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[1];
+            }
+
+            if (qcmAnswer4BoxOffice < validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[1];
+            }
+                        
+            console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === qcmQuestion[6]) {
+
+            var cheminsReponses = data.moviesDeathCount;
+            shuffle(cheminsReponses);
+            console.log(cheminsReponses[0][0]);
+            
+            var ReponseAleatoire1 = cheminsReponses[0];
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = cheminsReponses[1];
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = cheminsReponses[2];
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            var ReponseAleatoire4 = cheminsReponses[3];
+            console.log(ReponseAleatoire4);
+            var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
+            qcmAnswer4Name.innerText = ReponseAleatoire4[0];
+
+            var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
+            var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
+            var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
+            var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
+
+            var validAnswer = qcmAnswer1BoxOffice;
+            validAnswertoGet = ReponseAleatoire1[1];
+
+            if (qcmAnswer2BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer2BoxOffice;
+                validAnswertoGet = ReponseAleatoire2[1];
+            }
+
+            if (qcmAnswer3BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer3BoxOffice;
+                validAnswertoGet = ReponseAleatoire3[1];
+            }
+
+            if (qcmAnswer4BoxOffice > validAnswer) {
+                validAnswer = qcmAnswer4BoxOffice;
+                validAnswertoGet = ReponseAleatoire4[1];
+            }
+                        
+            console.log(validAnswertoGet);
+        } else if (qcmChosenQuestion === qcmQuestion[7]) {
+            
+            var ReponseAleatoire1 = "Benjamin";
+            console.log(ReponseAleatoire1);
+            var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
+            qcmAnswer1Name.innerText = ReponseAleatoire1[0];
+
+            var ReponseAleatoire2 = "Pearl";
+            console.log(ReponseAleatoire2);
+            var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
+            qcmAnswer2Name.innerText = ReponseAleatoire2[0];
+
+            var ReponseAleatoire3 = "Célia";
+            console.log(ReponseAleatoire3);
+            var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
+            qcmAnswer3Name.innerText = ReponseAleatoire3[0];
+
+            validAnswertoGet = ReponseAleatoire1;
+                        
+            console.log(validAnswertoGet);
         }
 }
 
@@ -354,8 +644,6 @@ radios.forEach((radio) => {
 });
 
 function checkAnswerAndDisplayNextQuestion(radioChosen,radio){ 
-    
-    Ambianceaudio;
 
     var data = jsonData;
 
@@ -371,7 +659,6 @@ function checkAnswerAndDisplayNextQuestion(radioChosen,radio){
 
     if (questionNumber < 20 && life > 0) {
         qcmLabel.classList.add('hidden');
-        Ambianceaudio.pause();
         ChooseQuestion(data);
     } else if (life === 0) {
         questionsSection.classList.add('hidden');
@@ -381,13 +668,6 @@ function checkAnswerAndDisplayNextQuestion(radioChosen,radio){
 function pictureQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
     pictureGame.classList.remove('hidden');
-
-    var cheminsAudio = data.musics;
-    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-    var Ambianceaudio = new Audio(cheminAleatoire);
-    Ambianceaudio.loop = true;
-
-    Ambianceaudio.play();
 
     var pictureQuestion = data.questions[1];
     var pictureQuestionChosen = pictureQuestion[Math.floor(Math.random() * pictureQuestion.length)];
@@ -440,13 +720,6 @@ function trueorfalseQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
     trueorfalseGame.classList.remove('hidden');
 
-    var cheminsAudio = data.musics;
-    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-    var Ambianceaudio = new Audio(cheminAleatoire);
-    Ambianceaudio.loop = true;
-
-    Ambianceaudio.play();
-
     var trueorfalseQuestion = data.questions[2];
     var trueorfalseQuestionChoose = trueorfalseQuestion[Math.floor(Math.random() * trueorfalseQuestion.length)];
     var trueorfalseQuestionChosen = trueorfalseQuestionChoose[0];
@@ -490,13 +763,6 @@ function thisorthatQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
     thisorthatGame.classList.remove('hidden');
 
-    var cheminsAudio = data.musics;
-    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-    var Ambianceaudio = new Audio(cheminAleatoire);
-    Ambianceaudio.loop = true;
-
-    Ambianceaudio.play();
-
     var thisorthatQuestion = data.questions[3];
     var thisorthatQuestionChosen = thisorthatQuestion[Math.floor(Math.random() * thisorthatQuestion.length)];
     var trueorfalseLabel = document.querySelector('.thisorthat__question');
@@ -528,7 +794,7 @@ function thisorthatQuestionLoader(data) {
         if (thisorthatAnswer2BoxOffice > validAnswer) {
             validAnswer = thisorthatAnswer2BoxOffice;
             validAnswertoGet = ReponseAleatoire2[0];
-        } 
+        }
     } else if (thisorthatQuestionChosen === thisorthatQuestion[1]) {
 
         var ReponseAleatoire1 = thisorthatcheminsReponses[0];
@@ -628,13 +894,6 @@ function thisorthatQuestionLoader(data) {
 function rankQuestionLoader(data) {
     questionsSection.classList.remove('hidden');
     rankGame.classList.remove('hidden');
-
-    var cheminsAudio = data.musics;
-    var cheminAleatoire = cheminsAudio[Math.floor(Math.random() * cheminsAudio.length)];
-    var Ambianceaudio = new Audio(cheminAleatoire);
-    Ambianceaudio.loop = true;
-
-    Ambianceaudio.play();
 
     var rankQuestion = data.questions[4];
     var rankQuestionChosen = rankQuestion[Math.floor(Math.random() * rankQuestion.length)];
@@ -762,21 +1021,21 @@ function rankQuestionLoader(data) {
 
         cardNumbersArray;
 
-        if (slotNumber === trueorfalsecheminsReponses) {
+        if (cardNumbersArray.length === 5) {
             score = score + 1;
             console.log(score);
-            radio.checked = false;
         } else {
             life = life - 1;
             console.log(life);
-            radio.checked = false;
         }
     
         if (questionNumber < 20 && life > 0) {
             qcmLabel.classList.add('hidden');
             ChooseQuestion(data);
+            $('.answer__card').remove();
         } else if (life === 0) {
             questionsSection.classList.add('hidden');
+            $('.answer__card').remove();
         }
     })
 }
@@ -785,19 +1044,733 @@ function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
 
-/*if (score === 10) {
-    var cheminMovies = cheminsReponses[Math.floor(Math.random() * cheminMovies.length)];
-    var chosenPoster = cheminMovies[6];
-    posterImage.src = chosenPoster;
-}
-            
-if (score === 20) {
-    const cheminPoster = choisirPosterShinyAleatoire();
-    afficherShinyPoster(cheminPoster);
-    if (cheminPoster === "./assets/images/shiny/alien.jpg") {
-        localStorage.setItem("AlienShiny", "Y");
+function pointstoposter() {
+    if (score === 10) {
+        if (!localStorage.getItem('posterBasic')) {
+
+            var initialNumber = imageBasic[Math.floor(Math.random() * imageBasic.length)];
+            var initialArray = [initialNumber];
+        
+            localStorage.setItem('posterBasic', JSON.stringify(initialArray));
+    
+        } else {
+
+            var existingArray = JSON.parse(localStorage.getItem('posterBasic'));
+            var newRandomNumber = imageBasic[Math.floor(Math.random() * imageBasic.length)];
+        
+            existingArray.push(newRandomNumber);
+        
+            localStorage.setItem('posterBasic', JSON.stringify(existingArray));
+        }
     }
-}*/
+            
+    if (score === 20) {
+        if (!localStorage.getItem('posterShiny')) {
+
+            var initialNumber = imageShiny[Math.floor(Math.random() * imageShiny.length)];
+            var initialArray = [initialNumber];
+        
+            localStorage.setItem('posterShiny', JSON.stringify(initialArray));
+        
+        } else {
+
+            var existingArray = JSON.parse(localStorage.getItem('posterShiny'));
+            var newRandomNumber = imageShiny[Math.floor(Math.random() * imageShiny.length)];
+        
+            existingArray.push(newRandomNumber);
+        
+            localStorage.setItem('posterShiny', JSON.stringify(existingArray));
+        }
+    }
+}
+
+function postertowatch() {
+
+    var BasicstoredArray = JSON.parse(localStorage.getItem('posterBasic'));
+
+    if (BasicstoredArray && Array.isArray(BasicstoredArray)) {
+
+        if (BasicstoredArray.includes(1)) {
+            var posterUnlocked = document.querySelector('.28dayslater');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(2)) {
+            var posterUnlocked = document.querySelector('.30daysofnight');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(3)) {
+            var posterUnlocked = document.querySelector('.alien');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(4)) {
+            var posterUnlocked = document.querySelector('.aquietplace');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(5)) {
+            var posterUnlocked = document.querySelector('.aquietplace2');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(6)) {
+            var posterUnlocked = document.querySelector('.brightburn');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(7)) {
+            var posterUnlocked = document.querySelector('.carrie');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(8)) {
+            var posterUnlocked = document.querySelector('.conjuring');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(9)) {
+            var posterUnlocked = document.querySelector('.conjuring2');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(10)) {
+            var posterUnlocked = document.querySelector('.dashcam');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(11)) {
+            var posterUnlocked = document.querySelector('.dawnofthedead');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(12)) {
+            var posterUnlocked = document.querySelector('.elmstreet');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(13)) {
+            var posterUnlocked = document.querySelector('.exorcist');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(14)) {
+            var posterUnlocked = document.querySelector('.firstpurge');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(15)) {
+            var posterUnlocked = document.querySelector('.fridaythe13th');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(16)) {
+            var posterUnlocked = document.querySelector('.fromdusktilldawn');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(17)) {
+            var posterUnlocked = document.querySelector('.halloween');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(18)) {
+            var posterUnlocked = document.querySelector('.hannibal');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(19)) {
+            var posterUnlocked = document.querySelector('.hereditary');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(20)) {
+            var posterUnlocked = document.querySelector('.host');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(21)) {
+            var posterUnlocked = document.querySelector('.hush');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(22)) {
+            var posterUnlocked = document.querySelector('.iamlegend');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(23)) {
+            var posterUnlocked = document.querySelector('.insidious');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(24)) {
+            var posterUnlocked = document.querySelector('.it');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(25)) {
+            var posterUnlocked = document.querySelector('.itchapter2');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(26)) {
+            var posterUnlocked = document.querySelector('.itfollows');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(27)) {
+            var posterUnlocked = document.querySelector('.janedoe');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(28)) {
+            var posterUnlocked = document.querySelector('.killersklowns');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(29)) {
+            var posterUnlocked = document.querySelector('.oculus');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(30)) {
+            var posterUnlocked = document.querySelector('.paranormalactivity');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(31)) {
+            var posterUnlocked = document.querySelector('.prometheus');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(32)) {
+            var posterUnlocked = document.querySelector('.psycho');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(33)) {
+            var posterUnlocked = document.querySelector('.purge3');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(34)) {
+            var posterUnlocked = document.querySelector('.rec');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(35)) {
+            var posterUnlocked = document.querySelector('.saw');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(36)) {
+            var posterUnlocked = document.querySelector('.scream3');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(37)) {
+            var posterUnlocked = document.querySelector('.shining');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(38)) {
+            var posterUnlocked = document.querySelector('.signs');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(39)) {
+            var posterUnlocked = document.querySelector('.silenceofthelambs');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(40)) {
+            var posterUnlocked = document.querySelector('.sinister');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(41)) {
+            var posterUnlocked = document.querySelector('.slither');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(42)) {
+            var posterUnlocked = document.querySelector('.terrified');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(43)) {
+            var posterUnlocked = document.querySelector('.texaschainsawmassacre');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(44)) {
+            var posterUnlocked = document.querySelector('.thebabadook');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(45)) {
+            var posterUnlocked = document.querySelector('.thebelkoexperiment');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(46)) {
+            var posterUnlocked = document.querySelector('.thecabininthewoods');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(47)) {
+            var posterUnlocked = document.querySelector('.thedescent');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(48)) {
+            var posterUnlocked = document.querySelector('.theinvisibleman');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(49)) {
+            var posterUnlocked = document.querySelector('.themist');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(50)) {
+            var posterUnlocked = document.querySelector('.thenun');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(51)) {
+            var posterUnlocked = document.querySelector('.thering');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(52)) {
+            var posterUnlocked = document.querySelector('.thesixthsense');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(53)) {
+            var posterUnlocked = document.querySelector('.thething');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(54)) {
+            var posterUnlocked = document.querySelector('.us');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (BasicstoredArray.includes(55)) {
+            var posterUnlocked = document.querySelector('.worldwarz');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+
+    }
+
+    var ShinystoredArray = JSON.parse(localStorage.getItem('posterShiny'));
+
+    if (ShinystoredArray && Array.isArray(ShinystoredArray)) {
+
+        if (ShinystoredArray.includes(1)) {
+            var posterUnlocked = document.querySelector('.28dayslatershiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinytoredArray.includes(2)) {
+            var posterUnlocked = document.querySelector('.30daysofnightshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(3)) {
+            var posterUnlocked = document.querySelector('.alienshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(4)) {
+            var posterUnlocked = document.querySelector('.aquietplaceshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(5)) {
+            var posterUnlocked = document.querySelector('.aquietplace2shiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(6)) {
+            var posterUnlocked = document.querySelector('.brightburnshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(7)) {
+            var posterUnlocked = document.querySelector('.carrieshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(8)) {
+            var posterUnlocked = document.querySelector('.conjuringshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(9)) {
+            var posterUnlocked = document.querySelector('.conjuring2shiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(10)) {
+            var posterUnlocked = document.querySelector('.dashcamshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(11)) {
+            var posterUnlocked = document.querySelector('.dawnofthedeadshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(12)) {
+            var posterUnlocked = document.querySelector('.elmstreetshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(13)) {
+            var posterUnlocked = document.querySelector('.exorcistshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(14)) {
+            var posterUnlocked = document.querySelector('.firstpurgeshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(15)) {
+            var posterUnlocked = document.querySelector('.fridaythe13thshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(16)) {
+            var posterUnlocked = document.querySelector('.fromdusktilldawnshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(17)) {
+            var posterUnlocked = document.querySelector('.halloweenshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(18)) {
+            var posterUnlocked = document.querySelector('.hannibalshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(19)) {
+            var posterUnlocked = document.querySelector('.hereditaryshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(20)) {
+            var posterUnlocked = document.querySelector('.hostshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(21)) {
+            var posterUnlocked = document.querySelector('.hushshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(22)) {
+            var posterUnlocked = document.querySelector('.iamlegendshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(23)) {
+            var posterUnlocked = document.querySelector('.insidiousshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(24)) {
+            var posterUnlocked = document.querySelector('.itshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(25)) {
+            var posterUnlocked = document.querySelector('.itchapter2shiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(26)) {
+            var posterUnlocked = document.querySelector('.itfollowsshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(27)) {
+            var posterUnlocked = document.querySelector('.janedoeshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(28)) {
+            var posterUnlocked = document.querySelector('.killersklownsshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(29)) {
+            var posterUnlocked = document.querySelector('.oculusshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(30)) {
+            var posterUnlocked = document.querySelector('.paranormalactivityshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(31)) {
+            var posterUnlocked = document.querySelector('.prometheusshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(32)) {
+            var posterUnlocked = document.querySelector('.psychoshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(33)) {
+            var posterUnlocked = document.querySelector('.purge3shiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(34)) {
+            var posterUnlocked = document.querySelector('.recshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(35)) {
+            var posterUnlocked = document.querySelector('.sawshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(36)) {
+            var posterUnlocked = document.querySelector('.scream3shiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(37)) {
+            var posterUnlocked = document.querySelector('.shiningshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(38)) {
+            var posterUnlocked = document.querySelector('.signsshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(39)) {
+            var posterUnlocked = document.querySelector('.silenceofthelambsshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(40)) {
+            var posterUnlocked = document.querySelector('.sinistershiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(41)) {
+            var posterUnlocked = document.querySelector('.slithershiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(42)) {
+            var posterUnlocked = document.querySelector('.terrifiedshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(43)) {
+            var posterUnlocked = document.querySelector('.texaschainsawmassacreshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(44)) {
+            var posterUnlocked = document.querySelector('.thebabadookshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(45)) {
+            var posterUnlocked = document.querySelector('.thebelkoexperimentshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(46)) {
+            var posterUnlocked = document.querySelector('.thecabininthewoodsshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(47)) {
+            var posterUnlocked = document.querySelector('.thedescentshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(48)) {
+            var posterUnlocked = document.querySelector('.theinvisiblemanshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(49)) {
+            var posterUnlocked = document.querySelector('.themistshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(50)) {
+            var posterUnlocked = document.querySelector('.thenunshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(51)) {
+            var posterUnlocked = document.querySelector('.theringshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(52)) {
+            var posterUnlocked = document.querySelector('.thesixthsenseshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(53)) {
+            var posterUnlocked = document.querySelector('.thethingshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(54)) {
+            var posterUnlocked = document.querySelector('.usshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+        if (ShinystoredArray.includes(55)) {
+            var posterUnlocked = document.querySelector('.worldwarzshiny');
+            
+            posterUnlocked.classList.add('collection__item--show');
+            posterUnlocked.classList.remove('collection__item');
+        }
+    }
+}
+
+function lifeheart() {
+    if (life === 3) {
+        lifeVisu.style.backgroundImage = "url('../assets/images/SVG/lives-full.svg')";
+    } else if (life === 2) {
+        lifeVisu.style.backgroundImage = "url('../assets/images/SVG/lives-two-thirds.svg')";
+    } else if (life === 1) {
+        lifeVisu.style.backgroundImage = "url('../assets/images/SVG/lives-one-third.svg')";
+    } else if (life === 0) {
+        lifeVisu.style.backgroundImage = "";
+    }
+}
 
 /*function getRandomIntInclusive(min,max) {
     min= Math.ceil(min);

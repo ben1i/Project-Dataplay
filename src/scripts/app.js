@@ -15,7 +15,6 @@
         //cardcontainer.appendChild(card);        
 
     //})
-    
 
     function createCard(number, cheminNombre) {
         var card = document.createElement('div');
@@ -26,8 +25,6 @@
         return card;
 
     }
-
-
 
     function slotNumber(slotsnumbers) {
         $(".rank__slot").each(function(index){
@@ -126,6 +123,19 @@ shinybutn.addEventListener('click', function(){
     shinycollection.classList.remove('hidden');
 });
 
+//sidebyside
+
+var right = document.querySelector('.sidebyside__right');
+var left = document.querySelector('.sidebyside__left');
+var sbsradio1 = document.getElementById('totradio--1');
+var sbsradio2 = document.getElementById('totradio--2');
+
+right.addEventListener('click', function(){
+    sbsradio2.checked = true;
+})
+left.addEventListener('click', function(){
+    sbsradio1.checked = true;
+})
 var score;
 var life;
 

@@ -502,8 +502,8 @@
              9,
              0,
              2016,
-             "assets/images/basic/janedoe.jpg",
-             "assets/images/shiny/janedoe.jpg"
+             "assets/images/basic/jane-doe.jpg",
+             "assets/images/shiny/jane-doe.jpg"
         ],
 
         [
@@ -1308,14 +1308,11 @@
         [
             "Parmi ces 4 films, lequel a gagné le plus au box-office mondial ?",
             "Parmi ces 4 films, lequel a gagné le moins au box-office mondial ?",
-            "Combien d'oscars a gagné ce film ?",
             "Parmi ces 4 films, lequel a le plus d'acteurs ?",
-            "En se basant seulement sur les posters, quel film a gagné le plus au box-office ?",
             "Parmi ces 4 films, lequel est le plus vieux ?",
             "Parmi ces 4 films, lequel a gagné le plus d'oscars ?",
             "Parmi ces 4 films, lequel a le moins de morts ?",
             "Parmi ces 4 films, lequel a le plus de morts ?",
-            "Parmi ces 4 films, lequel est sorti en 2017 ?",
             "Lequel des développeurs a vu le plus de film d'horreur ?"
         ],
 

@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 389.2 389.3">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #ba0400;
-      }
-    </style>
-  </defs>
-  <g id="Calque_2-2" data-name="Calque 2">
-    <g id="Calque_1-2" data-name="Calque 1-2">
-      <path class="cls-1" d="m194.6,389.3C87.3,389.3,0,302,0,194.6S87.3,0,194.6,0s194.6,87.3,194.6,194.6-87.2,194.7-194.6,194.7Zm0-354.3c-88,0-159.6,71.6-159.6,159.6s71.6,159.6,159.6,159.6,159.6-71.6,159.6-159.6S282.6,35,194.6,35Z"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_2_00000050661911337387751770000014972617684927235714_"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 389.3 389.3"
+	 style="enable-background:new 0 0 389.3 389.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#BA0400;}
+	.st1{display:none;}
+	.st2{display:inline;fill:#BA0400;}
+</style>
+<g id="Calque_1-2">
+	<path class="st0" d="M194.6,389.3C87.3,389.3,0,302,0,194.6S87.3,0,194.6,0s194.6,87.3,194.6,194.6S302,389.3,194.6,389.3z
+		 M194.6,35C106.6,35,35,106.6,35,194.6s71.6,159.6,159.6,159.6s159.6-71.6,159.6-159.6S282.6,35,194.6,35z"/>
+</g>
+<g id="Calque_1_-_copie_2" class="st1">
+	<path class="st2" d="M340.4,259.7c-25,55.6-80.9,94.5-145.7,94.5c-88,0-159.6-71.6-159.6-159.6S104,37.6,189.7,35
+		c-0.1-11.7,0-23.4-1.8-35C83.7,3.6,0,89.5,0,194.6s87.3,194.6,194.6,194.6c79.1,0,147.4-47.5,177.8-115.4
+		C361.9,268.7,351.4,263.6,340.4,259.7L340.4,259.7z"/>
+</g>
+<g id="Calque_1_-_copie" class="st1">
+	<path class="st2" d="M67.8,342c6.9-9.4,15-17.9,22.8-26.5C56.5,286.2,35,242.8,35,194.6c0-86.4,69-156.9,154.7-159.5
+		c-0.1-11.7,0-23.4-1.8-35C83.7,3.6,0,89.5,0,194.6C0,253.4,26.3,306.3,67.8,342z"/>
+</g>
 </svg>

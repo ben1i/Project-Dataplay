@@ -279,7 +279,6 @@ body {
   flex-flow: row wrap;
 }
 .answer__card {
-  transition: 0.2s;
   padding: 1em 3.38em;
   background-color: rgb(81, 0, 0);
   margin: 1em 1.5em;
@@ -289,7 +288,6 @@ body {
 }
 .answer__card:active {
   transform: scale(0.9);
-  transition: 0.2s;
 }
 
 @media (min-width: 800px) {
@@ -492,11 +490,13 @@ body {
     position: relative;
   }
   .sidebyside__left {
+    padding-top: 200px;
     padding: 1em;
     width: 50%;
     background-color: aqua;
   }
   .sidebyside__right {
+    padding-top: 200px;
     padding: 1em;
     background-color: red;
     width: 50%;
@@ -513,6 +513,9 @@ body {
     text-align: right;
     right: 1em;
   }
+}
+.totradio {
+  margin-top: 50%;
 }
 .youlose {
   padding: 1.5em;

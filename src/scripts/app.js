@@ -559,7 +559,7 @@ function qcmQuestionLoader(data) {
                         
            
         } else if (qcmChosenQuestion === qcmQuestion[6]) {
-
+            
             var cheminsReponses = data.moviesDeathCount;
             shuffle(cheminsReponses);
             
@@ -668,10 +668,19 @@ function pictureQuestionLoader(data) {
     var pictureLabel = document.querySelector('.picture__question');
     pictureLabel.innerText = pictureQuestionChosen;
 
-    var cheminsReponses = data.movies;
-    shuffle(cheminsReponses);
-    var moviePoster = cheminsReponses[0][6];
-    var movieName = cheminsReponses[0][0];
+    if (pictureQuestionChosen === pictureQuestion[0]){
+        var cheminsReponses = data.movies;
+        shuffle(cheminsReponses);
+        var moviePoster = cheminsReponses[0][6];
+        var movieName = cheminsReponses[0][0];
+        console.log(movieName);
+    } else if (pictureQuestionChosen === pictureQuestion[1]) {
+        var cheminsReponses = data.moviesCharacter;
+        shuffle(cheminsReponses);
+        var moviePoster = cheminsReponses[0][1];
+        var movieName = cheminsReponses[0][0];
+        console.log(movieName);
+    }
     var pictureDiv = document.querySelector('.picture__picture');
     var pictureImg = pictureDiv.querySelector('img');
     pictureImg.src = moviePoster;

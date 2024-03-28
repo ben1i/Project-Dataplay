@@ -44,11 +44,10 @@
     function handledrop(event, ui){
         var slotNumber = $(this).data('number');
         var cardNumber = ui.draggable.data('number');
-        console.log(slotNumber, cardNumber);
 
         if (cardNumber === slotNumber) {
             cardNumbersArray.push(cardNumber);
-            console.log(cardNumbersArray)
+
         }
     }
 
@@ -79,7 +78,6 @@
 
     label1.addEventListener('click', function(){
         radio1.checked = true;
-        console.log('checked');
         choice1.classList.add('selected');
         choice2.classList.remove('selected');
         choice3.classList.remove('selected');
@@ -89,7 +87,6 @@
 
     label2.addEventListener('click', function(){
         radio2.checked = true;
-        console.log('checked');
         choice2.classList.add('selected');
         choice3.classList.remove('selected');
         choice4.classList.remove('selected');
@@ -98,7 +95,6 @@
 
     label3.addEventListener('click', function(){
         radio3.checked = true;
-        console.log('checked');
         choice3.classList.add('selected');
         choice4.classList.remove('selected');
         choice1.classList.remove('selected');
@@ -106,14 +102,29 @@
     });
     label4.addEventListener('click', function(){
         radio4.checked = true;
-        console.log('checked');
         choice4.classList.add('selected');
         choice1.classList.remove('selected');
         choice2.classList.remove('selected');
         choice3.classList.remove('selected');
     });
 
+//collection//
+var basicbutn = document.querySelector('.collection__basic--active');
+var shinybutn = document.querySelector('.collection__shiny--active');
+var basiccollection = document.querySelector('.collection__basic');
+var shinycollection = document.querySelector('.collection__shiny');
 
+basicbutn.addEventListener('click', function(){
+    basiccollection.classList.remove('hidden');
+    shinycollection.classList.add('hidden');
+    basicbutn.classList.add('selected');
+
+});
+
+shinybutn.addEventListener('click', function(){
+    basiccollection.classList.add('hidden');
+    shinycollection.classList.remove('hidden');
+});
 
 var score;
 var life;
@@ -257,33 +268,26 @@ function qcmQuestionLoader(data) {
 
             var cheminsReponses = data.movies;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
                     
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
-
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
-
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
-
             var qcmAnswer1BoxOffice = ReponseAleatoire1[1];
             var qcmAnswer2BoxOffice = ReponseAleatoire2[1];
             var qcmAnswer3BoxOffice = ReponseAleatoire3[1];
             var qcmAnswer4BoxOffice = ReponseAleatoire4[1];
-
             var validAnswer = qcmAnswer1BoxOffice;
             validAnswertoGet = ReponseAleatoire1[0];
 
@@ -302,31 +306,31 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[0];
             }
 
-            console.log(validAnswertoGet);
+            
                     
         } else if (qcmChosenQuestion === questionQcm[1]) {
 
             var cheminsReponses = data.movies;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
 
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+            
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+            
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -353,30 +357,30 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[0];
             }
                         
-            console.log(validAnswertoGet);
+            
         } else if (qcmChosenQuestion === questionQcm[2]) {
 
             var cheminsReponses = data.movies;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
 
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+            
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+            
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -403,30 +407,30 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[0];
             }
                         
-            console.log(validAnswertoGet);
+            
         } else if (qcmChosenQuestion === questionQcm[3]) {
             
             var cheminsReponses = data.movies;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
 
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+            
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+            
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -453,30 +457,30 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[5];
             }
                         
-            console.log(validAnswertoGet);
+            
         } else if (qcmChosenQuestion === questionQcm[4]) {
 
             var cheminsReponses = data.movies;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
             
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+            
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+            
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -503,30 +507,30 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[4];
             }
                         
-            console.log(validAnswertoGet);
+
         } else if (qcmChosenQuestion === questionQcm[5]) {
 
             var cheminsReponses = data.moviesDeathCount;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
             
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+            
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+            
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+            
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -553,30 +557,30 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[1];
             }
                         
-            console.log(validAnswertoGet);
+           
         } else if (qcmChosenQuestion === qcmQuestion[6]) {
 
             var cheminsReponses = data.moviesDeathCount;
             shuffle(cheminsReponses);
-            console.log(cheminsReponses[0][0]);
+            
             
             var ReponseAleatoire1 = cheminsReponses[0];
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
 
             var ReponseAleatoire2 = cheminsReponses[1];
-            console.log(ReponseAleatoire2);
+           
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = cheminsReponses[2];
-            console.log(ReponseAleatoire3);
+           
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             var ReponseAleatoire4 = cheminsReponses[3];
-            console.log(ReponseAleatoire4);
+          
             var qcmAnswer4Name = document.querySelector('.multipleform__label--4');
             qcmAnswer4Name.innerText = ReponseAleatoire4[0];
 
@@ -603,40 +607,32 @@ function qcmQuestionLoader(data) {
                 validAnswertoGet = ReponseAleatoire4[1];
             }
                         
-            console.log(validAnswertoGet);
+          
         } else if (qcmChosenQuestion === qcmQuestion[7]) {
             
             var ReponseAleatoire1 = "Benjamin";
-            console.log(ReponseAleatoire1);
+            
             var qcmAnswer1Name = document.querySelector('.multipleform__label--1');
             qcmAnswer1Name.innerText = ReponseAleatoire1[0];
-
             var ReponseAleatoire2 = "Pearl";
-            console.log(ReponseAleatoire2);
             var qcmAnswer2Name = document.querySelector('.multipleform__label--2');
             qcmAnswer2Name.innerText = ReponseAleatoire2[0];
 
             var ReponseAleatoire3 = "Célia";
-            console.log(ReponseAleatoire3);
             var qcmAnswer3Name = document.querySelector('.multipleform__label--3');
             qcmAnswer3Name.innerText = ReponseAleatoire3[0];
 
             validAnswertoGet = ReponseAleatoire1;
-                        
-            console.log(validAnswertoGet);
         }
 }
 
 const radios = document.querySelectorAll('.multipleform__input');
-console.log(radios);
 radios.forEach((radio) => {
     radio.addEventListener('click', () => {
-        console.log("test");
         if (radio.checked) {
             const radioLabel = radio.nextElementSibling;
             var radioChosen = radioLabel.textContent;
 
-            console.log(radioChosen);
             
             checkAnswerAndDisplayNextQuestion(radioChosen,radio);
         };
@@ -649,11 +645,9 @@ function checkAnswerAndDisplayNextQuestion(radioChosen,radio){
 
     if (radioChosen === validAnswertoGet) {
         score = score + 1;
-        console.log(score);
         radio.checked = false;
     } else {
         life = life - 1;
-        console.log(life);
         radio.checked = false;
     }
 
@@ -678,7 +672,6 @@ function pictureQuestionLoader(data) {
     shuffle(cheminsReponses);
     var moviePoster = cheminsReponses[0][6];
     var movieName = cheminsReponses[0][0];
-    console.log(movieName);
     var pictureDiv = document.querySelector('.picture__picture');
     var pictureImg = pictureDiv.querySelector('img');
     pictureImg.src = moviePoster;
@@ -691,16 +684,12 @@ function pictureCheckAnswerAndDisplayNextQuestion(data,movieName) {
     var pictureInput = document.querySelector('.picture__input');
     var pictureSubmit = document.querySelector('.picture__confirm');
     var data = jsonData;
-    console.log(movieName);
 
     pictureSubmit.addEventListener('click', function(){
-        console.log(pictureInput.value);
         if (pictureInput.value === movieName) {
             score = score + 1;
-            console.log(score);
         } else {
             life = life - 1;
-            console.log(life);
         }
     
         if (questionNumber < 20 && life > 0) {
@@ -727,24 +716,18 @@ function trueorfalseQuestionLoader(data) {
     trueorfalseLabel.innerText = trueorfalseQuestionChosen;
 
     var trueorfalsecheminsReponses = trueorfalseQuestionChoose[1];
-    console.log(trueorfalsecheminsReponses)
 
     const radios = document.querySelectorAll('.tofradio');
-    console.log(radios);
     radios.forEach((radio) => {
         radio.addEventListener('click', () => {
-            console.log("test");
             if (radio.checked) {
                 var radioChosen = radio.value;
-                console.log(radioChosen);
 
                 if (radioChosen === trueorfalsecheminsReponses) {
                     score = score + 1;
-                    console.log(score);
                     radio.checked = false;
                 } else {
                     life = life - 1;
-                    console.log(life);
                     radio.checked = false;
                 }
             
@@ -776,12 +759,10 @@ function thisorthatQuestionLoader(data) {
 
     if (thisorthatQuestionChosen === thisorthatQuestion[0]) {
         var ReponseAleatoire1 = thisorthatcheminsReponses[0];
-        console.log(ReponseAleatoire1);
         var thisorthatAnswer1Name = document.querySelector('.totradio--1');
         thisorthatAnswer1Name.innerText = ReponseAleatoire1[0];
         
         var ReponseAleatoire2 = thisorthatcheminsReponses[1];
-        console.log(ReponseAleatoire2);
         var thisorthatAnswer2Name = document.querySelector('.totradio--2');
         thisorthatAnswer2Name.innerText = ReponseAleatoire2[0];
 
@@ -798,12 +779,10 @@ function thisorthatQuestionLoader(data) {
     } else if (thisorthatQuestionChosen === thisorthatQuestion[1]) {
 
         var ReponseAleatoire1 = thisorthatcheminsReponses[0];
-        console.log(ReponseAleatoire1);
         var thisorthatAnswer1Name = document.querySelector('.totradio--1');
         thisorthatAnswer1Name.innerText = ReponseAleatoire1[0];
         
         var ReponseAleatoire2 = thisorthatcheminsReponses[1];
-        console.log(ReponseAleatoire2);
         var thisorthatAnswer2Name = document.querySelector('.totradio--2');
         thisorthatAnswer2Name.innerText = ReponseAleatoire2[0];
         
@@ -821,15 +800,12 @@ function thisorthatQuestionLoader(data) {
             validAnswertoGet = ReponseAleatoire2[0];
         }
 
-        console.log(validAnswertoGet);
     } else if (thisorthatQuestionChosen === thisorthatQuestion[2]) {
         var deadReponseAleatoire1 = thisorthatDeadReponses[0];
-        console.log(deadReponseAleatoire1);
         var thisorthatAnswer1Name = document.querySelector('.totradio--1');
         thisorthatAnswer1Name.innerText = deadReponseAleatoire1[0];
         
         var deadReponseAleatoire2 = thisorthatDeadReponses[1];
-        console.log(deadReponseAleatoire2);
         var thisorthatAnswer2Name = document.querySelector('.totradio--2');
         thisorthatAnswer2Name.innerText = deadReponseAleatoire2[0];
 
@@ -848,34 +824,27 @@ function thisorthatQuestionLoader(data) {
     }
 
     const radios = document.querySelectorAll('.totradio');
-    console.log(radios);
     radios.forEach((radio) => {
         radio.addEventListener('click', () => {
-            console.log("test");
             if (radio.checked) {
                 const radioLabel = radio.nextElementSibling;
                 var radioChosen = radioLabel.textContent;
         
-                console.log(radioChosen);
                     
                 if (validAnswertoGet.length === 2) {
                     if (radioChosen === validAnswertoGet[0] || radioChosen === validAnswertoGet[1]) {
                         score = score + 1;
-                        console.log(score);
                         radio.checked = false;
                     } else {
                         life = life - 1;
-                        console.log(life);
                         radio.checked = false;
                        }
                 } else if (validAnswertoGet === ReponseAleatoire1[0] || validAnswertoGet === ReponseAleatoire2[0]) {
                     if (radioChosen === validAnswertoGet) {
                         score = score + 1;
-                        console.log(score);
                         radio.checked = false;
                     } else {
                         life = life - 1;
-                        console.log(life);
                         radio.checked = false;
                     }
                 }
@@ -907,35 +876,29 @@ function rankQuestionLoader(data) {
     shuffle(rankBudgetReponses);
 
     if (rankQuestionChosen === rankQuestion[1] || rankQuestionChosen === rankQuestion[2]) {
-        console.log(rankQuestionChosen);
         if (rankQuestionChosen === data.questions[4][1]) {
             
             var ReponseAleatoire1 = rankcheminsReponses[0][0];
-            console.log(ReponseAleatoire1);
             var cheminNombre = rankcheminsReponses[0][3]
             const card1 = createCard(ReponseAleatoire1, cheminNombre);
             cardcontainer.appendChild(card1);
 
             var ReponseAleatoire2 = rankcheminsReponses[1][0];
-            console.log(ReponseAleatoire2);
             var cheminNombre = rankcheminsReponses[1][3];
             const card2 = createCard(ReponseAleatoire2, cheminNombre);
             cardcontainer.appendChild(card2);
 
             var ReponseAleatoire3 = rankcheminsReponses[2][0];
-            console.log(ReponseAleatoire3);
             var cheminNombre = rankcheminsReponses[2][3];
             const card3 = createCard(ReponseAleatoire3,cheminNombre);
             cardcontainer.appendChild(card3);
 
             var ReponseAleatoire4 = rankcheminsReponses[3][0];
-            console.log(ReponseAleatoire4);
             var cheminNombre = rankcheminsReponses[3][3];
             const card4 = createCard(ReponseAleatoire4, cheminNombre);
             cardcontainer.appendChild(card4);
 
             var ReponseAleatoire5 = rankcheminsReponses[4][0];
-            console.log(ReponseAleatoire5);
             var cheminNombre = rankcheminsReponses[4][3];
             const card5 = createCard(ReponseAleatoire5, cheminNombre);
             cardcontainer.appendChild(card5);
@@ -943,31 +906,26 @@ function rankQuestionLoader(data) {
             movienumbers = [rankcheminsReponses[0][3], rankcheminsReponses[1][3], rankcheminsReponses[2][3], rankcheminsReponses[3][3], rankcheminsReponses[4][3]];
         } else if (rankQuestionChosen === data.questions[4][2]){
             var ReponseAleatoire1 = rankcheminsReponses[0][0];
-            console.log(ReponseAleatoire1);
             var cheminNombre = rankcheminsReponses[0][2];
             const card1 = createCard(ReponseAleatoire1, cheminNombre);
             cardcontainer.appendChild(card1);
 
             var ReponseAleatoire2 = rankcheminsReponses[1][0];
-            console.log(ReponseAleatoire2);
             var cheminNombre = rankcheminsReponses[1][2];
             const card2 = createCard(ReponseAleatoire2, cheminNombre);
             cardcontainer.appendChild(card2);
 
             var ReponseAleatoire3 = rankcheminsReponses[2][0];
-            console.log(ReponseAleatoire3);
             var cheminNombre = rankcheminsReponses[2][2];
             const card3 = createCard(ReponseAleatoire3, cheminNombre);
             cardcontainer.appendChild(card3);
 
             var ReponseAleatoire4 = rankcheminsReponses[3][0];
-            console.log(ReponseAleatoire4);
             var cheminNombre = rankcheminsReponses[3][2];
             const card4 = createCard(ReponseAleatoire4, cheminNombre);
             cardcontainer.appendChild(card4);
 
             var ReponseAleatoire5 = rankcheminsReponses[4][0];
-            console.log(ReponseAleatoire5);
             var cheminNombre = rankcheminsReponses[4][2];
             const card5 = createCard(ReponseAleatoire5, cheminNombre);
             cardcontainer.appendChild(card5);
@@ -976,31 +934,26 @@ function rankQuestionLoader(data) {
         } 
     } else if (rankQuestionChosen === rankQuestion[0]) {
         var ReponseAleatoire1 = rankBudgetReponses[0][0];
-        console.log(ReponseAleatoire1);
         var cheminNombre = rankBudgetReponses[0][1];
         const card1 = createCard(ReponseAleatoire1, cheminNombre);
         cardcontainer.appendChild(card1);
 
         var ReponseAleatoire2 = rankBudgetReponses[1][0];
-        console.log(ReponseAleatoire2);
         var cheminNombre = rankBudgetReponses[1][1];
         const card2 = createCard(ReponseAleatoire2, cheminNombre);
         cardcontainer.appendChild(card2);
 
         var ReponseAleatoire3 = rankBudgetReponses[2][0];
-        console.log(ReponseAleatoire3);
         var cheminNombre = rankBudgetReponses[2][1];
         const card3 = createCard(ReponseAleatoire3, cheminNombre);
         cardcontainer.appendChild(card3);
 
         var ReponseAleatoire4 = rankBudgetReponses[3][0];
-        console.log(ReponseAleatoire4);
         var cheminNombre = rankBudgetReponses[3][1];
         const card4 = createCard(ReponseAleatoire4, cheminNombre);
         cardcontainer.appendChild(card4);
 
         var ReponseAleatoire5 = rankBudgetReponses[4][0];
-        console.log(ReponseAleatoire5);
         var cheminNombre = rankBudgetReponses[4][1];
         const card5 = createCard(ReponseAleatoire5, cheminNombre);
         cardcontainer.appendChild(card5);
@@ -1009,10 +962,8 @@ function rankQuestionLoader(data) {
     }
     
     //movienumbers = [ReponseAleatoire1, ReponseAleatoire2, ReponseAleatoire3, ReponseAleatoire4, ReponseAleatoire5];
-    console.log(movienumbers);
 
     slotsnumbers = movienumbers.sort(function(a,b){return b-a});
-    console.log(slotsnumbers);
     slotNumber(slotsnumbers);
 
 
@@ -1023,10 +974,8 @@ function rankQuestionLoader(data) {
 
         if (cardNumbersArray.length === 5) {
             score = score + 1;
-            console.log(score);
         } else {
             life = life - 1;
-            console.log(life);
         }
     
         if (questionNumber < 20 && life > 0) {

@@ -513,7 +513,7 @@ body {
             padding-top: 200px;
             padding: 1em;
             width: 50%;
-            background-color: aqua;
+            background-color: linear-gradient(45deg, red 0 50%, blue 50% 100%)
         }
         &__right{
             padding-top: 200px;
@@ -601,6 +601,27 @@ body {
         }
     }
 }
+.collection__basic--active{
+    color: white;
+    font-family: spratbold;
+    font-size: 1.5em;
+    margin: 1em;
+    border-style: solid;
+    border : solid white;
+    background: none;
+    padding: 0.67em 1em;
+}
+.collection__shiny--active{
+    color: white;
+    font-family: spratbold;
+    font-size: 1.5em;
+    margin: 1em;
+    border-style: solid;
+    border : solid white;
+    background: none;
+    padding: 0.67em 1em;
+}
+
 
 /*.test__img {
   width: 10%;

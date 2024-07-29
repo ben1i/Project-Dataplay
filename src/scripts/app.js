@@ -844,7 +844,7 @@ function thisorthatQuestionLoader(data) {
 
     const radios = document.querySelectorAll('.totradio');
     radios.forEach((radio) => {
-        radio.addEventListener('click', () => {
+        radio.addEventListener('change', () => {
             if (radio.checked) {
                 const radioLabel = radio.nextElementSibling;
                 var radioChosen = radioLabel.textContent;

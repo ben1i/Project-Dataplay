@@ -1,0 +1,510 @@
+{
+    "gamemaps" : [
+        [
+          "GTA: San Andreas",
+          38  
+        ],
+
+        [
+            "The Elder Scrolls IV: Oblivion",
+            41
+        ],
+
+        [
+            "PUBG (Erangel & Miramar)",
+            64
+        ],
+
+        [
+            "Forza Horizon 4",
+            72
+        ],
+
+        [
+            "Red Dead Redemption 2",
+            75
+        ],
+
+        [
+            "Elden Ring",
+            79
+        ],
+
+        [
+            "Grand Theft Auto V",
+            80
+        ],
+
+        [
+            "Assassin's Creed: Origins",
+            80
+        ],
+
+        [
+            "Far Cry 6",
+            88
+        ],
+
+        [
+            "Cyberpunk 2077",
+            106
+        ],
+
+        [
+            "The Legend of Zelda: Tears of the Kingdom",
+            119
+        ],
+
+        [
+            "The Witcher 3",
+            136
+        ],
+
+        [
+            "ARK: Survival Evolved (Ragnarok)",
+            144
+        ],
+
+        [
+            "Assassin's Creed 4: Black Flag",
+            168
+        ],
+
+        [
+            "World of Warcraft (Azeroth)",
+            207
+        ],
+
+        [
+            "DayZ",
+            225
+        ],
+
+        [
+            "Assassin's Creed: Odyssey",
+            235
+        ],
+
+        [
+            "Avatar: Frontiers of Pandora",
+            254
+        ],
+
+        [
+            "Arma 3 (Altis)",
+            270
+        ],
+
+        [
+            "Operation Flashpoint: Dragon Rising",
+            350
+        ],
+
+        [
+            "The Lord of the Rings Online (Update 29)",
+            376
+        ],
+
+        [
+            "Xenoblade Chronicles X",
+            399
+        ],
+
+        [
+            "Black Desert Online",
+            400
+        ],
+
+        [
+            "Tom Clancy's Ghost Recon Wildlands",
+            440
+        ],
+
+        [
+            "Burnout Paradise",
+            518
+        ],
+
+        [
+            "Death Stranding",
+            596
+        ],
+
+        [
+            "True Crimes: Streets of L.A.",
+            622
+        ],
+
+        [
+            "Skull and Bones",
+            624
+        ],
+
+        [
+            "Just Cause 3 & 4",
+            1023
+        ],
+
+        [
+            "Just Cause 2",
+            1035
+        ],
+
+        [
+            "Asheron's Call",
+            1300
+        ],
+
+        [
+            "Final Fantasy XV",
+            1942
+        ],
+
+        [
+            "Tom Clancy's Ghost Recon: Breakpoint",
+            2023
+        ],
+
+        [
+            "Test Drive Unlimited 2 (Oahu and Ibiza)",
+            2116
+        ],
+
+        [
+            "The Crew",
+            6000
+        ],
+
+        [
+            "Fuel",
+            25900
+        ],
+
+        [
+            "Guild Wars Nightfall",
+            38850
+        ],
+
+        [
+            "Atlas",
+            44807
+        ],
+
+        [
+            "The Elder Scrolls II: Daggerfall",
+            209000
+        ],
+
+        [
+            "Word War II Online",
+            350000
+        ],
+
+        [
+            "The Elder Scrolls: Arena",
+            8000000
+        ],
+
+        [
+            "Microsoft Flight Simulator",
+            510072000
+        ],
+
+        [
+            "Minecraft (Java Edition)",
+            3600000000
+        ],
+
+        [
+            "Starfield",
+            37842920000000
+        ],
+
+        [
+            "Star Control 2: The Ur-Quan Masters",
+            143803096000000
+        ],
+
+        [
+            "Spore",
+            4541150400000000
+        ],
+
+        [
+            "Star Citizen",
+            200000000000000000
+        ],
+
+        [
+            "EVE Online",
+            737936940000000000000
+        ],
+
+        [
+            "Elite Dangerous",
+            9460730000000000000000
+        ],
+
+        [
+            "No Man's Sky",
+            681172560000000000000000000000
+        ]
+    ],
+
+    "countries" : [
+        [
+            "Vatican",
+            0.44
+        ],
+
+        [
+            "Monaco",
+            2
+        ],
+
+        [
+            "Gibraltar",
+            6
+        ],
+
+        [
+            "Nauru",
+            21
+        ],
+
+        [
+            "Tuvalu",
+            26
+        ],
+
+        [
+            "Macao",
+            33
+        ],
+
+        [
+            "San Marino",
+            61
+        ],
+
+        [
+            "Liechtenstein",
+            160
+        ],
+
+        [
+            "Marshall Islands",
+            181
+        ],
+
+        [
+            "Cook Islands",
+            236
+        ],
+
+        [
+            "Niue",
+            260
+        ],
+
+        [
+            "Saint Kitts and Nevis",
+            261
+        ],
+
+        [
+            "Maldives",
+            300
+        ],
+
+        [
+            "Malta",
+            315
+        ],
+
+        [
+            "Grenada",
+            345
+        ],
+
+        [
+            "Saint Vincent and the Grenadines",
+            389
+        ],
+
+        [
+            "Barbados",
+            431
+        ],
+
+        [
+            "Antigua and Barbuda",
+            442
+        ],
+
+        [
+            "Seychelles",
+            457
+        ],
+
+        [
+            "Palaos",
+            459
+        ],
+
+        [
+            "Andorre",
+            468
+        ],
+
+        [
+            "Saint Lucia",
+            616
+        ],
+
+        [
+            "Micronesia",
+            702
+        ],
+
+        [
+            "Kiribati",
+            726
+        ],
+
+        [
+            "Singapore",
+            729
+        ],
+
+        [
+            "Tonga",
+            747
+        ],
+
+        [
+            "Dominica",
+            750
+        ],
+
+        [
+            "Bahrain",
+            778
+        ],
+
+        [
+            "São Tomé and Príncipe",
+            964
+        ],
+
+        [
+            "Hong Kong",
+            1114
+        ],
+
+        [
+            "Mauritius",
+            1979
+        ],
+
+        [
+            "Comores",
+            2235
+        ],
+
+        [
+            "Luxemburg",
+            2586
+        ],
+
+        [
+            "Samoa",
+            2842
+        ],
+
+        [
+            "Cape-Verde",
+            4033
+        ],
+
+        [
+            "Trinidad and Tobago",
+            5127
+        ],
+
+        [
+            "Brunei",
+            5765
+        ],
+
+        [
+            "Cyprus",
+            9251
+        ],
+
+        [
+            "Lebanon",
+            10452
+        ],
+
+        [
+            "Kosovo",
+            10887
+        ],
+
+        [
+            "Jamaica",
+            10991
+        ],
+
+        [
+            "Gambia",
+            11295
+        ],
+
+        [
+            "Qatar",
+            11637
+        ],
+
+        [
+            "Vanuatu",
+            12189
+        ],
+
+        [
+            "Montenegro",
+            13888
+        ],
+
+        [
+            "Bahamas",
+            13940
+        ],
+
+        [
+            "Timor-Leste",
+            14919
+        ],
+
+        [
+            "Eswatini",
+            17363
+        ],
+
+        [
+            "Koweit",
+            17818
+        ],
+
+        [
+            "Fidji",
+            18272
+        ],
+
+        [
+            "Slovenia",
+            20273
+        ]
+    ]
+}

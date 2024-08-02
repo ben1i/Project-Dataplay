@@ -505,6 +505,781 @@
         [
             "Slovenia",
             20273
+        ],
+
+        [
+            "El Salvador",
+            21041
+        ],
+
+        [
+            "Israel",
+            22072
+        ],
+
+        [
+            "Belize",
+            22965
+        ],
+
+        [
+            "Djibouti",
+            23200
+        ],
+
+        [
+            "North Macedonia",
+            25713
+        ],
+
+        [
+            "Rwanda",
+            26338
+        ],
+
+        [
+            "Haiti",
+            27750
+        ],
+
+        [
+            "Burundi",
+            27834
+        ],
+
+        [
+            "Equatorial Guinea",
+            28051
+        ],
+
+        [
+            "Albania",
+            28748
+        ],
+
+        [
+            "Solomon Islands",
+            28896
+        ],
+
+        [
+            "Armenia",
+            29743
+        ],
+
+        [
+            "Lesotho",
+            30355
+        ],
+
+        [
+            "Belgium",
+            30528
+        ],
+
+        [
+            "Moldova",
+            33847
+        ],
+
+        [
+            "Guinea-Bissau",
+            36125
+        ],
+
+        [
+            "Taiwan",
+            36197
+        ],
+
+        [
+            "Bhutan",
+            38394
+        ],
+
+        [
+            "Switzerland",
+            41291
+        ],
+
+        [
+            "Netherlands",
+            41542
+        ],
+
+        [
+            "Estonia",
+            45227
+        ],
+
+        [
+            "Dominican Republic",
+            48671
+        ],
+
+        [
+            "Slovakia",
+            49035
+        ],
+
+        [
+            "Costa Rica",
+            51100
+        ],
+
+        [
+            "Bosnia-Herzegovina",
+            51209
+        ],
+
+        [
+            "Croatia",
+            56594
+        ],
+
+        [
+            "Togo",
+            56785
+        ],
+
+        [
+            "Latvia",
+            64673
+        ],
+
+        [
+            "Lithuania",
+            65286
+        ],
+
+        [
+            "Sri Lanka",
+            65610
+        ],
+
+        [
+            "Georgia",
+            69700
+        ],
+
+        [
+            "Ireland",
+            69825
+        ],
+
+        [
+            "United Arab Emirates",
+            71024
+        ],
+
+        [
+            "Sierra Leone",
+            72300
+        ],
+
+        [
+            "Panama",
+            75320
+        ],
+
+        [
+            "Czechia",
+            78870
+        ],
+
+        [
+            "Austria",
+            83882
+        ],
+
+        [
+            "Azerbaidjan",
+            86600
+        ],
+
+        [
+            "Serbia",
+            88499
+        ],
+
+        [
+            "Jordan",
+            89318
+        ],
+
+        [
+            "Portugal",
+            92226
+        ],
+
+        [
+            "Hungary",
+            93022
+        ],
+
+        [
+            "South Korea",
+            100339
+        ],
+
+        [
+            "Iceland",
+            103000
+        ],
+
+        [
+            "Guatemala",
+            108889
+        ],
+
+        [
+            "Cuba",
+            109884
+        ],
+
+        [
+            "Bulgaria",
+            110372
+        ],
+
+        [
+            "Liberia",
+            111369
+        ],
+
+        [
+            "Honduras",
+            112492
+        ],
+
+        [
+            "Benin",
+            114763
+        ],
+
+        [
+            "Erythrea",
+            117600
+        ],
+
+        [
+            "Malawi",
+            117726
+        ],
+
+        [
+            "North Korea",
+            120538
+        ],
+
+        [
+            "Nicaragua",
+            130373
+        ],
+
+        [
+            "Greece",
+            131957
+        ],
+
+        [
+            "Tadjikistan",
+            142600
+        ],
+
+        [
+            "Nepal",
+            147181
+        ],
+
+        [
+            "Bangladesh",
+            147570
+        ],
+
+        [
+            "Tunisia",
+            163610
+        ],
+
+        [
+            "Suriname",
+            163820
+        ],
+
+        [
+            "Uruguay",
+            173626
+        ],
+
+        [
+            "Cambodia",
+            181035
+        ],
+
+        [
+            "Syria",
+            185180
+        ],
+
+        [
+            "Senegal",
+            196712
+        ],
+
+        [
+            "Kirghizistan",
+            199949
+        ],
+
+        [
+            "Belarus",
+            207600
+        ],
+
+        [
+            "Guyana",
+            214969
+        ],
+
+        [
+            "Laos",
+            236800
+        ],
+
+        [
+            "Romania",
+            238391
+        ],
+
+        [
+            "Ghana",
+            238537
+        ],
+
+        [
+            "Uganda",
+            241550
+        ],
+
+        [
+            "United Kingdom",
+            242495
+        ],
+
+        [
+            "Guinea",
+            245836
+        ],
+
+        [
+            "Ecuador",
+            257217
+        ],
+
+        [
+            "Western Sahara",
+            266000
+        ],
+
+        [
+            "Gabon",
+            267668
+        ],
+
+        [
+            "New Zealand",
+            268107
+        ],
+
+        [
+            "Burkina Faso",
+            272967
+        ],
+
+        [
+            "Philippines",
+            300000
+        ],
+
+        [
+            "Italy",
+            302073
+        ],
+
+        [
+            "Oman",
+            309500
+        ],
+
+        [
+            "Poland",
+            312679
+        ],
+
+        [
+            "Ivory Coast",
+            322462
+        ],
+
+        [
+            "Norway",
+            323772
+        ],
+
+        [
+            "Malaysia",
+            330345
+        ],
+
+        [
+            "Viet Nam",
+            330967
+        ],
+
+        [
+            "Finland",
+            336861
+        ],
+
+        [
+            "Congo",
+            342000
+        ],
+
+        [
+            "Germany",
+            357386
+        ],
+
+        [
+            "Japan",
+            377930
+        ],
+
+        [
+            "Zimbabwe",
+            390757
+        ],
+
+        [
+            "Paraguay",
+            406752
+        ],
+
+        [
+            "Irak",
+            435052
+        ],
+
+        [
+            "Sweden",
+            438574
+        ],
+
+        [
+            "Morroco",
+            446550
+        ],
+
+        [
+            "Uzbekistan",
+            448969
+        ],
+
+        [
+            "Papua New Guinea",
+            462840
+        ],
+
+        [
+            "Cameroon",
+            475650
+        ],
+
+        [
+            "Turkmenistan",
+            488100
+        ],
+
+        [
+            "Spain",
+            505944
+        ],
+
+        [
+            "Thailand",
+            513120
+        ],
+
+        [
+            "Yemen",
+            527968
+        ],
+
+        [
+            "Botswana",
+            582000
+        ],
+
+        [
+            "Madagascar",
+            587295
+        ],
+
+        [
+            "Kenya",
+            591958
+        ],
+
+        [
+            "Ukraine",
+            603500
+        ],
+
+        [
+            "Central African Republic",
+            622984
+        ],
+
+        [
+            "Somalia",
+            637657
+        ],
+
+        [
+            "Afghanistan",
+            652854
+        ],
+
+        [
+            "South Sudan",
+            658841
+        ],
+
+        [
+            "France",
+            672051
+        ],
+
+        [
+            "Myanmar",
+            676553
+        ],
+
+        [
+            "Zambia",
+            752612
+        ],
+
+        [
+            "Chile",
+            756102
+        ],
+
+        [
+            "Turkey",
+            780004
+        ],
+
+        [
+            "Pakistan",
+            796095
+        ],
+
+        [
+            "Mozambique",
+            799380
+        ],
+
+        [
+            "Namibia",
+            824116
+        ],
+
+        [
+            "Venezuela",
+            912050
+        ],
+
+        [
+            "Nigeria",
+            923768
+        ],
+
+        [
+            "Tanzania",
+            947303
+        ],
+
+        [
+            "Egypt",
+            1002000
+        ],
+
+        [
+            "Mauritania",
+            1030700
+        ],
+
+        [
+            "Bolivia",
+            1098581
+        ],
+
+        [
+            "Ethipia",
+            1104300
+        ],
+
+        [
+            "Colombia",
+            1141748
+        ],
+
+        [
+            "South Africa",
+            1221037
+        ],
+
+        [
+            "Mali",
+            1240192
+        ],
+
+        [
+            "Angola",
+            1246700
+        ],
+
+        [
+            "Niger",
+            1267000
+        ],
+
+        [
+            "Chad",
+            1284000
+        ],
+
+        [
+            "Peru",
+            1285216
+        ],
+
+        [
+            "Mongolia",
+            1564116
+        ],
+
+        [
+            "Iran",
+            1628750
+        ],
+
+        [
+            "Libya",
+            1676198
+        ],
+
+        [
+            "Sudan",
+            1861484
+        ],
+
+        [
+            "Indonesia",
+            1910931
+        ],
+
+        [
+            "Mexico",
+            1964375
+        ],
+
+        [
+            "Saudi Arabia",
+            2206714
+        ],
+
+        [
+            "Denmark",
+            2210573
+        ],
+
+        [
+            "Democratic Republic of the Congo",
+            2344858
+        ],
+
+        [
+            "Algeria",
+            2381741
+        ],
+
+        [
+            "Kazakhstan",
+            2724902
+        ],
+
+        [
+            "Argentina",
+            2780400
+        ],
+
+        [
+            "India",
+            3287263
+        ],
+
+        [
+            "Australia",
+            7692024
+        ],
+
+        [
+            "Brazil",
+            8515767
+        ],
+
+        [
+            "China",
+            9600000
+        ],
+
+        [
+            "United States of America",
+            9833517
+        ],
+
+        [
+            "Canada",
+            9984670
+        ],
+
+        [
+            "Russia",
+            17098246
+        ],
+
+        [
+            "Asia",
+            44580000
+        ],
+
+        [
+            "Earth",
+            510100000
+        ],
+
+        [
+            "Solar System",
+            4699822609770330684
+        ],
+
+        [
+            "Milky Way",
+            9460730000000000000000
         ]
     ]
 }

@@ -201,4 +201,58 @@ body {
 }
 .dataplay__intro .intro__button .button__continue:active .continue__text {
   color: #000000;
+}
+
+.dataplay__game {
+  height: 100%;
+  margin: 20px 20px 20px 20px;
+}
+.dataplay__game .game__league {
+  margin-bottom: 200px;
+}
+.dataplay__game .game__league .league__paragraph {
+  font-family: Handjet, sans-serif;
+  font-size: 44px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: start;
+}
+.dataplay__game .game__league .league__paragraph--bottom {
+  margin-bottom: 40px;
+}
+.dataplay__game .game__league .league__square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dataplay__game .game__league .league__square .square__form {
+  background-color: #FFFFFF;
+  width: 100px;
+  height: 100px;
+}
+.dataplay__game .game__test {
+  margin-bottom: 200px;
+}
+.dataplay__game .game__test .test__paragraph {
+  font-family: Handjet, sans-serif;
+  font-size: 44px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: start;
+}
+.dataplay__game .game__test .test__paragraph--bottom {
+  margin-bottom: 40px;
+}
+.dataplay__game .game__test .test__testsquare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dataplay__game .game__test .test__testsquare .testsquare__form {
+  background-color: #FFFFFF;
+  width: 200px;
 }/*# sourceMappingURL=app.css.map */

@@ -10,6 +10,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #000000;
+
 }
 
 .hidden {
@@ -234,8 +235,8 @@ body {
 }
 
 .dataplay__game {
-    height: 100%;
     margin: 20px 20px 20px 20px;
+    animation: scroll 2000000s linear;
 
     .game__league {
         margin-bottom: 200px;
@@ -261,8 +262,8 @@ body {
 
             .square__form {
                 background-color: #FFFFFF;
-                width: 100px;
-                height: 100px;
+                width: 10px;
+                height: 10px;
             }
         }
     }
@@ -294,5 +295,14 @@ body {
                 width: 200px;
             }
         }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
     }
 }

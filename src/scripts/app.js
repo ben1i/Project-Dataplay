@@ -1,7 +1,37 @@
 "use strict"
 
-
+var homePage = document.querySelector('.dataplay__home');
+var rulePage = document.querySelector('.dataplay__rules');
+var introPage = document.querySelector('.dataplay__intro');
 var gamePage = document.querySelector('.dataplay__game');
+
+function scrollPage(pixels, duration) {
+    // Calcul des variables nécessaires
+    let start = window.scrollY;
+    let end = start + pixels;
+    let startTime = Date.now();
+    let intervalTime = 16; // Environ 60 FPS
+
+    function animateScroll() {
+        let now = Date.now();
+        let elapsedTime = now - startTime;
+        let progress = Math.min(elapsedTime / duration, 1);
+        let scrollAmount = start + (pixels * progress);
+
+        window.scrollTo(0, scrollAmount);
+
+        // Continuer l'animation jusqu'à ce que la durée soit écoulée
+        if (progress < 1) {
+            setTimeout(animateScroll, intervalTime);
+        } else {
+            // S'assurer que la page est bien à la position finale
+            window.scrollTo(0, end);
+        }
+    }
+
+    // Démarrer l'animation
+    animateScroll();
+}
 
 /*function smoothScroll(pixels, duration) {
     let start = window.scrollY;
@@ -73,9 +103,6 @@ function defilementAutomatique() {
 var intervalId = setInterval(defilementAutomatique(), 10); // 10 ms pour un défilement fluide
 */
 
-
-
-
 fetch('assets/json/data.json')
     .then(function(response) {
         return response.json();
@@ -97,26 +124,57 @@ fetch('assets/json/data.json')
             gameDiv.classList.add('game__test');
             gameDiv.classList.add('game__test--' + i);
             gamePage.appendChild(gameDiv);
-
+        
             let gameName = document.createElement('p');
             gameName.classList.add('test__paragraph');
             gameName.textContent = currentGame;
             gameDiv.appendChild(gameName);
-
+        
             let gameSize = document.createElement('p');
             gameSize.classList.add('test__paragraph', 'test__paragraph--bottom');
             gameSize.textContent = currentGameSize + "km²";
             gameDiv.appendChild(gameSize);
-
+        
             let gameSquareDiv = document.createElement('div');
             gameSquareDiv.classList.add('test__testsquare');
             gameDiv.appendChild(gameSquareDiv);
-
+        
             let gameSquare = document.createElement('div');
             gameSquare.classList.add('testsquare__form');
             gameSquareDiv.appendChild(gameSquare);
             gameSquare.style.height = currentGameSizeScaleString;
         }
+        
+        var ruleButton = homePage.querySelector('.buttons__button--rules');
+        ruleButton.addEventListener('click', function() {
+            homePage.classList.add('hidden');
+            rulePage.classList.remove('hidden');
+        })
+        
+        var introButton = homePage.querySelector('.buttons__button--play');
+        introButton.addEventListener('click', function() {
+            homePage.classList.add('hidden');
+            introPage.classList.remove('hidden');
+        })
+        
+        var homeButton = rulePage.querySelector('.button__home');
+        homeButton.addEventListener('click', function() {
+            rulePage.classList.add('hidden');
+            homePage.classList.remove('hidden');
+        })
+        
+        var playButton = introPage.querySelector('.button__continue');
+        playButton.addEventListener('click', function() {
+            introPage.classList.add('hidden');
+            gamePage.classList.remove('hidden');
+
+            setTimeout(function() {
+                
+                scrollPage(389.2, 2000);
+            }, 1000)
+        })
+
+
 
         /*const sanAndreas = gameMaps[0];
         console.log(sanAndreas);

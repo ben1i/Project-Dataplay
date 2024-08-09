@@ -1,73 +1,450 @@
 {
     "gamemaps" : [
         [
-          "GTA: San Andreas",
-            38
+            "GTA: San Andreas",
+            38,
+
+            [
+                [
+                    "CJ, the protagonist of 'GTA: San Andreas', can become fat by eating too much junk food.",
+                    1
+                ],
+
+                [
+                    "In 'GTA: San Andreas', the game is set entirely in the city of Los Santos.",
+                    0
+                ],
+
+                [
+                    "Players can customise CJ's appearance by changing his hairstyle, clothes, and even muscle mass, in 'GTA: San Andreas'.",
+                    1
+                ],
+
+                [
+                    "'GTA: San Andreas' does not allow players to swim; touching water results in instant death.",
+                    0
+                ],
+
+                [
+                    "The Game 'GTA: San Andreas' features a storyline where CJ's brother, Sweet, is killed early in the game.",
+                    0
+                ]
+            ]
         ],
 
         [
             "The Elder Scrolls IV: Oblivion",
-            41
+            41,
+            [
+                [
+                    "In Oblivion, the player can join the Thieves Guild.",
+                    1
+                ],
+                
+                [
+                    "Oblivion takes place primarily in the province of Morrowind.",
+                    0
+                ],
+
+                [
+                    "The main character in Oblivion starts the adventure as a prisonner.",
+                    1
+                ],
+
+                [
+                    "Oblivion is the first Elder Scrolls' game to use first-person camera.",
+                    0
+                ],
+
+                [
+                    "The Oblivion Gates are portals to another world full of enemy creatures.",
+                    1
+                ]
+            ]
         ],
 
         [
             "PUBG (Erangel & Miramar)",
-            64
+            64,
+
+            [
+                [
+                    "In 'PUBG' players can equip up to three primary weapons at the same time.",
+                    0
+                ],
+
+                [
+                    "'PUBG' was originally released as an early access game on Steam in 2017.",
+                    1
+                ],
+
+                [
+                    "The game 'PUBG' features only one map where players can battle each other.",
+                    0
+                ],
+
+                [
+                    "In 'PUBG', the last player or team standing win the match.",
+                    1
+                ],
+
+                [
+                    "Players in 'PUBG' can heal themselves instantly with the First Aid Kit",
+                    0
+                ]
+            ]
         ],
 
         [
             "Forza Horizon 4",
-            72
+            72,
+
+            [
+                [
+                    "'Forza Horizon 4' is set in a fictional versio  of the United States.",
+                    0
+                ],
+
+                [
+                    "In 'Forza Horizon 4', players can experience dynamic seasons that change the environment and driving conditions.",
+                    1
+                ],
+
+                [
+                    "'Forza Horizon 4' features an offline mode where players can race against AI opponents.",
+                    1
+                ],
+
+                [
+                    "The game 'Forza Horizon 4' allows players to customise and upgrade their vehicles.",
+                    1
+                ],
+
+                [
+                    "'Forza Horizon 4' includes a battle royale mode called 'The Eliminator'?",
+                    1
+                ]
+            ]
         ],
 
         [
             "Red Dead Redemption 2",
-            75
+            75,
+
+            [
+                [
+                    "In 'Red Dead Redemption 2', the main character is John Marston throughout the entire game.",
+                    0
+                ],
+
+                [
+                    "'Red Dead Redemption 2' is set in the late 19th and early 20th centuries.",
+                    1
+                ],
+
+                [
+                    "Players in 'Red Dead Redemption 2' can engage in activities like fishing, hunting, and poker.",
+                    1
+                ],
+
+                [
+                    "The game 'Red Dead Redemption 2' features a large open world with no loading screens when transitioning between different areas.",
+                    1
+                ],
+
+                [
+                    "In 'Red Dead Redemption 2', horses can be permanently lost if they die in the game.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Elden Ring",
-            79
+            79,
+
+            [
+                [
+                    "In 'Elden Ring', players can create their own characters and choose their starting class.",
+                    1
+                ],
+
+                [
+                    "'Elden Ring' is set in a futuristic sci-fi world with advanced technology.",
+                    0
+                ],
+
+                [
+                    "'Elden Ring' features an open-world environment with areas that can be explored on horseback?",
+                    1
+                ],
+
+                [
+                    "'Elden Ring' was developed by FromSoftware in collaboration with Hidetaka Miyazaki and George R.R. Martin.",
+                    1
+                ],
+
+                [
+                    "Players in 'Elden Ring' can only play in single-player mode and cannot interact with other players.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Grand Theft Auto V",
-            80
+            80,
+
+            [
+                [
+                    "'Grand Theft Auto V' features three main protagonists that players can switch between during the game.",
+                    1
+                ],
+
+                [
+                    "The setting of 'Grand Theft Auto V' is a fictional city called Liberty City.",
+                    0
+                ],
+
+                [
+                    "In 'Grand Theft Auto V', players can participate in activities such as stock trading and real estate investment.",
+                    1
+                ],
+
+                [
+                    "'Grand Theft Auto V' allows players to customise their own character's appearance with various clothing and accessories.",
+                    1
+                ],
+
+                [
+                    "'Grand Theft Auto V' does not include any multiplayer mode; it is strictly a single-player experience.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Assassin's Creed: Origins",
-            80
+            80,
+
+            [
+                [
+                    "'Assassin's Creed: Origins' is set in ancient Greece.",
+                    0
+                ],
+
+                [
+                    "The protagonist of 'Assassin's Creed: Origins' is a character named Bayek.",
+                    1
+                ],
+
+                [
+                    "In 'Assassin's Creed: Origins', players can use a variety of weapons including bows and swords.",
+                    1
+                ],
+
+                [
+                    "'Assassin's Creed: Origins' introduces a new combat system that includes a stamina bar for attacks.",
+                    1
+                ],
+
+                [
+                    "'Assassin's Creed: Origins' does not feature any side quests or activities outside the main storyline.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Far Cry 6",
-            88
+            88,
+
+            [
+                [
+                    "'Far Cry 6' is set in a fictional Caribbean island nation called Yara.",
+                    1
+                ],
+
+                [
+                    "The main antagonist in 'Far Cry 6' is a character named Anton Castillo, played by Giancarlo Esposito.",
+                    1
+                ],
+
+                [
+                    "In 'Far Cry 6', players can only use traditional firearms and cannot drive vehicles.",
+                    0
+                ],
+
+                [
+                    "The protagonist of 'Far Cry 6' is a character named Dani Rojas, who can be either male or female.",
+                    1
+                ],
+
+                [
+                    "'Far Cry 6' features a cooperative multiplayer mode that allows players to team up with friends.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Cyberpunk 2077",
-            106
+            106,
+
+            [
+                [
+                    "'Cyberpunk 2077' is set in a dystopian city called Night City.",
+                    1
+                ],
+
+                [
+                    "The main character in 'Cyberpunk 2077' is named V, and players can choose V's gender and background.",
+                    1
+                ],
+
+                [
+                    "'Cyberpunk 2077' features a real-time weather system but does not have a day-night cycle.",
+                    0
+                ],
+
+                [
+                    "'Cyberpunk 2077' includes a variety of cybernetic enhancements and upgrades for the character.",
+                    1
+                ],
+
+                [
+                    "In 'Cyberpunk 2077', players can only play through the main storyline and have no option for side quests or additional activities.",
+                    0
+                ]
+            ]
         ],
 
         [
             "The Legend of Zelda: Tears of the Kingdom",
-            119
+            119,
+
+            [
+                [
+                    "'The Legend of Zelda: Tears of the Kingdom' is a direct sequel to 'The Legend of Zelda: Breath of the Wild.",
+                    1
+                ],
+
+                [
+                    "In 'The Legend of Zelda: Tears of the Kingdom', Link can transform into different animals.",
+                    0
+                ],
+
+                [
+                    "'The Legend of Zelda: Tears of the Kingdom' was developed by Nintendo.",
+                    1
+                ],
+
+                [
+                    "The game 'The Legend of Zelda: Tears of the Kingdom' features a multiplayer mode.",
+                    0
+                ],
+
+                [
+                    "'The Legend of Zelda: Tears of the Kingdom' introduces new abilities for Link, such as time manipulation.",
+                    1
+                ]
+            ]
         ],
 
         [
-            "The Witcher 3",
-            136
+            "The Witcher 3: Wild Hunt",
+            136,
+
+            [
+                [
+                    "'The Witcher 3: Wild Hunt' is set in a fictional world called the Continent.",
+                    1
+                ],
+
+                [
+                    "The main protagonist of 'The Witcher 3: Wild Hunt' is a character named Geralt of Rivia.",
+                    1
+                ],
+
+                [
+                    "In 'The Witcher 3: Wild Hunt', players can only follow the main storyline and cannot engage in side quests or exploration.",
+                    0
+                ],
+
+                [
+                    "'The Witcher 3: Wild Hunt' features a dynamic weather system and a day-night cycle that affects gameplay.",
+                    1 
+                ],
+
+                [
+                    "'The Witcher 3: Wild Hunt' includes an in-game card game called Gwent, which players can play and collect cards for.",
+                    1
+                ]
+            ]
         ],
 
         [
             "ARK: Survival Evolved (Ragnarok)",
-            144
+            144,
+
+            [
+                [
+                    "'ARK: Survival Evolved' is set in a world populated by dinosaurs and prehistoric creatures.",
+                    1
+                ],
+
+                [
+                    "Players in 'ARK: Survival Evolved' can build and customise structures and bases.",
+                    1
+                ],
+
+                [
+                    "In 'ARK: Survival Evolved', players can only use melee weapons and have no access to firearms or ranged weapons.",
+                    0
+                ],
+
+                [
+                    "'ARK: Survival Evolved' includes a feature that allows players to tame and ride dinosaurs and other creatures.",
+                    1
+                ],
+
+                [
+                    "'ARK: Survival Evolved' does not feature any multiplayer options and is strictly a single-player experience.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Assassin's Creed 4: Black Flag",
-            168
+            168,
+
+            [
+                [
+                    "'Assassin's Creed 4: Black Flag' is set during the Golden Age of Piracy in the early 18th century.",
+                    1
+                ],
+
+                [
+                    "The protagonist of 'Assassin's Creed 4: Black Flag' is named Edward Kenway",
+                    1
+                ],
+
+                [
+                    "In 'Assassin's Creed 4: Black Flag', players can only explore land-based environments and cannot travel by sea.",
+                    0
+                ],
+
+                [
+                    "'Assassin's Creed 4: Black Flag' features a fully customizable pirate ship that players can upgrade and modify",
+                    1
+                ],
+
+                [
+                    "'Assassin's Creed 4: Black Flag' does not include any naval combat or ship-based missions.",
+                    0
+                ]
+            ]
         ],
 
         [
@@ -248,6 +625,37 @@
         [
             "No Man's Sky",
             681172560000000000000000000000
+        ],
+
+        [
+            "Rocket League",
+            0.10,
+            [
+                [
+                    "Rocket League is a game that can only be played solo.",
+                    0
+                ],
+
+                [
+                    "Rocket League's cars can jump and flip to hit the ball.",
+                    1
+                ],
+
+                [
+                    "It is possible to entirely customise your car's appearance in Rocket League.",
+                    1
+                ],
+
+                [
+                    "Rocket League was launched in 2015.",
+                    1
+                ],
+
+                [
+                    "Rocket League does not have a competitive gamemode.",
+                    0
+                ]
+            ]
         ]
     ],
 

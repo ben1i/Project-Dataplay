@@ -449,97 +449,610 @@
 
         [
             "World of Warcraft (Azeroth)",
-            207
+            207,
+
+            [
+                [
+                    "'World of Warcraft' is a massively multiplayer online role-playing game (MMORPG) developed by Blizzard Enterntainement.",
+                    1
+                ],
+
+                [
+                    "In 'World of Warcraft', players can choose from two factions: the Alliance and the Horde.",
+                    1
+                ],
+
+                [
+                    "'World of Warcraft' does not feature any expansions or additional content beyond the base game.",
+                    0
+                ],
+
+                [
+                    "Players in 'World of Warcraft' can only play as human characters and cannot choose other races.",
+                    0
+                ],
+
+                [
+                    "'World of Warcraft' includes a variety of PvE (Player vs. Environment) and PvP (Player vs. Player) activities.",
+                    1
+                ]
+            ]
         ],
 
         [
             "DayZ",
-            225
+            225,
+
+            [
+                [
+                    "'DayZ' is a survival game set in a post-apocalyptic world overrun by zombies.",
+                    1
+                ],
+
+                [
+                    "In 'DayZ', players start the game with a full set of weapons and supplies.",
+                    0
+                ],
+
+                [
+                    "'DayZ' features both a health system and a need to manage hunger and thirst.",
+                    1
+                ],
+
+                [
+                    "'DayZ' is primarly a single-player experience with no multiplayer options.",
+                    0
+                ],
+
+                [
+                    "Players in 'DayZ' can craft items and build shelters to survive longer in the game world.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Assassin's Creed: Odyssey",
-            235
+            235,
+
+            [
+                [
+                    "'Assassin's Creed: Odyssey' is set during the Peloponnesian War between Athens and Sparta.",
+                    1
+                ],
+
+                [
+                    "In 'Assassin's Creed: Odyssey', players can choose to play as either a male character, Alexios, or a female character, Kassandra.",
+                    1
+                ],
+
+                [
+                    "'Assassin's Creed: Odyssey' features an entirely linear storyline with no player choices affecting the outcome.",
+                    0
+                ],
+
+                [
+                    "'Assassin's Creed: Odyssey' does not include any naval combat or exploration, focusing only on land-based activities.",
+                    0
+                ],
+
+                [
+                    "Players can upgrade their gear and abilities as they progress through 'Assassin's Creed: Odyssey'.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Avatar: Frontiers of Pandora",
-            254
+            254,
+
+            [
+                [
+                    "'Avater: Frontiers of Pandora' is an open-world action-adventure game.",
+                    1
+                ],
+
+                [
+                    "'Avatar: Frontiers of Pandora' features a single-player campaign only.",
+                    0
+                ],
+
+                [
+                    "In 'Avatar: Frontiers of Pandora', players can ride and control various creatures from Pandora.",
+                    1
+                ],
+
+                [
+                    "'Avatar: Frontiers of Pandora''s story is set after the events of the first Avatar movie.",
+                    1
+                ],
+
+                [
+                    "The development of 'Avatar: Frontier of Pandora' was handled exclusively by Ubisoft Massive.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Arma 3 (Altis)",
-            270
+            270,
+
+            [
+                [
+                    "'Arma 3' is a military simulation game that emphasizes realistic combat and tactics.",
+                    1
+                ],
+
+                [
+                    "'Arma 3' is set in a fictional archipelago in the Mediterranean Sea.",
+                    1
+                ],
+
+                [
+                    "'Arma 3' is known for its fast-paced, arcade-style gameplay.",
+                    0
+                ],
+
+                [
+                    "In 'Arma 3', players can use a variety of vehicles, including helicopters, tanks, and boats.",
+                    1
+                ],
+
+                [
+                    "'Arma 3' only supports single-player mode and does not have any mutliplayer options.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Operation Flashpoint: Dragon Rising",
-            350
+            350,
+
+            [
+                [
+                    "'Operation Flashpoint: Dragon Rising' is set in a fictional island called Skira, which is based on a real location.",
+                    1
+                ],
+
+                [
+                    "'Operation Flashpoint: Dragon Rising' is a military simulation game developed by Codemasters.",
+                    1
+                ],
+
+                [
+                    "In 'Operation Flashpoint: Dragon Rising', players can control only infantry units and cannot use vehicles.",
+                    0
+                ],
+
+                [
+                    "'Operation Flashpoint: Dragon Rising' is known fot its emphasis on realism, including bullet drop and tactical planning.",
+                    1
+                ],
+
+                [
+                    "'Operation Flashpoint: Dragon Rising' features a cooperative multiplayer mode where players can complete missions together.",
+                    1
+                ]
+            ]
         ],
 
         [
             "The Lord of the Rings Online (Update 29)",
-            376
+            376,
+
+            [
+                [
+                    "'The Lord of the Rings Online' is an MMORPG set in the world of Middle-earth, based on J.R.R. Tolkien's works.",
+                    1
+                ],
+
+                [
+                    "Players in 'The Lord of the Rings Online' can choose to play as characters from the Fellowship, such as Fredo or Aragorn.",
+                    0
+                ],
+
+                [
+                    "'The Lord of the Rings Online' features different regions of Middle-earth, including the Shire, Rivendell, and Mordor, that players can explore.",
+                    1
+                ],
+
+                [
+                    "'The Lord of the Rings Online' does not include any PvP (Player vs. Player) content, focusing solely on PvE(Player vs. Environment) activities.",
+                    0
+                ],
+
+                [
+                    "'The Lord of the Rings Online' has a free-to-play model with the option to purchase additional content and expansions.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Xenoblade Chronicles X",
-            399
+            399,
+
+            [
+                [
+                    "'Xenoblade Chronicles X' is set on an alien planet called Mira.",
+                    1
+                ],
+
+                [
+                    "The protagonist in 'Xenoblade Chronicles X' is a pre-defined character with a fixed appearance and name.",
+                    0
+                ],
+
+                [
+                    "In 'Xenoblade Chronicles X', players can explore the world of Mira using giant mechs called Skells.",
+                    1
+                ],
+
+                [
+                    "'Xenoblade Chronicles X' features an open-world environment with a focus on exploration and combat.",
+                    1
+                ],
+
+                [
+                    "'Xenoblade Chronicles X' is only available on the Nintendo Switch.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Black Desert Online",
-            400
+            400,
+
+            [
+                [
+                    "'Black Desert Online' is known for its highly detailed character customization options.",
+                    1
+                ],
+
+                [
+                    "In 'Black Desert Online', players can only engage in combat activities and cannot participate in life skills such as fishing, trading, or crafting.",
+                    0
+                ],
+
+                [
+                    "'Black Desert Online' features a dynamic weather system and day-night cycle that can impact gameplay.",
+                    1
+                ],
+
+                [
+                    "'Black Desert Online' has a traditional tab-targeting combat system common in many MMORPGs.",
+                    0
+                ],
+
+                [
+                    "'Black Desert Online' includes both PvE and PvP content for players to engage in.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Tom Clancy's Ghost Recon Wildlands",
-            440
+            440,
+
+            [
+                [
+                    "'Tom Clancy's Ghost Recon Wildlands' is set in a fictional version of Bolivia.",
+                    1
+                ],
+
+                [
+                    "In 'Tom Clancy's Ghost Recon Wildlands', players can choose to play the entire campaign in either solo mode or cooperative multiplayer.",
+                    1
+                ],
+
+                [
+                    "'Tom Clancy's Ghost Recon Wildlands' features a linear mission structure with no option for open-world exploration.",
+                    0
+                ],
+
+                [
+                    "Players in 'Tom Clancy's Ghost Recon Wildlands' can customise their characters and weapons to suit their playstyle.",
+                    1
+                ],
+
+                [
+                    "'Tom Clancy's Ghost Recon Wildlands' does not include any vehicles, requiring players to travel on foot throughout the game.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Burnout Paradise",
-            518
+            518,
+
+            [
+                [
+                    "'Burnout Paradise' is an open-world racing game set in a fictional city called Paradise City.",
+                    1
+                ],
+
+                [
+                    "In 'Burnout Paradise', players can freely switch between different vehicles at any time during gameplay.",
+                    0
+                ],
+
+                [
+                    "'Burnout Paradise' features a mode where players can intentionally crash their cars to cause as much destruction as possible, known as 'Crash Mode'.",
+                    0
+                ],
+
+                [
+                    "'Burnout Paradise' includes both single-player and multiplayer modes.",
+                    1
+                ],
+
+                [
+                    "'Burnout Paradise' has no DLC or expansion content, and everything is available in the base game.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Death Stranding",
-            596
+            596,
+
+            [
+                [
+                    "'Death Stranding' is set in a post-apocalyptic world where the player character must deliver packages and reconnect isolated communities.",
+                    1
+                ],
+
+                [
+                    "The main protagonist in 'Death Stranding' is named Sam Porter Bridges.",
+                    1
+                ],
+
+                [
+                    "In 'Death Stranding', players can use various futuristic tools and equipment to assist in their deliveries, such as a floating backpack and a robotic helper.",
+                    1
+                ],
+
+                [
+                    "'Death Stranding' does not feature any combat mechanics, focusing solely on exploration and delivery tasks.",
+                    0
+                ],
+
+                [
+                    "'Death Stranding' was developed by Kojima Productions and directed by Hideo Kojima.",
+                    1
+                ]
+            ]
         ],
 
         [
             "True Crimes: Streets of L.A.",
-            622
+            622,
+
+            [
+                [
+                    "'True Crimes: Streets of L.A.' is set in a fictional version of Los Angeles.",
+                    0
+                ],
+
+                [
+                    "The protagonist of 'True Crimes: Streets of L.A.' is an undercover cop named Nick Kang.",
+                    1
+                ],
+
+                [
+                    "'True Crimes: Streets of L.A.' features an open-world environment where players can explore the city and engage in various side activities.",
+                    1
+                ],
+
+                [
+                    "'True Crimes: Streets of L.A.' does not include any driving mechanics and focuses only on on-foot action.",
+                    0
+                ],
+
+                [
+                    "Players in 'True Crimes: Streets of L.A.' can make moral choices that affect the storyline and their character's alignment with law enforcement.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Skull and Bones",
-            624
+            624,
+
+            [
+                [
+                    "'Skull and Bones' is a single-player, story-driven pirate adventure game.",
+                    0
+                ],
+
+                [
+                    "In 'Skull and Bones', players can customise their ships and crews.",
+                    1
+                ],
+
+                [
+                    "'Skull and Bones' features both PvP and PvE gameplay modes.",
+                    1
+                ],
+
+                [
+                    "'Skull and Bones' is set in the Caribbean Sea during the Golden Age of Piracy.",
+                    1
+                ],
+
+                [
+                    "'Skull and Bones' was developed by Ubisoft Montreal.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Just Cause 3 & 4",
-            1023
+            1023,
+
+            [
+                [
+                    "Both 'Just Cause 3' and 'Just Cause 4' feature a protagonist named Rico Rodriguez.",
+                    1
+                ],
+
+                [
+                    "In 'Just Cause 3' and 'Just Cause 4', players can use a grappling hook to attach to and pull objects or vehicles.",
+                    1
+                ],
+
+                [
+                    "'Just Cause 3' and 'Just Cause 4' include a variety of vehicles, including cars, helicopters, and boats.",
+                    1
+                ],
+
+                [
+                    "'Just Cause 3' and 'Just Cause 4' are set in a fictional South American country and focus on overthrowing a dictator.",
+                    0
+                ],
+
+                [
+                    "In 'Just Cause 3' and 'Just Cause 4', players can use a wingsuit to glide through the air.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Just Cause 2",
-            1035
+            1035,
+
+            [
+                [
+                    "'Just Cause 2' is set on a fictional island nation called Panau.",
+                    1
+                ],
+
+                [
+                    "'Just Cause 2' features a grappling hook and parachute that players can use to navigate the open world.",
+                    1
+                ],
+
+                [
+                    "The protagist of 'Just Cause 2' is named Rico Rodriguez.",
+                    1
+                ],
+
+                [
+                    "'Just Cause 2' includes a multiplayer mode that allows players to compete against each other in various game modes.",
+                    0
+                ],
+
+                [
+                    "'Just Cause 2' allows players to customise their vehicles and weapons extensively.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Asheron's Call",
-            1300
+            1300,
+
+            [
+                [
+                    "'Asheron's Call' is a massively multiplayer online role-playing game (MMORPG) developed by Turbine Entertainment.",
+                    1
+                ],
+
+                [
+                    "'Asheron's Call' is set in a high-fantasy world with a focus on futuristic technology and sci-fi elementds.",
+                    0
+                ],
+
+                [
+                    "'Asheron's Call' features a dynamic event system where the game's world evolves and changes based on player actions and events.",
+                    1
+                ],
+
+                [
+                    "In 'Asheron's Call', players can choose to play as characters from a variety of races and classes, including humans, elves, and dwarves.",
+                    1
+                ],
+
+                [
+                    "'Asheron's Call' includes a feature where players can control and build their own in-game towns.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Final Fantasy XV",
-            1942
+            1942,
+
+            [
+                [
+                    "'Final Fantasy XV' is set in the fictional world of Eos, which features a mix of modern and fantasy elements.",
+                    1
+                ],
+
+                [
+                    "The protagonist of 'Final Fantasy XV' is named Noctis Lucis Caelum.",
+                    1
+                ],
+
+                [
+                    "In 'Final Fantasy XV', players can only travel by foot and cannot use any vehicles.",
+                    0
+                ],
+
+                [
+                    "'Final Fantasy XV' features a real-time combat system rather than the traditional turn-based combat system found in earlier Final Fantasy titles.",
+                    1
+                ],
+
+                [
+                    "'Final Fantasy XV' includes a feature where players can cook meals and share them with their party members.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Tom Clancy's Ghost Recon: Breakpoint",
-            2023
+            2023,
+
+            [
+                [
+                    "'Tom Clancy's Ghost Recon: Breakpoint' is set on a fictional island called Auroa.",
+                    1
+                ],
+
+                [
+                    "In 'Tom Clancy's Ghost Recon: Breakpoint', players can only play in single-player mode and cannot engage in any multiplayer activities.",
+                    0
+                ],
+
+                [
+                    "'Tom Clancy's Ghost Recon: Breakpoint' features a dynamic weather system and day-night cycle that can impact gameplay.",
+                    1
+                ],
+
+                [
+                    "'Tom Clancy's Ghost Recon: Breakpoint' allows players to choose between different classes, such as Assault, Sharpshooter, and Medic, with unique abilities for each.",
+                    1
+                ],
+
+                [
+                    "In 'Tom Clancy's Ghost Recon: Breakpoint', players cannot customise their weapons or gear.",
+                    0
+                ]
+            ]
         ],
 
         [

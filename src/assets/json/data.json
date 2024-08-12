@@ -1057,87 +1057,547 @@
 
         [
             "Test Drive Unlimited 2 (Oahu and Ibiza)",
-            2116
+            2116,
+
+            [
+                [
+                    "'Test Drive Unlimited 2' is set on two main islands: Ibiza and Oahu.",
+                    1
+                ],
+
+                [
+                    "'Test Drive Unlimited 2' focuses solely on racing and does not include any open-world exploration elements.",
+                    0
+                ],
+
+                [
+                    "In 'Test Drive Unlimited 2', players can purchase and customise homes as well as their vehicles.",
+                    1
+                ],
+
+                [
+                    "'Test Drive Unlimited 2' features both single-player and multiplayer modes.",
+                    1
+                ],
+
+                [
+                    "'Test Drive Unlimited 2' does not include any off-road driving and only focuses on street racing.",
+                    0
+                ]
+            ]
         ],
 
         [
             "The Crew",
-            6000
+            6000,
+
+            [
+                [
+                    "'The Crew' features an open-world environment that spans the entire continental United States.",
+                    1
+                ],
+
+                [
+                    "In 'The Crew', players can switch between different vehicles, including cars, boats, and planes.",
+                    0
+                ],
+
+                [
+                    "'The Crew' includes a storyline where the player character works to take down a criminal organization.",
+                    1
+                ],
+
+                [
+                    "'The Crew' allows for seamless multiplayer integration, where players can encounter and team up with other players in the open world.",
+                    1
+                ],
+
+                [
+                    "'The Crew' does not have any customisation options for vehicles, and players must use stock cars.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Fuel",
-            25900
+            25900,
+
+            [
+                [
+                    "'Fuel' is set in a post-apocalyptic world affected by extreme weather and environmental disasters.",
+                    1
+                ],
+
+                [
+                    "'Fuel' features one of the largest open-world environments ever created in a racing game.",
+                    1
+                ],
+
+                [
+                    "In 'Fuel', players can only race on paved roads and highways.",
+                    0
+                ],
+
+                [
+                    "'Fuel' offers a dynamic weather system that can change conditions during races.",
+                    1
+                ],
+
+                [
+                    "'Fuel' allows players to customise their vehicles extensively, including engine upgrades and cosmetic changes.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Guild Wars Nightfall",
-            38850
+            38850,
+
+            [
+                [
+                    "'Guild Wars Nightfall' is the third campaign in the Guild Wars series, following Prophecies and Factions.",
+                    1
+                ],
+
+                [
+                    "'Guild Wars Nightfall' is set in the continent of Elone, which is inspired by African and Middle Eastern cultures.",
+                    1
+                ],
+
+                [
+                    "In 'Guild Wars Nightfall', players can recruit Heroes, which are customisable AI-controlled party members.",
+                    1
+                ],
+
+                [
+                    "'Guild Wars Nightfall' introduces two new professions: the Paragon and the Dervish.",
+                    1
+                ],
+
+                [
+                    "'Guild Wars Nighfall' is a standalone expansion and requires the original Guild Wars Prophecies to play.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Atlas",
-            44807
+            44807,
+
+            [
+                [
+                    "'Atlas' is an open-world survival MMO that focuses on naval exploration and piracy.",
+                    1
+                ],
+
+                [
+                    "In 'Atlas', players can only build small boats and cannot create large ships like galleons.",
+                    0
+                ],
+
+                [
+                    "'Atlas' includes both PvE (Player vs. Environment) and PvP (Player vs. Player) gameplay options.",
+                    1
+                ],
+
+                [
+                    "Players in 'Atlas' can claim and control territory, which can be contested by other players or groups.",
+                    1
+                ],
+
+                [
+                    "'Atlas' does not include any fantasy elements, such as mythical creatures or magical abilities.",
+                    0
+                ]
+            ]
         ],
 
         [
             "The Elder Scrolls II: Daggerfall",
-            209000
+            209000,
+
+            [
+                [
+                    "'The Elder Scrolls II: Daggerfall' features one of the largest open-world maps in video game history.",
+                    1
+                ],
+
+                [
+                    "'The Elder Scrolls II: Daggerfall' is set in the provinces of High Rock and Hammerfell within the fictional world of Tamriel.",
+                    1
+                ],
+
+                [
+                    "In 'The Elder Scrolls II: Daggerfall', players can only choose from a limited number of predefined character classes.",
+                    0
+                ],
+
+                [
+                    "'The Elder Scrolls II: Daggerfall' includes a robust system for joining and participating in various guilds and factions.",
+                    1
+                ],
+
+                [
+                    "'The Elder Scrolls II: Daggerfall' was the first game in the Elder Scrolls series to fearture full 3D graphics.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Word War II Online",
-            350000
+            350000,
+
+            [
+                [
+                    "'World War II Online' is a massively multiplayer online first-person shooter that simulates the battles of World War II in real-time.",
+                    1
+                ],
+
+                [
+                    "'World War II Online' features a single, large map that covers parts of Europe, where thousands of players can engage in battles simultaneously.",
+                    1
+                ],
+
+                [
+                    "'World War II Online' allows players to control various vehicles, including tanks, aircraft, and ships, in addition to infantry roles.",
+                    1
+                ],
+
+                [
+                    "'World War II Online' does not include any persistent world elements, and battles are isolated to individual matches.",
+                    0
+                ],
+
+                [
+                    "'World War II Online' is a free-to-play game with no subscription fees or microtransactions.",
+                    0
+                ]
+            ]
         ],
 
         [
             "The Elder Scrolls: Arena",
-            8000000
+            8000000,
+
+            [
+                [
+                    "'The Elder Scrolls: Arena' is the first game in the Elder Scrolls series.",
+                    1
+                ],
+
+                [
+                    "'The Elder Scrolls: Arena' features an open-world environment that spans the entire continent of Tamriel.",
+                    1
+                ],
+
+                [
+                    "In 'The Elder Scrolls: Arena', players can choose from multiple playable races, including Elves, Orcs, and Khajiit.",
+                    1
+                ],
+
+                [
+                    "The main quest of 'The Elder Scrolls: Arena' involves recovering pieces of the Staff of Chaos to defeat the antagonist Jagar Tharn.",
+                    1
+                ],
+
+                [
+                    "'The Elder Scrolls: Arena' uses a turn-based combat system similar to early RPGs.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Microsoft Flight Simulator",
-            510072000
+            510072000,
+
+            [
+                [
+                    "'Microsoft Flight Simulator' uses a real-world satellite data and weather information to create an accurate simulation of Earth's environment.",
+                    1
+                ],
+
+                [
+                    "'Microsoft Flight Simulator' includes only a few major airports, with most of the world being inaccessible.",
+                    0
+                ],
+
+                [
+                    "'Microsoft Flight Simulator' offers a variety of aircraft, from small propeller planes to large commercial airliners.",
+                    1
+                ],
+
+                [
+                    "'Microsoft Flight Simulator' features a multiplayer mode where players can see and interact with other player's aircraft in real-time.",
+                    1
+                ],
+
+                [
+                    "'Microsoft Flight Simulator' does not support VR (Virtual Reality) gameplay.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Minecraft (Java Edition)",
-            3600000000
+            3600000000,
+
+            [
+                [
+                    "'Minecraft (Java Edition)' was the original version of the game, released before any other editions.",
+                    1
+                ],
+
+                
+                [
+                    "In 'Minecraft (Java Edition)', players can only build structures using pre-designed blueprints and cannot create custom designs.",
+                    0
+                ],
+
+                [
+                    "'Minecraft (Java Edition)' features a variety of game modes, including Survival, Creative, and Hardcore.",
+                    1
+                ],
+
+                [
+                    "'Minecraft (Java Edition)' allows for modding, where players can create and use mods that enhance or change gameplay.",
+                    1
+                ],
+
+                [
+                    "'Minecraft (Java Edition)' does not include any multiplayer options and is strictly a single-player game.",
+                    0
+                ]
+                
+            ]
         ],
 
         [
             "Starfield",
-            37842920000000
+            37842920000000,
+
+            [
+                [
+                    "'Starfield' is an open-world action-adventure game set in space.",
+                    1
+                ],
+                
+                [
+                    "'Starfield' features a character creation system where players can customise their character's appearance and background.",
+                    1
+                ],
+
+                [
+                    "'Starfield' is exclusively a single-player experience.",
+                    1
+                ],
+
+                [
+                    "'Starfield' is developed by Bethesda Game Studios.",
+                    1
+                ],
+
+                [
+                    "Players in 'Starfield' can land on any planet in the game."
+                ]
+            ]
         ],
 
         [
             "Star Control 2: The Ur-Quan Masters",
-            143803096000000
+            143803096000000,
+
+            [
+                [
+                    "'Star Control 2: The Ur-Quan Masters' is a space exploration game with a focus on displomacy, combat, and strategy.",
+                    1
+                ],
+
+                [
+                    "'Star Control 2: The Ur-Quan Masters' features a vast universe where players can explore different star systems and interact with various alien species.",
+                    1
+                ],
+
+                [
+                    "In 'Star Control 2: the Ur-Quan Masters', players control a single spaceship throughout the entire game with no ability to manage or upgrade it.",
+                    0
+                ],
+
+                [
+                    "The main objective of 'Star Control 2: The Ur-Quan Masters' is to defeat the Ur-Quan, a powerful alien race that has enslaved many other species.",
+                    1
+                ],
+
+                [
+                    "'Star Control 2: The Ur-Quan Masters' was originally released in the 1990s and is known for its rich narrative and innovative gameplay.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Spore",
-            4541150400000000
+            4541150400000000,
+
+            [
+                [
+                    "'Spore' allows players to control the evolution of a species from a single-cell organism to an advanced interstellar civilization.",
+                    1
+                ],
+
+                [
+                    "'Spore' includes a creature creator that lets players design and customise their own creature.",
+                    1
+                ],
+
+                [
+                    "'Spore''s gameplay is divided into multiple stages, including Cell, Creature, Tribe, Civilization, and Space.",
+                    1
+                ],
+
+                [
+                    "'Spore' features a multiplayer mode where players can collaborate or compete each other in real-time.",
+                    0
+                ],
+
+                [
+                    "In 'Spore', players can only create land-based creatures and structures, with no option to design underwater or space-faring entities.",
+                    0
+                ]
+            ]
         ],
 
         [
             "Star Citizen",
-            200000000000000000
+            200000000000000000,
+
+            [
+                [
+                    "'Star Citizen' is an ambitious space simulation game that aims to provide a detailed and immersive universe with a focus on space exploration, combat, and trading.",
+                    1
+                ],
+
+                [
+                    "'Star Citizen' is being developed by Cloud Imperium Games and is led by Chris Roberts, known for his work on the Wing Commander series.",
+                    1
+                ],
+
+                [
+                    "'Star Citizen' is a single-player game only, with no plans to include any multiplayer features.",
+                    0
+                ],
+
+                [
+                    "'Star Citizen' has been funded through crowdfunding, with players able to purchase ships and other content to support its development.",
+                    1
+                ],
+
+                [
+                    "'Star Citizen' is fully released and available for purchase in its complete form, with all planned features and content included.",
+                    0
+                ]
+            ]
         ],
 
         [
             "EVE Online",
-            737936940000000000000
+            737936940000000000000,
+
+            [
+                [
+                    "'EVE Online' is a massively multiplayer online role-playing game (MMORPG) set in a science fiction universe with a focus on space exploration, combat, and economics.",
+                    1
+                ],
+
+                [
+                    "'EVE Online' is known for its player-driven economy and player-created content, including corporations, alliances, and large-scale space battles.",
+                    1
+                ],
+
+                [
+                    "In 'EVE Online', players can only pilot small ships, and cannot control larger capital ships or space stations.",
+                    0
+                ],
+
+                [
+                    "'EVE Online' features a real-time combat system where players engage in space battles with other players and NPCs.",
+                    1
+                ],
+
+                [
+                    "'EVE Online' includes a subscription model, but players can also earn in-game currency to pay for their subscription through gameplay.",
+                    1
+                ]
+            ]
         ],
 
         [
             "Elite Dangerous",
-            9460730000000000000000
+            9460730000000000000000,
+
+            [
+                [
+                    "'Elite Dangerous' is a space simualtion game that features a realistic, open-world galaxy modeled after the Milky Way.",
+                    1
+                ],
+
+                [
+                    "'Elite Dangerous' allows players to explore space, engage in combat, trade goods, and participate in various missions within a vast, procedurally generated universe.",
+                    1
+                ],
+
+                [
+                    "'Elite Dangerous' includes a fully detailed and interactive planetary landing system, allowing players to land on any planet or moon in the galaxy.",
+                    0
+                ],
+
+                [
+                    "Players in 'Elite Dangerous' can form and join factions, participate in large-scale space battles, and influence the galaxy's political landscape.",
+                    1
+                ],
+
+                [
+                    "'Elite Dangerous' requires a subscription fee to play and does not offer any other payment options.",
+                    0
+                ]
+            ]
         ],
 
         [
             "No Man's Sky",
-            681172560000000000000000000000
+            681172560000000000000000000000,
+
+            [
+                [
+                    "'No Man's Sky' is a procedurally generated space exploration game that allows players to explore an almost infinite universe within billions of planets.",
+                    1
+                ],
+
+                [
+                    "'No Man's Sky' features a single-player mode only, with no options for multiplayer or cooperative play.",
+                    0
+                ],
+
+                [
+                    "In 'No Man's Sky', players can discover and name new planets, flora and fauna, contributing to a shared universe.",
+                    1
+                ],
+
+                [
+                    "'No Man's Sky' launched with extensive features but faced criticism for lacking key promised elements, which were later added through significant updates.",
+                    1
+                ],
+
+                [
+                    "'No Man's Sky' includes a crafting system that allows players to upgrade their equipment, ships, and bases using ressources collected from planets.",
+                    1
+                ]
+            ]
         ],
 
         [

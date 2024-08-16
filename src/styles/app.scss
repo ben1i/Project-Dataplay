@@ -296,6 +296,59 @@ body {
             }
         }
     }
+
+    .game__questions {
+        position: fixed;
+        width: 90%;
+        height: 200px;
+        align-self: center;
+        background-color: grey;
+        display: flex;
+        flex-direction: column;
+
+        .questions__question {
+            text-align: center;;
+            font-family: Handjet, sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .questions__answers {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .answers__answer {
+                width: 150px;
+                height: 75px;
+                background-color: transparent;
+                outline-style: solid;
+                outline-color: #FFFFFF;
+                outline-offset: -10px;
+                outline-width: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                .answer__radio {
+                    opacity: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+
+                .answer__text {
+                    font-family: Handjet, sans-serif;
+                    font-size: 31px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
 
 @keyframes scroll {

@@ -5,6 +5,8 @@ var rulePage = document.querySelector('.dataplay__rules');
 var introPage = document.querySelector('.dataplay__intro');
 var gamePage = document.querySelector('.dataplay__game');
 
+const gameQuestions = document.querySelector('.game__questions');
+
 function scrollPage(pixels, duration) {
     // Calcul des variables nécessaires
     let start = window.scrollY;
@@ -103,6 +105,42 @@ function defilementAutomatique() {
 var intervalId = setInterval(defilementAutomatique(), 10); // 10 ms pour un défilement fluide
 */
 
+const radio1 = document.querySelector('.answer__radio--1');
+const radio2 = document.querySelector('.answer__radio--2');
+const radio1Div = document.querySelector('.answers__answer--1');
+const radio2Div = document.querySelector('.answers__answer--2');
+
+const QuestionText = document.querySelector('.questions__question');
+
+radio1Div.addEventListener('click', function() {
+    radio1.checked = true;
+    checkRadios();
+});
+
+radio2Div.addEventListener('click', function() {
+    radio2.checked = true;
+    checkRadios();
+});
+
+function checkRadios() {
+    if (radio1.checked) {
+        console.log('checked1');
+    }
+
+    if (radio2.checked) {
+        console.log('checked2');
+    }
+}
+
+function getRandomNumber() {
+    return Math.floor(Math.random() * 5);
+}
+
+function QuestionSearcher(searchQuestion, gameMaps) {
+    const randomNum = getRandomNumber();
+    QuestionText.textContent = gameMaps[searchQuestion][2][randomNum][0];
+}
+
 fetch('assets/json/data.json')
     .then(function(response) {
         return response.json();
@@ -168,10 +206,15 @@ fetch('assets/json/data.json')
             introPage.classList.add('hidden');
             gamePage.classList.remove('hidden');
 
-            setTimeout(function() {
+            gameQuestions.classList.remove('hidden');
+            var searchQuestion = 50;
+
+            QuestionSearcher(searchQuestion, gameMaps);
+
+            /*setTimeout(function() {
                 
                 scrollPage(389.2, 2000);
-            }, 1000)
+            }, 1000)*/
         })
 
 

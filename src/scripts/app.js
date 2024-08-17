@@ -111,34 +111,65 @@ const radio1Div = document.querySelector('.answers__answer--1');
 const radio2Div = document.querySelector('.answers__answer--2');
 
 const QuestionText = document.querySelector('.questions__question');
+var userAnswer;
+var randomNum;
+var questionPrompt;
+var questionAnswer;
+var gameMaps;
+var searchQuestion;
 
 radio1Div.addEventListener('click', function() {
     radio1.checked = true;
-    checkRadios();
+    checkAnswer();
 });
 
 radio2Div.addEventListener('click', function() {
     radio2.checked = true;
-    checkRadios();
+    checkAnswer();
 });
 
-function checkRadios() {
-    if (radio1.checked) {
-        console.log('checked1');
-    }
-
-    if (radio2.checked) {
-        console.log('checked2');
-    }
-}
-
-function getRandomNumber() {
-    return Math.floor(Math.random() * 5);
+function getRandomIntInclusive(min,max) {
+    min= Math.ceil(min);
+    max=Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function QuestionSearcher(searchQuestion, gameMaps) {
-    const randomNum = getRandomNumber();
-    QuestionText.textContent = gameMaps[searchQuestion][2][randomNum][0];
+    randomNum = getRandomIntInclusive(0,4);
+
+    questionPrompt = gameMaps[searchQuestion][2][randomNum][0];
+    questionAnswer = gameMaps[searchQuestion][2][randomNum][1];
+
+    QuestionText.textContent = questionPrompt;
+}
+
+function checkAnswer() {
+    if (radio1.checked || radio2.checked) {
+        if ((radio1.checked && gameMaps[searchQuestion][2][randomNum][1] === 1) || (radio2.checked && gameMaps[searchQuestion][2][randomNum][1] === 0)) {
+            userAnswer = 1;
+        } else {
+            userAnswer = 0;
+        }
+
+        console.log(userAnswer);
+
+        radio1.checked = false;
+        radio2.checked = false;
+        
+        gameQuestions.classList.add('hidden');
+
+        if (userAnswer === 1) {
+            setTimeout(function() {
+                
+                scrollPage(389.2, 1000);
+            }, 1000)
+        } else {
+            setTimeout(function() {
+                
+                scrollPage(389.2, 2000);
+            }, 1000)
+        }
+    }
 }
 
 fetch('assets/json/data.json')
@@ -147,7 +178,7 @@ fetch('assets/json/data.json')
     })
     .then(data => {
         
-        const gameMaps = data.gamemaps;
+        gameMaps = data.gamemaps;
 
         for (var i = 0; i<43; i++) {
             
@@ -207,14 +238,9 @@ fetch('assets/json/data.json')
             gamePage.classList.remove('hidden');
 
             gameQuestions.classList.remove('hidden');
-            var searchQuestion = 50;
+            searchQuestion = 50;
 
             QuestionSearcher(searchQuestion, gameMaps);
-
-            /*setTimeout(function() {
-                
-                scrollPage(389.2, 2000);
-            }, 1000)*/
         })
 
 

@@ -117,6 +117,15 @@ var questionPrompt;
 var questionAnswer;
 var gameMaps;
 var searchQuestion;
+var sectionHeight;
+var sectionTime;
+var userTime;
+var iboucle = 0;
+
+var paused = false;
+
+var mobileHeight = [549.2, 613.8, 679.2, 719.2, 734.2, 754.2, 759.2, 759.2, 799.2, 889.2, 1003.8, 1039.2, 1128.8, 1248.8, 1443.8, 1484.2, 1534.2, 1678.8, 1709.2, 2158.8, 2288.8, 2354.2, 2359.2, 2608.8, 2949.2, 3339.2, 3518.2, 3479.2, 5474.2, 5534.2, 6859.2, 10069.2, 10523.8, 10988.8, 30359.2, 129859, 194609, 224394, 1045410, 1750360, 26843700, 26843700, 26843700];
+var mobileTime = [2822, 3154, 3490, 3695, 3772, 3875, 3901, 3901, 4106, 4569, 5158, 5340, 5800, 6417, 7419, 7626, 7883, 8626, 8783, 11093, 11761, 12097, 12123, 13405, 15155, 17159, 18079, 17878, 28130, 28438, 35247, 51743, 54079, 56468, 156008, 667312, 1000046, 1153102, 5372096, 8994655, 137942959, 137942959, 137942959];
 
 radio1Div.addEventListener('click', function() {
     radio1.checked = true;
@@ -134,13 +143,18 @@ function getRandomIntInclusive(min,max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function QuestionSearcher(searchQuestion, gameMaps) {
+function QuestionSearcher(searchQuestion, gameMaps, i) {
+
+    gameQuestions.classList.remove('hidden');
+
     randomNum = getRandomIntInclusive(0,4);
 
     questionPrompt = gameMaps[searchQuestion][2][randomNum][0];
     questionAnswer = gameMaps[searchQuestion][2][randomNum][1];
 
     QuestionText.textContent = questionPrompt;
+
+    checkAnswer();
 }
 
 function checkAnswer() {
@@ -161,14 +175,34 @@ function checkAnswer() {
         if (userAnswer === 1) {
             setTimeout(function() {
                 
-                scrollPage(389.2, 1000);
+                scrollPage(sectionHeight, (sectionTime / 2));
+                userTime = sectionTime / 2;
+                paused = true;
+                questionLoader();
             }, 1000)
         } else {
             setTimeout(function() {
                 
-                scrollPage(389.2, 2000);
+                scrollPage(sectionHeight, sectionTime);
+                userTime = sectionTime;
+                paused = true;
+                questionLoader();
             }, 1000)
         }
+    }
+}
+
+function questionLoader() {
+    if (paused === true) {
+        sectionHeight = mobileHeight[searchQuestion];
+        sectionTime = mobileTime[searchQuestion];
+
+        setTimeout(function() {
+        
+            QuestionSearcher(searchQuestion, gameMaps);
+            gameQuestions.classList.remove('hidden');
+            searchQuestion = iboucle + 1;
+        }, userTime);               
     }
 }
 
@@ -237,10 +271,12 @@ fetch('assets/json/data.json')
             introPage.classList.add('hidden');
             gamePage.classList.remove('hidden');
 
-            gameQuestions.classList.remove('hidden');
             searchQuestion = 50;
+            sectionHeight = 389.2;
+            sectionTime = 2000;
 
-            QuestionSearcher(searchQuestion, gameMaps);
+            QuestionSearcher(searchQuestion, gameMaps, i);
+            searchQuestion = 0;
         })
 
 

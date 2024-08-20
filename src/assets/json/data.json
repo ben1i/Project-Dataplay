@@ -1,5 +1,38 @@
 {
     "gamemaps" : [
+
+        [
+            "Rocket League",
+            0.10,
+            [
+                [
+                    "Rocket League is a game that can only be played solo.",
+                    0
+                ],
+
+                [
+                    "Rocket League's cars can jump and flip to hit the ball.",
+                    1
+                ],
+
+                [
+                    "It is possible to entirely customise your car's appearance in Rocket League.",
+                    1
+                ],
+
+                [
+                    "Rocket League was launched in 2015.",
+                    1
+                ],
+
+                [
+                    "Rocket League does not have a competitive gamemode.",
+                    0
+                ]
+            ]
+        ],
+
+        
         [
             "GTA: San Andreas",
             38,
@@ -1596,37 +1629,6 @@
                 [
                     "'No Man's Sky' includes a crafting system that allows players to upgrade their equipment, ships, and bases using ressources collected from planets.",
                     1
-                ]
-            ]
-        ],
-
-        [
-            "Rocket League",
-            0.10,
-            [
-                [
-                    "Rocket League is a game that can only be played solo.",
-                    0
-                ],
-
-                [
-                    "Rocket League's cars can jump and flip to hit the ball.",
-                    1
-                ],
-
-                [
-                    "It is possible to entirely customise your car's appearance in Rocket League.",
-                    1
-                ],
-
-                [
-                    "Rocket League was launched in 2015.",
-                    1
-                ],
-
-                [
-                    "Rocket League does not have a competitive gamemode.",
-                    0
                 ]
             ]
         ]

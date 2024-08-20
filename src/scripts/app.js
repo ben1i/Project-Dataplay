@@ -1,5 +1,3 @@
-"use strict"
-
 var homePage = document.querySelector('.dataplay__home');
 var rulePage = document.querySelector('.dataplay__rules');
 var introPage = document.querySelector('.dataplay__intro');
@@ -8,7 +6,6 @@ var gamePage = document.querySelector('.dataplay__game');
 const gameQuestions = document.querySelector('.game__questions');
 
 function scrollPage(pixels, duration) {
-    // Calcul des variables nécessaires
     let start = window.scrollY;
     let end = start + pixels;
     let startTime = Date.now();
@@ -22,88 +19,15 @@ function scrollPage(pixels, duration) {
 
         window.scrollTo(0, scrollAmount);
 
-        // Continuer l'animation jusqu'à ce que la durée soit écoulée
         if (progress < 1) {
             setTimeout(animateScroll, intervalTime);
         } else {
-            // S'assurer que la page est bien à la position finale
             window.scrollTo(0, end);
         }
     }
 
-    // Démarrer l'animation
     animateScroll();
 }
-
-/*function smoothScroll(pixels, duration) {
-    let start = window.scrollY;
-    let end = start + pixels;
-    let startTime = performance.now();
-
-    // Fonction d'interpolation ease-in-out
-    function easeInOutQuad(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    function animateScroll(currentTime) {
-        // Calcul du temps écoulé
-        let elapsedTime = currentTime - startTime;
-        let progress = Math.min(elapsedTime / duration, 1); // Progression de 0 à 1
-        let easedProgress = easeInOutQuad(progress);
-        let scrollAmount = start + (pixels * easedProgress);
-
-        window.scrollTo(0, scrollAmount);
-
-        // Continuer l'animation jusqu'à ce que la durée soit écoulée
-        if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-        } else {
-            // S'assurer que la page est bien à la position finale
-            window.scrollTo(0, end);
-        }
-    }
-
-    // Démarrer l'animation
-    requestAnimationFrame(animateScroll);
-}*/
-
-/*
-// Vitesse de défilement en pixels par milliseconde
-var vitesseDefilement = 1;
-
-// Sélectionner toutes les sections de la page
-var sections = gamePage.querySelectorAll('div');
-
-// Index de la section actuellement en cours de défilement
-var sectionIndex = 0;
-
-// Fonction de défilement
-function defilementAutomatique() {
-    if (sectionIndex < sections.length) {
-        // Obtenez la position de la section suivante
-        var sectionTop = sections[sectionIndex].offsetTop;
-
-        // Défilement de la page vers la section suivante
-        window.scrollBy(0, vitesseDefilement);
-
-        // Vérifiez si le bas de la page ou le haut de la section est atteint
-        if (window.scrollY >= sectionTop) {
-            clearInterval(intervalId); // Arrête le défilement
-            sectionIndex++; // Passe à la section suivante
-
-            // Redémarrer le défilement après un délai (par exemple 2 secondes)
-            if (sectionIndex < sections.length) {
-                setTimeout(function() {
-                    intervalId = setInterval(defilementAutomatique, 10);
-                }, 2000); // 2000 ms = 2 secondes
-            }
-        }
-    }
-}
-
-// Démarrer le défilement après 1 seconde (1000 ms)
-var intervalId = setInterval(defilementAutomatique(), 10); // 10 ms pour un défilement fluide
-*/
 
 const radio1 = document.querySelector('.answer__radio--1');
 const radio2 = document.querySelector('.answer__radio--2');
@@ -116,93 +40,81 @@ var randomNum;
 var questionPrompt;
 var questionAnswer;
 var gameMaps;
-var searchQuestion;
+var searchQuestion = 1;  // Commencer à 1 pour la question sur San Andreas
 var sectionHeight;
 var sectionTime;
 var userTime;
-var iboucle = 0;
 
-var paused = false;
-
-var mobileHeight = [549.2, 613.8, 679.2, 719.2, 734.2, 754.2, 759.2, 759.2, 799.2, 889.2, 1003.8, 1039.2, 1128.8, 1248.8, 1443.8, 1484.2, 1534.2, 1678.8, 1709.2, 2158.8, 2288.8, 2354.2, 2359.2, 2608.8, 2949.2, 3339.2, 3518.2, 3479.2, 5474.2, 5534.2, 6859.2, 10069.2, 10523.8, 10988.8, 30359.2, 129859, 194609, 224394, 1045410, 1750360, 26843700, 26843700, 26843700];
+var mobileHeight = [];
 var mobileTime = [2822, 3154, 3490, 3695, 3772, 3875, 3901, 3901, 4106, 4569, 5158, 5340, 5800, 6417, 7419, 7626, 7883, 8626, 8783, 11093, 11761, 12097, 12123, 13405, 15155, 17159, 18079, 17878, 28130, 28438, 35247, 51743, 54079, 56468, 156008, 667312, 1000046, 1153102, 5372096, 8994655, 137942959, 137942959, 137942959];
 
 radio1Div.addEventListener('click', function() {
-    radio1.checked = true;
-    checkAnswer();
+    if (!radio1.checked) {
+        radio1.checked = true;
+        checkAnswer(); // Appelle checkAnswer seulement une fois
+    }
 });
 
 radio2Div.addEventListener('click', function() {
-    radio2.checked = true;
-    checkAnswer();
+    if (!radio2.checked) {
+        radio2.checked = true;
+        checkAnswer(); // Appelle checkAnswer seulement une fois
+    }
 });
 
-function getRandomIntInclusive(min,max) {
-    min= Math.ceil(min);
-    max=Math.floor(max);
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function QuestionSearcher(searchQuestion, gameMaps, i) {
+function QuestionSearcher() {
+    if (searchQuestion >= gameMaps.length) {
+        return; // Évitez les dépassements d'index
+    }
 
+    console.log(searchQuestion);
+    
     gameQuestions.classList.remove('hidden');
 
-    randomNum = getRandomIntInclusive(0,4);
+    randomNum = getRandomIntInclusive(0, 4);
 
     questionPrompt = gameMaps[searchQuestion][2][randomNum][0];
     questionAnswer = gameMaps[searchQuestion][2][randomNum][1];
 
     QuestionText.textContent = questionPrompt;
-
-    checkAnswer();
 }
 
 function checkAnswer() {
     if (radio1.checked || radio2.checked) {
-        if ((radio1.checked && gameMaps[searchQuestion][2][randomNum][1] === 1) || (radio2.checked && gameMaps[searchQuestion][2][randomNum][1] === 0)) {
+        if ((radio1.checked && questionAnswer === 1) || (radio2.checked && questionAnswer === 0)) {
             userAnswer = 1;
         } else {
             userAnswer = 0;
         }
 
-        console.log(userAnswer);
-
         radio1.checked = false;
         radio2.checked = false;
-        
+
         gameQuestions.classList.add('hidden');
 
-        if (userAnswer === 1) {
-            setTimeout(function() {
-                
-                scrollPage(sectionHeight, (sectionTime / 2));
-                userTime = sectionTime / 2;
-                paused = true;
-                questionLoader();
-            }, 1000)
-        } else {
-            setTimeout(function() {
-                
-                scrollPage(sectionHeight, sectionTime);
-                userTime = sectionTime;
-                paused = true;
-                questionLoader();
-            }, 1000)
-        }
-    }
-}
+        // Assurez-vous que les hauteurs sont calculées correctement pour la section suivante
+        sectionHeight = mobileHeight[searchQuestion] || 0; // Valeur par défaut pour éviter les erreurs
+        sectionTime = mobileTime[searchQuestion] || 0;
 
-function questionLoader() {
-    if (paused === true) {
-        sectionHeight = mobileHeight[searchQuestion];
-        sectionTime = mobileTime[searchQuestion];
+        // Déterminez le temps de défilement
+        userTime = userAnswer === 1 ? sectionTime / 2 : sectionTime;
 
+        // Assurez-vous que le défilement se fait correctement
+        scrollPage(sectionHeight, userTime);
+
+        // Incrémenter la question après le défilement
         setTimeout(function() {
-        
-            QuestionSearcher(searchQuestion, gameMaps);
-            gameQuestions.classList.remove('hidden');
-            searchQuestion = iboucle + 1;
-        }, userTime);               
+            searchQuestion = searchQuestion + 1;
+            if (searchQuestion < gameMaps.length) {
+                QuestionSearcher();
+            }
+        }, userTime + 100); // Ajouter un léger délai pour s'assurer que la question suivante est chargée correctement
     }
 }
 
@@ -211,106 +123,73 @@ fetch('assets/json/data.json')
         return response.json();
     })
     .then(data => {
-        
         gameMaps = data.gamemaps;
 
-        for (var i = 0; i<43; i++) {
-            
-            const games = gameMaps[i];
-            
-            const currentGame = games[0];
-            const currentGameSize = games[1];
-            const currentGameSizeScale = currentGameSize*5.000000000162988224 + "px";
-            const currentGameSizeScaleString = currentGameSizeScale.toString();
-            
-            let gameDiv = document.createElement('div');
-            gameDiv.classList.add('game__test');
-            gameDiv.classList.add('game__test--' + i);
-            gamePage.appendChild(gameDiv);
-        
-            let gameName = document.createElement('p');
-            gameName.classList.add('test__paragraph');
-            gameName.textContent = currentGame;
-            gameDiv.appendChild(gameName);
-        
-            let gameSize = document.createElement('p');
-            gameSize.classList.add('test__paragraph', 'test__paragraph--bottom');
-            gameSize.textContent = currentGameSize + "km²";
-            gameDiv.appendChild(gameSize);
-        
-            let gameSquareDiv = document.createElement('div');
-            gameSquareDiv.classList.add('test__testsquare');
-            gameDiv.appendChild(gameSquareDiv);
-        
-            let gameSquare = document.createElement('div');
-            gameSquare.classList.add('testsquare__form');
-            gameSquareDiv.appendChild(gameSquare);
-            gameSquare.style.height = currentGameSizeScaleString;
-        }
-        
         var ruleButton = homePage.querySelector('.buttons__button--rules');
         ruleButton.addEventListener('click', function() {
             homePage.classList.add('hidden');
             rulePage.classList.remove('hidden');
-        })
-        
+        });
+
         var introButton = homePage.querySelector('.buttons__button--play');
         introButton.addEventListener('click', function() {
             homePage.classList.add('hidden');
             introPage.classList.remove('hidden');
-        })
-        
+        });
+
         var homeButton = rulePage.querySelector('.button__home');
         homeButton.addEventListener('click', function() {
             rulePage.classList.add('hidden');
             homePage.classList.remove('hidden');
-        })
-        
+        });
+
         var playButton = introPage.querySelector('.button__continue');
         playButton.addEventListener('click', function() {
             introPage.classList.add('hidden');
             gamePage.classList.remove('hidden');
 
-            searchQuestion = 50;
-            sectionHeight = 389.2;
-            sectionTime = 2000;
+            // Boucle commence à i = 1 pour la création des jeux
+            for (let i = 1; i < gameMaps.length; i++) {
+                const games = gameMaps[i];
+                const currentGame = games[0];
+                const currentGameSize = games[1];
+                const currentGameSizeScale = currentGameSize * 5.000000000162988224 + "px";
 
-            QuestionSearcher(searchQuestion, gameMaps, i);
-            searchQuestion = 0;
-        })
+                let gameDiv = document.createElement('div');
+                gameDiv.classList.add('game__test', 'game__test--' + i);
+                gamePage.appendChild(gameDiv);
 
+                let gameName = document.createElement('p');
+                gameName.classList.add('test__paragraph');
+                gameName.textContent = currentGame;
+                gameDiv.appendChild(gameName);
 
+                let gameSize = document.createElement('p');
+                gameSize.classList.add('test__paragraph', 'test__paragraph--bottom');
+                gameSize.textContent = currentGameSize + "km²";
+                gameDiv.appendChild(gameSize);
 
-        /*const sanAndreas = gameMaps[0];
-        console.log(sanAndreas);
+                let gameSquareDiv = document.createElement('div');
+                gameSquareDiv.classList.add('test__testsquare');
+                gameDiv.appendChild(gameSquareDiv);
 
-        const sanAndreasName = sanAndreas[0];
-        const sanAndreasSize = sanAndreas[1];
-        const sanAndreasSiteSize = sanAndreasSize*500.0000000162988224 + "px";
-        const sanAndreasSizeString = sanAndreasSiteSize.toString();
-        console.log (sanAndreasSiteSize, sanAndreasSizeString);
+                let gameSquare = document.createElement('div');
+                gameSquare.classList.add('testsquare__form');
+                gameSquareDiv.appendChild(gameSquare);
+                gameSquare.style.height = currentGameSizeScale;
 
-        let sanAndreasDiv = document.createElement('div');
-        sanAndreasDiv.className = 'game__test';
-        gamePage.appendChild(sanAndreasDiv);
+                mobileHeight[i] = (gameDiv.offsetHeight) + 200;
+            }
 
-        let sanAndreasText1 = document.createElement('p');
-        sanAndreasText1.className = 'test__paragraph'
-        sanAndreasText1.textContent = sanAndreasName;
-        sanAndreasDiv.appendChild(sanAndreasText1);
+            // Ajouter une vérification de la hauteur et du défilement de la section spécifique (exemple avec un élément particulier)
+            let rocketleagueDiv = document.querySelector('.game__league');
+            if (rocketleagueDiv) {
+                let rocketLeagueHeight = (rocketleagueDiv.offsetHeight) + 200;
+                scrollPage(rocketLeagueHeight, 2000);
+            }
 
-        let sanAndreasText2 = document.createElement('p');
-        sanAndreasText2.className = 'test__paragraph'
-        sanAndreasText2.textContent = sanAndreasSize + "km²";
-        sanAndreasDiv.appendChild(sanAndreasText2);
-
-        let sanAndreasSquareDiv = document.createElement('div');
-        sanAndreasSquareDiv.className = 'test__testsquare';
-        sanAndreasDiv.appendChild(sanAndreasSquareDiv);
-
-        let sanAndreasSquare = document.createElement('div');
-        sanAndreasSquare.className = 'testsquare__form';
-        sanAndreasSquareDiv.appendChild(sanAndreasSquare);
-        sanAndreasSquare.style.height = sanAndreasSizeString;*/
-        
+            setTimeout(function() {
+                QuestionSearcher(); // Début des questions à l'index 1 (San Andreas)
+            }, 2000);
+        });
     });

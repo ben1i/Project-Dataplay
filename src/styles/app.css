@@ -299,7 +299,7 @@ body {
 .dataplay__game .game__questions .questions__answers .answers__answer .answer__radio {
   opacity: 0;
   position: absolute;
-  pointer-events: none;
+  z-index: -10;
 }
 .dataplay__game .game__questions .questions__answers .answers__answer .answer__text {
   font-family: Handjet, sans-serif;

@@ -204,7 +204,7 @@
                     if (window.innerWidth < 1200) {
                         var rocketLeagueHeight = (rocketleagueDiv.offsetHeight) + 220;
                     } else {
-                        var rocketLeagueHeight = (rocketleagueDiv.offsetHeight) + 40;
+                        var rocketLeagueHeight = (rocketleagueDiv.offsetHeight) + 400;
                     }
                     
                     scrollPage(rocketLeagueHeight, 2000);

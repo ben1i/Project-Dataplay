@@ -90,16 +90,20 @@ body {
     }
 
     .home__title {
-        font-family: Handjet, sans-serif;
-        font-size: 62px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 20px;
-        color: #FFFFFF;
+        margin-bottom: 0;
 
-        &--bottom {
-            margin-bottom: 80px;
+        .title__title {
+            font-family: Handjet, sans-serif;
+            font-size: 62px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+    
+            &--bottom {
+                margin-bottom: 80px;
+            }
         }
     }
 
@@ -448,11 +452,14 @@ body {
         }
     
         .home__title {
-            font-size: 124px;
-            margin-bottom: 40px;
+
+            .title__title {
+                font-size: 124px;
+                margin-bottom: 40px;
     
-            &--bottom {
-                margin-bottom: 160px;
+                &--bottom {
+                    margin-bottom: 160px;
+                }
             }
         }
     
@@ -615,48 +622,71 @@ body {
     }
 }
 
-@media (max-height: 750px ) {
+@media (max-height: 750px) {
+    
+    .dataplay__home {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+    
+        .home__title {
+            .title__title {
+                font-size: 44px;
+                margin-bottom: 20px;
+        
+                &--bottom {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+    
+    .dataplay__rules {
+    
+        .rules__paragraph {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+    
     .dataplay__intro {
-        height: 100%;
-        margin: 20px 20px 20px 20px;
-        max-width: 1400px;
     
         .intro__title {
-            font-size: 62px;
-            margin-bottom: 40px;
+            font-size: 44px;
+            margin-bottom: 80px;
         }
     
         .intro__square {
-            height: 10px;
             margin-bottom: 40px;
-    
-            .square__league {
-                width: 10px;
-                height: 10px;
-            }
         }
     
         .intro__paragraph {
-            font-size: 31px;
-    
-            &--bottom {
-                margin-top: 20px;
-            }
+            font-size: 22px;
         }
     
         .intro__button {
-            margin-top: 80px;
+            margin-top: 20px;
     
             .button__continue {
-                width: 435px;
-                height: 156px;
-                outline-offset: -20px;
-                outline-width: 20px;
+                width: 145px;
+                height: 52px;
+                outline-offset: -5px;
+                outline-width: 5px;
     
                 .continue__text {
-                    font-size: 88px;
+                    font-size: 31px;
                 }
             }
+        }
+    }
+    
+    .dataplay__game {
+    
+        .game__questions {
+            width: 80%;
+            height: 200px;
+            top: 30%;
         }
     }
 }

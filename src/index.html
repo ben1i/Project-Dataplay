@@ -24,12 +24,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="dataplay__home">
+    <section class="dataplay__home hidden">
 
         <div class="home__warning hidden">
             <p class="warning__text">Warning! This game might not work on all mobile devices using Google Chrome. We invite you to use another browser. Thank You!</p>
             <button class="warning__ok">
-                <p class="ok__text">OK</p>
+                <span class="ok__text">OK</span>
             </button>
         </div>
 
@@ -40,10 +40,10 @@
 
         <div class="home__buttons">
             <button class="buttons__button buttons__button--play">
-                <p class="button__text">PLAY</p>
+                <span class="button__text">PLAY</span>
             </button>
             <button class="buttons__button buttons__button--rules">
-                <p class="button__text">RULES</p>
+                <span class="button__text">RULES</span>
             </button>
         </div>
     </section>
@@ -71,7 +71,7 @@
 
         <div class="rules__button">
             <button class="button__home">
-                <p class="home__text">Go to home</p>
+                <span class="home__text">Go to home</span>
             </button>
         </div>
     </section> 
@@ -93,7 +93,7 @@
 
         <div class="intro__button">
             <button class="button__continue">
-                <p class="continue__text">PLAY</p>
+                <span class="continue__text">PLAY</span>
             </button>
         </div>
     </section>
@@ -123,10 +123,19 @@
             </form>
         </div>
 
-        <div class="game__result">
+        <div class="game__result hidden">
             <p class="result__truefalse"></p>
             <p class="result__time"></p>
         </div>
+    </section>
+
+    <section class="dataplay__ending">
+        <h1 class="ending__title">Congratulations!</h1>
+        <h2 class="ending__subtitle">You've reached the end!</h2>
+
+        <button class="ending__button">
+            <span class="button__end">Go to Homepage</span>
+        </button>
     </section>
 </body>
 </html>

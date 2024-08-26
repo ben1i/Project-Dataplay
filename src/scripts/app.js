@@ -108,7 +108,7 @@ function QuestionSearcher() {
     
     gameQuestions.classList.remove('hidden');
 
-    if (boucle < 43) {
+    if (questionBoucle < 44) {
         randomNum = getRandomIntInclusive(0, 4);
 
         questionPrompt = gameMaps[searchQuestion][2][randomNum][0];
@@ -116,7 +116,7 @@ function QuestionSearcher() {
 
         QuestionText.textContent = questionPrompt;
 
-        boucle = boucle + 1;
+        questionBoucle = questionBoucle + 1;
     }
 }
 
@@ -165,7 +165,7 @@ function checkAnswer(radio1, radio2) {
                 QuestionSearcher();
             }
 
-            if (boucle === 43) {
+            if (questionBoucle === 44) {
                 gamePage.classList.add('hidden');
                 endingPage.classList.remove('hidden');
             }
